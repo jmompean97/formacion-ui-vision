@@ -1,2 +1,2 @@
-# Formaci-n-UI.Vision
+# Formacion de UI. Vision
 Repositorio para la formación de UI. Vision
