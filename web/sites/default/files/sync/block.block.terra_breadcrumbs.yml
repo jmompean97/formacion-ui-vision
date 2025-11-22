@@ -1,0 +1,26 @@
+uuid: 4d6b7fc2-7e99-4559-aaf3-850cbc6775be
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - terra
+_core:
+  default_config_hash: 3OuYYax_nNQwxpCNfKdcCfubDVAdsJRd7leQbFEvAcc
+id: terra_breadcrumbs
+theme: terra
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Enlaces de ayuda a la navegación'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

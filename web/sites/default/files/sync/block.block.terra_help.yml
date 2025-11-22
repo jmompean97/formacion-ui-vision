@@ -1,0 +1,22 @@
+uuid: 0cc93172-85fd-4dfa-ac7f-936e7969ca73
+langcode: es
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - terra
+_core:
+  default_config_hash: gt3WZNwNgftREEX-yUzjR4HfW56A_K-52byGtxLvY5w
+id: terra_help
+theme: terra
+region: content
+weight: -51
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Ayuda
+  label_display: '0'
+  provider: help
+visibility: {  }

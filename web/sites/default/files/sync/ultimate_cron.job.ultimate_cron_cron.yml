@@ -1,0 +1,22 @@
+uuid: f5eeb9d6-debf-40b6-af4a-75625b8093bc
+langcode: es
+status: true
+dependencies: {  }
+title: 'Run internal cleanup operations'
+id: ultimate_cron_cron
+weight: 0
+module: ultimate_cron
+callback: 'ultimate_cron#cron'
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0+@ 5 * * *'
+    catch_up: 0
+launcher:
+  id: serial
+logger:
+  id: database
+  configuration:
+    method: '3'
+    retain: 100

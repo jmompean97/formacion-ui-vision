@@ -1,0 +1,22 @@
+uuid: c779e796-58eb-464f-ae80-90f391300ea8
+langcode: es
+status: true
+dependencies:
+  theme:
+    - terra
+_core:
+  default_config_hash: WheXcVxpBNAkm9zpKkW8tvBOp1QsWpa8EuGu3xlzee8
+id: terra_local_tasks
+theme: terra
+region: content
+weight: -52
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestañas
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

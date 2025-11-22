@@ -1,0 +1,14 @@
+uuid: cfe09b7f-ad7c-4b1a-858d-2bd0c3b5bf7b
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Comentarios sobre el sitio web'
+recipients:
+  - jmompean@eservicios.indra.es
+reply: ''
+weight: 0
+message: 'Su mensaje ha sido enviado.'
+redirect: ''

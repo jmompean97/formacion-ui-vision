@@ -1,0 +1,20 @@
+uuid: 7dd18ca1-0d3f-4cd8-91ff-08b082cad339
+langcode: es
+status: true
+dependencies:
+  theme:
+    - terra
+_core:
+  default_config_hash: PKcPtAGuc2qJvYkVMsvUhOQGComo3nplbYDv3ENCPn0
+id: terra_local_actions
+theme: terra
+region: content
+weight: -50
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones primarias de administración'
+  label_display: '0'
+  provider: core
+visibility: {  }

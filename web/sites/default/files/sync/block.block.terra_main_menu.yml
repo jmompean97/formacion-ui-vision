@@ -1,0 +1,27 @@
+uuid: 29fbda6f-7591-4601-9b99-be550266cf3a
+langcode: es
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - terra
+_core:
+  default_config_hash: QOEIMRvVpGT2TH2zgztCQOYD216N3c5pbJesom38Q8w
+id: terra_main_menu
+theme: terra
+region: primary_menu
+weight: -31
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navegación principal'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: cd863773-7c71-4694-b90b-1cb6ce7d256c
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - terra
+_core:
+  default_config_hash: B9xcfijRVTgXBF8BskFZHCiRFLAsOR5tsJWghofY6Wk
+id: terra_messages
+theme: terra
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Mensajes de estado'
+  label_display: '0'
+  provider: system
+visibility: {  }

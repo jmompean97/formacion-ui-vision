@@ -1,0 +1,11 @@
+uuid: 02004be3-b92c-458b-90bf-cb6dcc841140
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GLP3q35DDqGL4afRaU-m6vcPxV8RyRW95mBdoWtUTkk
+id: superuser
+label: 'Súper usuario'
+weight: 2
+is_admin: true
+permissions: {  }

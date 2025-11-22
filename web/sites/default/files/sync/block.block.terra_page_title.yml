@@ -1,0 +1,27 @@
+uuid: 222f7710-0a4b-4e8a-9a7a-8b482c5a3e78
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - terra
+_core:
+  default_config_hash: FKeMUseiq0qlRBQTeiUrprifJlJFu-7fCm5UsrVYwvA
+id: terra_page_title
+theme: terra
+region: content
+weight: -53
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    pages: /buscar
+    negate: true
+    context_mapping: {  }

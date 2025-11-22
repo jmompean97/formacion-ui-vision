@@ -1,0 +1,22 @@
+uuid: e2def1cb-415f-41a1-849a-712d6d6bc645
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - terra
+_core:
+  default_config_hash: qiBOm3UZ-F5Ks1EiqU3aCOkzdFas3AL7NWph_2FlaHA
+id: terra_content
+theme: terra
+region: content
+weight: -49
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

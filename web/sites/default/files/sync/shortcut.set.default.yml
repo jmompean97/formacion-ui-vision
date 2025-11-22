@@ -1,0 +1,8 @@
+uuid: fee7115e-e61f-4c41-813e-41ca840b2718
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U5VlGjd_SfV0Qm_EfnaynOfc549cNscFAx48JfYoMRI
+id: default
+label: 'Por defecto'
