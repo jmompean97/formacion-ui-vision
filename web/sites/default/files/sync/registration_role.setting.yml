@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM
+role_to_select:
+  content_editor: content_editor
+registration_mode: admin
