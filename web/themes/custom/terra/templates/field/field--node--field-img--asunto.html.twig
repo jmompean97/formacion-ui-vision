@@ -1,0 +1,25 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% for item in items %}
+  <div{{ attributes.addClass(classes, 'field__item', 'global-img') }}>
+    <div class="imagebox">
+      <img src="{{ file_url(item.content['#paragraph'].field_img.0.entity.uri.value) }}" 
+        alt="{{ item.content['#paragraph'].field_img.0.alt }}"
+        class="category-banner img-responsive"/>
+      <span class="imagebox-desc">{{ item.content['#paragraph'].field_pie_foto.0.value }}</span>
+    </div>
+  </div>
+{% endfor %}

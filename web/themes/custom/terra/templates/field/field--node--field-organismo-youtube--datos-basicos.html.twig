@@ -1,0 +1,12 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes,'label-social-network') }} >
+    {% for item in items %}
+        <a class="icon-youtube pr-3" href="{{ item.content['#url']}}"></a>
+    {% endfor %}
+</div>

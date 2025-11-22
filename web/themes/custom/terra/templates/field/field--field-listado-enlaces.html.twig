@@ -1,0 +1,10 @@
+<ul class="fa-ul">
+    {% for item in items %}
+        <li>
+            <a href=" {{ item.content['#url']}} " title="{{ item.content['#title'] }}"
+            {{ content_attributes.addClass('link') }}>
+            <span>{{ item.content['#title'] }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

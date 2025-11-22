@@ -1,0 +1,28 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - system.menu.junta-de-andalucia
+  module:
+    - block_class
+    - system
+  theme:
+    - terra
+third_party_settings:
+  block_class:
+    classes: menu--juntadeandalucia
+id: juntadeandalucia
+theme: terra
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:junta-de-andalucia'
+settings:
+  id: 'system_menu_block:junta-de-andalucia'
+  label: 'Junta de Andalucía'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

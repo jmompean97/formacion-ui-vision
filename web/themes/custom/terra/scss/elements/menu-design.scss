@@ -1,0 +1,930 @@
+/*
+    Menu sistema de diseño
+*/
+
+.radix-layouts-sidebar{
+    padding-left: 0px;
+    .block-menu {
+        border-right: 2px solid #f1f1f1;
+        border-top: 2px solid #cccccc;
+        .nav {
+            .nav-item {
+                width: 100%;
+                //Submenu
+                .menu{
+                    display:inline;
+                    list-style-type: none;
+                    padding-inline-start: 0;
+                    .nav-item {
+                        .active, .is-active{
+                            background-color: transparent !important;
+                            padding-left: 15px !important;
+                            border-left: 2px solid #087021 !important;
+                            margin-left: -2px !important;
+                        }
+                        &.menu-item--expanded{
+                            .menu{
+                                display:none;
+                            }
+                            &.menu-item--active-trail{
+                                .menu{
+                                    display:inline;
+                                }
+                            }
+                        }
+                        .nav-link{
+                            padding-top: 0px;
+                            padding-bottom: 0px;
+                            margin-top: 15px;
+                            margin-bottom: 15px;
+                            font-weight: 400;
+                            border: none;
+                            &:hover{
+                                background-color: transparent;
+                                border-left: 2px solid #087021;
+                                margin-left: -2px;
+                            }
+                        }
+                        //Elemento activo del submenu
+                        .is-active{
+                            + .menu{
+                                display: inline;
+                            }
+                        }
+                        .menu{
+                            .nav-item {
+                                .is-active{
+                                    background-color: transparent;
+                                    padding-left: 15px;
+                                    border-left: 2px solid #087021;
+                                    margin-left: 13px !important;
+                                }
+                                .nav-link{
+                                    margin-left: 15px;
+                                    &:hover{
+                                        background-color: transparent;
+                                        border-left: 2px solid #087021;
+                                        margin-left: 13px;
+                                    }
+                                }
+                            }
+                        }
+                        &:last-child{
+                            border-bottom: 2px solid #f1f1f1
+                        }
+                    }
+                }
+
+                .nav-link {
+                    border-bottom: 2px solid #f1f1f1;
+                    padding-bottom: 20px;
+                    padding-top: 20px;
+                    color: #333333;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 19px;
+                    &:hover{
+                        background-color: #F7FBF8;
+                        color: #087021;
+                        font-size: 14px;
+                        font-weight: bold;
+                        line-height: 19px;
+                    }
+                }
+                .active, .is-active {
+                    padding-left: 10px;
+                    background-color: #F7FBF8;
+                    color: #087021;
+                    font-size: 14px;
+                    font-weight: bold;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $screen-lg-max) {
+    .radix-layouts-sidebar{
+        .block-menu {
+            .nav{
+                display: none;
+            }
+            .desplegado{
+                display:block;
+            }
+            #menuToggle{
+                display: block;
+            }
+        }
+    }
+
+    #menuToggle input
+    {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    z-index: 2;
+
+    -webkit-touch-callout: none;
+    }
+
+    #menuToggle span
+    {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+    }
+
+    #menuToggle input:checked ~ span
+    {
+    opacity: 1;
+    background: #000;
+    }
+}
+#menuToggle{
+    display: none;
+    margin: 10px;
+}
+#menu-mobile-layer{
+    display:none;
+}
+
+/********************INICIO MUESTRA U OCULTA ENLACE BUSCAR*******************************/
+.navbar .container.top-nav-bar .visibility-link-search{
+    display: none;
+}
+
+.navbar-main .container .menu--juntadeandalucia li:last-child{
+    display: block;
+}
+
+/******************FIN MUESTRA U OCULTA ENLACE BUSCAR*********************************/
+
+@media (max-width: $screen-lg-max) {
+    #CollapsingNavbar{
+        position: fixed;
+        top: 110px;
+        left:15px;
+        z-index: 20;
+        width: 100%;
+    }
+    #menu-mobile-layer{
+        width:100%;
+        height: 100vh;
+        position: absolute;
+        top:100%;
+        left:0;
+        background-color: $gray-600;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    .body-fixed{
+        position:fixed;
+        width:100%;
+    }
+    #navbar-main{
+        .block-menu{
+            width:100%;
+            // DR max-height: calc(100vh - 150px);
+            // 60px es el alto de la barra con logo y menu de primer nivel
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: rgba(0,0,0,.5);
+        }
+        .container .menu--main{
+            .awemenu-nav.awemenu-standard .awemenu-container{
+                .awemenu{
+                    .awemenu-active > a{
+                        border-bottom:none!important;
+                    }
+                    .awemenu-arrow{
+                        display: inline-block;
+                        width:10%;
+                        margin:0;
+                        height: 27px;
+                        float:left;
+                        padding-top:15px;
+                        cursor: pointer;
+                        color:$primary-shade;
+                    }
+                }
+                .awemenu > .awemenu-item{
+                    margin:0!important;
+                    padding:5px 0;
+                    display:block;
+                    width: 100%;
+                    float:left;
+                    max-width:100%;
+                    border-bottom:solid 1px $gray-100;
+                    .menu-icon-content{
+                        width: auto;
+                        display: inline-block;
+                    }
+                    a{
+                        display: inline-block;
+                        text-align: left;
+                        width: 90%;
+                        float:left;
+                    }
+                    .menu-icon-content{
+                        width: 35px;
+                        margin: 0;
+                        padding-top: 2px;
+                        display: block;
+                        float: left;
+                    }
+                    &:last-child {
+                        border-bottom:none!important;
+                        &::before {
+                            margin:0;
+                            border-radius:0;
+                            content:"";
+                        }
+                    }
+                    .awemenu-submenu{
+                        position: inherit!important;
+                        margin-top:40px;
+                        left: 0!important;
+                        width: 100%  !important;
+                    }
+                }
+            }
+            .awemenu-nav .awemenu-container .awemenu .awemenu-item > a{
+                border-bottom:solid 1px $boder-color;
+                padding:5px!important;
+                i, img{
+                    margin:0;
+                    padding:0;
+                    float:left;
+                }
+            }
+        }
+    }
+
+    /*************INICIO MENÚ RESPONSIVE**************/
+    #navbar-main{
+        .menu-icon-content{
+            display: flex;
+
+        }
+
+        .container .menu--juntadeandalucia {
+
+            .menu-icon-content {
+                position: relative;
+                i, img{
+                    margin-left: 0;
+                    margin-right: 7px;
+                    margin-bottom: 0;
+                    width: 21px;
+                    font-size: 18px;
+                }
+            }
+
+            .menu-msd{
+                >li{
+                    border-bottom: 1px solid $border-list-inverse;
+                    margin: 0 1em;
+    
+    
+                    &:last-child{
+                        display: none;
+                    }
+                }
+            }
+
+            .position-static{
+                width: initial;
+            }
+
+            .position-static a .menu-icon-content{
+                margin-left: initial;
+            }
+
+            .position-static a .menu-icon-content:after{
+                content: '\f0d7';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                left: 95%;
+            }
+            .position-static a.elem-activo .menu-icon-content:after {
+                transform: rotate(180deg);
+            }
+
+            .position-static.show a .menu-icon-content:after{
+                content: '\f0d8';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                left: 95%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .position-static.show .dropdown-menu .menu_link_content .solapa.ds-1col.clearfix{
+                display: none;
+            }
+
+            .position-static .dropdown-menu .menu_link_content{
+                padding-left: 0;
+                padding-right: 0;
+                .block{
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-top: 0;
+                }
+
+                .list-unstyled{
+                    li a{
+                        position: relative;
+
+                        i{
+                            position: absolute;
+                        }
+
+                        span{
+                            padding-left: 0;
+                            display: inline-block;
+                        }
+                    }
+                }
+
+
+            }
+
+            .position-static .full-width{
+                width: 100% !important;
+                margin-left: 0;
+
+            }
+
+            .dropdown-menu{
+                box-shadow: none;
+            }
+
+        }
+
+
+        .container.top-nav-bar a[title="Buscar"] .menu-icon-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            text-transform: uppercase;
+
+            i{
+                font-size: 16px;
+                margin-bottom: 1px;
+
+            }
+        }
+
+    }
+
+    i.svg-inline--fa.fa-search.fa-w-16{
+        position: static;
+    }
+
+    .navbar .container.top-nav-bar .visibility-link-search{
+        display: block;
+        position: relative;
+        top: 4px;
+    }
+
+
+    /*************FIN MENÚ RESPONSIVE**************/
+
+    #header .navbar-expand-lg{
+        position: relative;
+
+        .container{
+            .navbar-collapse{
+                position: absolute;
+                top: 51px;
+            }
+        }
+    }
+
+    .container-button-responsive{
+        display: flex;
+
+        .visibility-link-search{
+            padding-right: 10px;
+        }
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            margin-left: auto;
+        }
+    }
+
+}
+
+
+
+
+@media all and (max-width: $screen-lg-max) {
+    #header .navbar-expand-lg {
+
+        .collapse:not(.show){
+            display: none !important;
+        }
+
+        .navbar-nav{
+            flex-direction: column;
+            padding-right: 0;
+            background-color: rgba(255,255,255,1);
+        }
+
+        .navbar-nav .dropdown-menu {
+            position: static;
+            float: none;
+        }
+
+        .navbar-toggler {
+            display: block;
+            padding: 0 5px;
+            &:focus{
+                outline-color: #fff;
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-sm-max) {
+    #header .navbar-expand-lg {
+        .navbar-toggler {
+            padding: 0 1px 0 5px;
+        }
+    }
+}
+
+#header .navbar-expand-lg .navbar-collapse{
+    width: 100%;
+}
+
+// DR correcciones para demo
+// button para cerrar solapa de menu
+#navbar-main>.container #cierre-custom[aria-expanded=true],
+#navbar-main>.container #cierre-custom[aria-expanded=false] {
+    position: relative;
+    display: block;
+    float: right;
+    right: 10px; 
+    top: 0;
+    &:focus{
+        outline-color: #fff;
+    }
+    .navbar-toggler-icon:before {
+        content: '\2715';
+    }
+}
+
+.solapa .enlaces-segundo-nivel .mas-opciones i{
+    position: absolute;
+    top: 3px;
+}
+
+@media all and (max-width: $screen-lg-max) {
+    /*#navbar-main>.container .menu--juntadeandalucia>li a, 
+    #navbar-main>.container .menu-msd>li a, 
+    #navbar-main>.container>.menu--main>li a,*/
+    #navbar-main>.container .menu-msd>li a.dropdown-toggle{
+        padding: 10px 10px 0 10px;
+    }
+    #navbar-main>.container .menu-msd>li.not-solapa a {
+        padding: 10px 10px 25px;
+    }
+    #navbar-main>.container #cierre-custom[aria-expanded=true],
+    #navbar-main>.container #cierre-custom[aria-expanded=false]{
+        display: none;
+    }
+    #navbar-main>.container .menu--juntadeandalucia .solapa .blockmenulink-msd h4, 
+    #navbar-main>.container .menu-msd .solapa .blockmenulink-msd h4, 
+    #navbar-main>.container>.menu--main .solapa .blockmenulink-msd h4,
+    #navbar-main>.container .menu--juntadeandalucia .solapa .blockmenulink-msd div, 
+    #navbar-main>.container .menu-msd .solapa .blockmenulink-msd div, 
+    #navbar-main>.container>.menu--main .solapa .blockmenulink-msd div {
+        border-bottom: none;
+    }
+    // elementos que no se tienen que mostrar en version mobile
+    .portada-directo-a,
+    .enlaces-segundo-nivel,
+    .imagebox {
+        display: none;
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    #navbar-main>.container .menu--juntadeandalucia .solapa .enlaces-primer-nivel div ul, 
+    #navbar-main>.container .menu-msd .solapa .enlaces-primer-nivel div ul, 
+    #navbar-main>.container>.menu--main .solapa .enlaces-primer-nivel div ul {
+        padding-left: 15px;
+        padding-right: 15px;
+    } 
+    #navbar-main>.container .menu-msd .solapa .layout__region--second .enlaces-primer-nivel{
+        ul{
+            padding-left: 0;
+        }
+    }
+    #navbar-main>.container .menu-msd .solapa .blockmenulink-msd ul li a{
+        padding: 0;
+    }
+    #header #navbar-main .container .navbar-collapse.row .menu--juntadeandalucia div .menu-msd .solapa .enlaces-primer-nivel div ul li {
+        padding: 10px;
+    }
+    #navbar-main>.container .menu--juntadeandalucia .solapa .enlaces-primer-nivel div ul>li,
+    #navbar-main>.container .menu-msd .solapa .enlaces-primer-nivel div ul>li,
+    #navbar-main>.container>.menu--main .solapa .enlaces-primer-nivel div ul>li {
+        border-bottom: 1px solid $gray-300;
+    }
+    #header #navbar-main .container .navbar-collapse.row .menu--juntadeandalucia div .menu-msd .solapa .enlaces-primer-nivel div ul li a .awemenu-arrow {
+        display: none;
+    }
+    #navbar-main .container .menu--juntadeandalucia .position-static .dropdown-menu .menu_link_content .layout .layout__region .list-unstyled li a span {
+        padding-left: 0;
+    }
+}
+
+@media all and (min-width: $screen-lg-max + 1) {
+    #header .navbar-expand-lg .navbar-collapse{
+        height: 100px;
+    }
+    #navbar-main > .container .menu-msd > li.position-static > a {
+        height: 100px;
+        box-sizing: border-box;
+    }
+    #navbar-main > .container .menu-msd > li.position-static > a:hover,
+    #navbar-main > .container .menu-msd > li.position-static > a.elem-activo {
+        border-bottom: 4px solid; 
+        box-sizing: border-box;
+    }
+    #navbar-main > .container .menu-msd > li.position-static > a:hover .menu-icon-content,
+    #navbar-main > .container .menu-msd > li.position-static > .elem-activo .menu-icon-content{
+        top: calc(50% - 28px);
+        i{
+            color: #087021;
+        }
+        img{
+            &.nav-sup-lj{
+                display: none;
+            }
+            &.nav-sup-lj-hv{
+                display: block;
+            }
+        }
+    }
+    #navbar-main > .container .menu-msd > li.position-static.active > a > .menu-icon-content{
+        i{
+            color: #087021;
+        }
+        img{
+            &.nav-sup-lj{
+                display: none;
+            }
+            &.nav-sup-lj-hv{
+                display: block;
+            }
+        }
+    }
+    #navbar-main > .container .menu-msd > li.position-static .menu-icon-content {
+        top: calc(50% - 30px);
+    }    
+}
+
+
+
+/*
+Menu dinámico
+*/
+#titulo-menu-principal-hijo a {
+    color: black;
+}
+#div-menu-principal-hijos li {
+    list-style: none;
+    padding: 7px 0px 0px 20px;
+}
+div#div-menu-principal-hijos {
+    padding: 23px 39px 25px 0px;
+    display: inline-block;
+    width: 351px;
+    vertical-align: top;
+}
+#titulo-menu-principal-hijo i:not(:root).svg-inline--fa {
+    overflow: visible;
+    color: #087021;
+    margin-right: 9px;
+}
+div#div-menu-principal {
+    padding-top: 14px;
+}
+
+
+// DR menu temp. para "La Junta"
+#navbar-main>.container .menu--juntadeandalucia .lista-menu-n1{
+    list-style: none;
+    padding: 0;
+    .enlace-menu-n1 {
+        padding: .75rem 0;
+    }
+    .enlace-menu-n1 a {
+        color: #333;
+        font-size: 17px;
+        line-height: 22px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 700;
+        display: block;
+        overflow: hidden;
+        width: auto;
+        &:hover{
+            text-decoration: underline;
+            color: #0b4c1a;
+        }
+    }
+    .awemenu-arrow{
+        margin-right: 0;
+        display: none;
+    }
+}
+#navbar-main>.container .menu--juntadeandalucia .lista-menu-n2{
+    list-style: none;
+    padding: 10px 0 0 15px;
+    column-count: 2;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-fill: auto;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    height: 200px;
+    .enlace-menu-n2 {
+        padding: 0 0 10px 0;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .enlace-menu-n2 a {
+        color: #087021;
+        font-weight: 100;
+        font-size: 15px;
+        line-height: 20px;
+        position: relative;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+}
+@media all and (max-width: $screen-1300-max) {
+    #navbar-main>.container .menu--juntadeandalucia .lista-menu-n2{
+        height: 250px;
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    #navbar-main>.container .menu--juntadeandalucia .lista-menu-n1{ 
+        padding: 0;
+        .enlace-menu-n1 {
+            padding: 10px;
+            border-bottom: 1px solid #d8d8d8;
+            &:last-child{
+                border-bottom: none;
+            }
+            a{
+                &:hover{
+                    text-decoration: none;
+                }
+                i{
+                    display: none;
+                }
+                span{
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    #navbar-main>.container .menu--juntadeandalucia .lista-menu-n2{
+        display: none;
+    }
+}
+
+@media all and (max-width: $screen-sm-max) {
+    #header{
+        #navbar-main{
+            padding: 5px 10px;
+            .container{
+                &.top-nav-bar{
+                    .visibility-link-search{
+                        padding-right: 5px;
+                        top: 4px;
+                    }
+                }
+                .logo-junta{
+                    width: 40px;
+                    display: block;
+                    background-size: cover;
+                    height: 40px;
+                    background-position: -27px 0;
+                }
+                .logo-domain {
+                    width: 175px;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    display: block;
+                    height: 45px;
+                    background-position: -386px 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-md-max) {
+    #header{
+        #navbar-main{
+            .container{
+                .navbar-collapse.row{
+                    .menu--juntadeandalucia{
+                        .menu-msd{
+                            .solapa.ds-1col{
+                                .enlaces-primer-nivel{
+                                    ul{
+                                        li{
+                                            a{
+                                                span{
+                                                    padding-left: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    #header{
+        #navbar-main{
+            .container{
+                .navbar-collapse.row{
+                    .menu--juntadeandalucia{
+                        .menu-icon-content{
+                            text-align: left;
+                            img{
+                                margin-right: 9px;
+                                width: 14px;
+                            }
+                        }
+                        .menu-msd{
+                            .position-static{
+                                overflow: hidden;
+                                display: block;
+                                &:last-child{
+                                    visibility: hidden;
+                                    &.not-solapa, &.search{
+                                        display: none;
+                                    }
+                                    a{
+                                        height: 30px;
+                                    }
+                                }
+                                &:nth-last-child(2){
+                                    >.dropdown-menu{
+                                        .enlaces-primer-nivel{
+                                            ul:last-child{
+                                                >li{
+                                                    &:last-child{
+                                                        margin-bottom: 18px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            >li{
+                                a{
+                                    font-size: 16px;
+                                    display: block;
+                                }
+                                .menu-icon-content{
+                                    text-align: left;
+                                }
+                            }
+                            .dropdown-menu{
+                                .blockmenulink-msd{
+                                    display: none;
+                                }
+                            }
+                            .solapa.ds-1col{
+                                border: none;
+                                margin-top: 0;
+                                .enlaces-primer-nivel{
+                                    margin: 0;
+                                    ul{
+                                        padding: 0;
+                                        li{
+                                            a{
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                        &:last-child{
+                                            >li{
+                                                &:last-child{
+                                                    border-bottom: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .solapa.layout{
+                                margin-top: 0;
+                                padding-bottom: 0;
+                                border-bottom: none;
+                                .quick-node-block-wrapper{
+                                    padding: 0;
+                                    margin-top: 0;
+                                }
+                                .enlaces-primer-nivel{
+                                    margin: 0;
+                                    padding-right: 0;
+                                    ul{
+                                        li{
+                                            a{
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                        &:last-child{
+                                            >li{
+                                                &:last-child{
+                                                    border-bottom: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .node--type-listado-de-enlaces{
+                                    margin-top: 0;
+                                    .listado-enlaces{
+                                        padding: 0;
+                                        ul{
+                                            li{
+                                                padding: 10px 20px;
+                                                border-bottom: 1px solid #d8d8d8;
+                                                a{
+                                                    font-size: 16px;
+                                                    color: #333;
+                                                    line-height: 22px;
+                                                    font-family: 'Source Sans Pro', sans-serif;
+                                                    font-weight: 400;
+                                                    display: block;
+                                                    overflow: hidden;
+                                                    width: auto;
+                                                    padding: 0 5px;
+                                                    .awemenu-arrow{
+                                                        display: none;
+                                                    }
+                                                    span{
+                                                        float: left;
+                                                        width: 100%; 
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

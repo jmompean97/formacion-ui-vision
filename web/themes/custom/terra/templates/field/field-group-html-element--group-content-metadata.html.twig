@@ -1,0 +1,130 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - title_element: Element to wrap the title.
+ * - children: The children of the group.
+ * - wrapper_element: The html element to use
+ * - attributes: A list of HTML attributes for the group wrapper.
+ *
+ * @see template_preprocess_field_group_html_element()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<{{ wrapper_element }} {{ attributes }}>
+{% if title %}
+  <{{ title_element }}{{ title_attributes }}>{{ title }}</{{ title_element }}>
+{% endif %}
+  {% if collapsible %}
+<div class="field-group-wrapper">
+  {% endif %}
+
+    <div class="row">
+        {% if element['field_authorship'].0['#terra_authorship'].website is not empty or element['field_authorship'].0['#terra_authorship'].telephone is not empty or element['field_authorship'].0['#terra_authorship'].email is not empty or element['field_authorship'].0['#terra_authorship'].contact_link is not empty or element['field_authorship'].0['#terra_authorship'].additional_information is not empty %}
+            <div class="col-12 col-md-6">
+                {% if element['field_authorship'].0['#terra_authorship'].website is not empty %}
+                    <p>{{ 'Responsible'|t }}:
+                        <a href="{{ element['field_authorship'].0['#terra_authorship'].website.0.uri }}" title="{{ element['field_authorship'].0['#terra_authorship'].name.0.value }}">
+                            {{ element['field_authorship'].0['#terra_authorship'].name.0.value }}
+                        </a>
+                    </p>
+
+                {% endif %}
+
+                {% if element['field_authorship'].0['#terra_authorship'].telephone is not empty or element['field_authorship'].0['#terra_authorship'].email is not empty or element['field_authorship'].0['#terra_authorship'].contact_link is not empty or element['field_authorship'].0['#terra_authorship'].additional_information is not empty %}
+                    <p class="mb-1">{{ 'For more information'|t }}:</p>
+                {% endif %}
+
+                <ul class="list-unstyled">
+
+                    {% if element['field_authorship'].0['#terra_authorship'].telephone is not empty %}
+                        <li>
+                            <i class="fas fa-phone-alt pr-2 icon"></i>
+                            <p>
+                                {% for telephone in element['field_authorship'].0['#terra_authorship'].telephone %}
+                                    <a href="tel:{{ telephone.value }}" title="{{ telephone.value }}">{{ telephone.value }}</a>
+                                    {% if not loop.last %}|{% endif %}
+                                {% endfor %}
+                            </p>
+                        </li>
+                    {% endif %}
+
+                    {% if element['field_authorship'].0['#terra_authorship'].email is not empty %}
+                        <li>
+                            <i class="fas fa-envelope pr-2 icon"></i>
+                            <p class="text-break">
+                                {% for email in element['field_authorship'].0['#terra_authorship'].email %}
+                                    <a href="mailto:{{email.value}}" title="{{email.value}}">{{email.value}}</a>
+                                    {% if not loop.last %}|{% endif %}
+                                {% endfor %}
+                            </p>
+                        </li>
+                    {% endif %}
+
+                    {% if element['field_authorship'].0['#terra_authorship'].contact_link is not empty %}
+                        <li>
+                            <i class="fas fa-comment pr-2 icon"></i>
+                            <p>
+                                <a href="{{ element['field_authorship'].0['#terra_authorship'].contact_link.0.uri }}" title="{{ element['field_authorship'].0['#terra_authorship'].contact_link.0.title }}">
+                                    {{ element['field_authorship'].0['#terra_authorship'].contact_link.0.title }}
+                                </a>
+                            </p>
+                        </li>
+                    {% endif %}
+
+                    {% if element['field_authorship'].0['#terra_authorship'].additional_information is not empty %}
+                        <li>
+                            <i class="fas fa-circle-info pr-2 icon"></i>
+                            <div>
+                                {{element['field_authorship'].0['#terra_authorship'].additional_information.0.value|raw}}
+                            </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <div class="col-12 col-md-6">
+            {% if element['published_at'].0 is not empty %}
+                <p class="mb-0">{{ 'Publication date'|t }}: {{element['published_at'].0}} </p>
+            {% endif %}
+            {% if element['field_last_modified_date'].0 is not empty %}
+                <p class="mb-0">{{ 'Last update'|t }}: {{ element['field_last_modified_date'].0 }}</p>
+            {% endif %}
+
+            {% if element['field_content_changelog']['#items'] is not empty %}
+                <p class="mb-0">{{ 'Changelog'|t }}:</p>
+                <ul class="list-unstyled pl-3 mb-0">
+                    {% for i in element['field_content_changelog']['#items']|keys %}
+                        <li class="pb-1">{{element['field_content_changelog'][i]}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if element['field_changelog_rss_options'] is not empty %}
+                <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ element['field_changelog_rss_options']['#title'] }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item subscribe" href="{{ element['field_changelog_rss_options']['rss_link']['#url'] }}" title="{{ element['field_changelog_rss_options']['rss_link']['#title'] }}">
+                            {{ element['field_changelog_rss_options']['rss_link']['#title'] }}
+                        </a>
+                        <a class="dropdown-item help" href="{{ element['field_changelog_rss_options']['help']['#url'] }}" title="{{ element['field_changelog_rss_options']['help']['#title'] }}">
+                            {{ element['field_changelog_rss_options']['help']['#title'] }}
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+  {% if collapsible %}
+</div>
+{% endif %}
+</{{ wrapper_element }}>

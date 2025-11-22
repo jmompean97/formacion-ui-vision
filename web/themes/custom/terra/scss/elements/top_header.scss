@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Top Header: menú y botones de redes sociales.
+ */
+#navbar-top {
+    .region-top-header {
+        display: flex;
+        align-items: center;
+        margin-left:auto;
+        margin-right: 0;
+
+        .block-menu {
+            .nav-item {
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: $accent-shade !important;
+                    font-size: 12px;
+                    padding: 0;
+                    margin-right: 40px;
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+
+                &:last-child a {
+                    margin-right: 25px;
+                }
+            }
+        } 
+
+        .social-media-links--platforms {
+            .fa-2x {
+                font-size: 15px;
+                color: $accent-shade;
+            }
+
+            &::before {
+                display: inline-block;
+                border-radius: 0.5px;
+                color: $accent-shade;
+                content: "\007C";
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $screen-lg-max) {
+    #navbar-top {
+        .region-top-header {
+            margin-right: -10px;
+            .block-menu {
+                .nav-item {
+                    a {
+                        margin-right: 20px;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+    #navbar-top {
+        display: none;
+    }
+}

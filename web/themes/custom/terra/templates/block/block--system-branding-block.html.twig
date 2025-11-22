@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% set attributes = attributes.addClass('site-branding') %}
+
+<div class="d-inline-flex header-cap">
+	<div>
+		<a href="" title="Junta de Andalucía" class="navbar-brand logo-junta" style="background-image:url(/{{ base_path ~ directory }}/logo-jda.png);">Junta de Andalucía</a>
+	</div>
+</div>

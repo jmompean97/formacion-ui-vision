@@ -1,0 +1,76 @@
+/* VARIABLES */
+
+// colors
+$primary-shade: #087021;
+$primary-light: #C4DDCA;
+$primary-dark: #087021;
+$primary-hover: #0B4C1A;
+$primary-back: #f7fbf8;
+$accent-shade: #fff;
+$accent-light: lighten($accent-shade, 37%);
+$accent-dark: darken($accent-shade, 12%);
+// Social Networks
+$facebook-color: #3B5998;
+$twitter-color: #1DA1F2;
+$whatsapp-color: #25D366;
+$linkedin-color: #0077B5;
+// Reassign color vars to semantic color scheme
+$red: #d9534f !default;
+$yellow: #f0ad4e !default;
+$green: #5c966a !default;
+$cyan: #5bc0de !default;
+$gray-100: #eeeeee !default;
+$gray-300: #d8d8d8 !default;
+$gray-600: #555555 !default;
+$gray-800: #333333 !default;
+$background-grey:#F5F5F5;
+$shadow-color: #000000;
+$boder-color:#9A9A9A;
+$border-list: #ECECEC;
+$border-list-inverse: #D8D8D8;
+$theme-colors: ( primary: $primary-shade, secondary: $accent-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
+$brand-primary: $accent-shade;
+$bg-green-dira: #EDF5EF;
+$bg-footer-bottom: #E7E7E7;
+//$brand-success: $green;
+//$brand-info: $teal;
+//$brand-warning: $orange;
+//$brand-danger: $red;
+$brand-inverse: $primary-shade;
+// Body
+//
+// Settings for the `<body>` element.
+//$body-bg: $white;
+$body-color: $gray-800;
+$inverse-bg: $primary-shade;
+//$inverse-color: $gray-lighter;
+// Links
+//
+// Style anchor elements.
+$link-color: $primary-dark;
+$link-decoration: none;
+$link-hover-color: $primary-hover;
+$link-hover-decoration: none;
+// Comments
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+// Responsive font sizes
+$enable-responsive-font-sizes: true;
+$global-padding: 0 10%;
+
+// DR se definen nuevos puntos de corte para la nueva imagen corp.
+// se sobreescribe lo que se importa con bootstrap, ver el file
+// import.scss para el orden de importacion
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1300px
+) !default;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1275px
+) !default;

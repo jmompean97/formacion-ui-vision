@@ -1,0 +1,12 @@
+<div class="card card-directo-a">
+  <div class="card-header">
+    {{ label }}
+  </div>
+  <div class="card-body">
+    <ul class="fa-ul">
+      {% for item in items %}
+          {{ item.content}}
+     {% endfor %}
+    </ul>
+  </div>
+</div>

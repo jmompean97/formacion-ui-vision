@@ -1,0 +1,31 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'datos-basicos-sitio-web') }}>
+    {% block content %}
+      {% if content.field_sitio_web['#items'].0.uri|render %}
+       <h4>{{'Sitio web'|t}}</h4>
+       {% set resultados = content.field_sitio_web['#items']|length %}
+        {% for i in 0..resultados-1 %}
+            <a href="{{content.field_sitio_web['#items'][i].uri}}" 
+            {% if content.field_sitio_web['#items'][i].title|render %}
+              title="{{content.field_sitio_web['#items'][i].title}}"><i class="fas fa-globe"></i><span>{{content.field_sitio_web['#items'][i].title}}</span></a>
+            {% else %}
+              title="{{content.field_sitio_web['#items'][i].uri}}"><i class="fas fa-globe"></i><span>{{content.field_sitio_web['#items'][i].uri}}</span></a>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endblock content %}
+  </div>
+</article>

@@ -1,0 +1,321 @@
+// Faceted views styles.
+.view--faceted {
+  margin-bottom: 30px;
+
+  .view-header {
+    line-height: 2em;
+
+    .form-row {
+      display: initial;
+      flex-wrap: initial;
+      margin: 0;
+    }
+
+    .form-group,
+    .form-actions {
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-item-text {
+      margin-bottom: 30px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        color: #ced4da;
+        display: block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f002";
+      }
+
+      .form-text {
+        padding-right: 30px;
+      }
+    }
+
+    .form-item-sort-by {
+      margin-left: 50%;
+      max-width: 50%;
+      text-align: right;
+
+      label,
+      .form-control {
+        font-size: 14px;
+        display: inline;
+      }
+
+      .form-select {
+        max-width: 66%;
+
+        @media screen and (max-width: map-get($grid-breakpoints, 'lg')) {
+          max-width: 60%;
+        }
+      }
+    }
+
+    &.view-header--with-sort-by {
+      .view-header__summary {
+        display: block;
+        position: relative;
+        top: -30px;
+        max-width: 50%;
+      }
+    }
+
+    @media screen and (max-width: map-get($grid-breakpoints, 'md')) {
+      text-align: left !important;
+      margin-top: 15px;
+
+      &.view-header--with-sort-by {
+        .view-header__summary {
+          top: inherit;
+          max-width: inherit;
+          margin-top: 30px;
+        }
+      }
+
+      .form-item-sort-by {
+        max-width: inherit;
+        margin-left: inherit;
+
+        label {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Facets */
+.block-facets {
+  h4 {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  .item-list__checkbox, .item-list__toggle_checkbox {
+    list-style: none;
+    padding: 0;
+
+    .facet-item {
+      display: block;
+      padding: 15px 20px;
+
+      border-bottom: 1px solid #ebebeb;
+      &:first-child {
+        border-top: 1px solid #ebebeb;
+      }
+
+      label {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: normal;
+        display: flex;
+        color: #333;
+
+        .facet-item__count {
+          font-family: 'Source Sans Pro', sans-serif;
+          color: $black;
+          margin-left: auto;
+          padding: 0 25px;
+        }
+      }
+
+      ul {
+        display: none;
+      }
+    }
+
+    .facet-item * {
+      box-sizing: border-box;
+      position: relative;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .facet-item > input {
+      display: none;
+    }
+
+    .facet-item > label {
+      vertical-align: top;
+      font-size: 15px;
+      padding-left: 30px;
+    }
+
+    .facet-item--regular > [type="checkbox"] + label:before {
+      color: #777;
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      display: inline-block;
+      min-height: 15px;
+      height: 15px;
+      width: 15px;
+      border: 1px solid #83b790;
+      box-shadow: 0 0 3px #83b790;
+      font-size: 15px;
+      vertical-align: top;
+      text-align: center;
+      transition: all 0.2s ease-in;
+      content: '';
+    }
+
+    .facet-item--regular.radio-square > [type="checkbox"] + label:before {
+      border-radius: 0px;
+    }
+
+    .facet-item--regular.radio-rounded > [type="checkbox"] + label:before {
+      border-radius: 25%;
+    }
+
+    .facet-item--regular.radio-blue > [type="checkbox"] + label:before {
+      border: 2px solid #ccc;
+    }
+
+    .facet-item--regular > [type="checkbox"] + label:hover:before {
+      border-color: #83b790;
+    }
+
+    .facet-item--regular > [type="checkbox"]:checked + label:before {
+      width: 8px;
+      height: 16px;
+      border-top: transparent;
+      border-left: transparent;
+      border-color: #087021;
+      border-width: 2px;
+      box-shadow: none;
+      transform: rotate(45deg);
+      top: -2px;
+      left: 4px;
+    }
+
+    // Toggle style.
+    .facet-item--toggle {
+      position: relative;
+    }
+
+    .facet-item--toggle .toggler {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 20px;
+      left: 10px;
+      top: 15px;
+      z-index: -1;
+    }
+
+    /* Hide default HTML checkbox */
+    .facet-item--toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .facet-item--toggle .toggler .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .facet-item--toggle .toggler .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .facet-item--toggle [type="checkbox"]:checked ~ .toggler .slider {
+      background-color: #087021;
+      box-shadow: 0 0 3px #83b790;
+    }
+
+    .facet-item--toggle input:focus ~ .toggler .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    .facet-item--toggle [type="checkbox"]:checked ~ .toggler .slider:before {
+      -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+  }
+
+  .facets-soft-limit-link {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+    display: block;
+    margin: 15px 0;
+
+    &::after {
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f107";
+      padding-left: 10px;
+    }
+
+    &.open::after {
+      font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f106";
+    }
+  }
+
+}
+
+/* Views pages sidebar blocks. */
+.block-jda-views-pages {
+  margin-bottom: 30px;
+
+  h2,
+  h3,
+  h4 {
+    font-size: 18px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    svg {
+      height: 14px;
+      top: -2px;
+      position: relative;
+      margin-right: 5px;
+    }
+  }
+
+  form {
+    .form-group {
+      padding: 0;
+    }
+
+    .btn {
+      border-radius: 5px;
+    }
+  }
+}

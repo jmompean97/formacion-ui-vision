@@ -1,0 +1,227 @@
+/* TYPOGRAPHY */
+
+/* Google Fonts */
+/*@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+	}
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url('../fonts/OpenSans/OpenSans-Bold.ttf');
+	}
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url('../fonts/OpenSans/OpenSans-Light.ttf');
+	}
+@font-face {
+	font-family: 'Montserrat Regular';
+	src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+  }
+@font-face {
+	font-family: 'Montserrat Bold';
+	src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+  }*/
+
+// DR nuevo font Noto_Sans_HK
+/*@font-face {
+	font-family: 'Noto Sans TC Regular';
+	src: url('../fonts/Noto_Sans_HK/NotoSansHK-Regular.otf') format("opentype");
+  }
+  @font-face {
+	font-family: 'Noto Sans TC Light';
+	src: url('../fonts/Noto_Sans_HK/NotoSansHK-Light.otf') format("opentype");
+  }
+  @font-face {
+	font-family: 'Noto Sans TC Bold';
+	src: url('../fonts/Noto_Sans_HK/NotoSansHK-Bold.otf') format("opentype");
+  }*/
+
+
+// font families
+/*$font-opensans: 'Open Sans', Arial, Verdana, sans-serif;
+$font-opensans-bold: 'Open Sans Bold', Arial, Verdana, sans-serif;*/
+$font-montserrat: 'Montserrat Regular', Arial, Verdana, sans-serif;
+$font-montserrat-bold: 'Montserrat Bold', Arial, Verdana, sans-serif;
+$font-awesome: 'Font Awesome 5 Free';
+// DR nuevo font
+/*$font-notosans: 'Noto Sans TC Regular', Arial, Verdana, sans-serif;
+$font-notosans-light: 'Noto Sans TC Light', Arial, Verdana, sans-serif;
+$font-notosans-bold: 'Noto Sans TC Bold', Arial, Verdana, sans-serif;*/
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-lg: 1.25rem;
+$font-size-sm: .875rem;
+$font-size-xs: 0.8125rem;
+
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+$font-size-h1: 28px; //Título de noticias
+$font-size-h2: 26px; //Título de secciones
+$font-size-h3: 22px; //Título de slider, datos
+$font-size-h4: 20px; //Secciones en el pie, subtemas, títulos de acordeón
+$font-size-h5: 17px; //Título de las cards, títulos de subsección
+$font-size-h6: 18px; //Subtítulo slider
+
+
+body {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.title {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	// font-size: 28px;
+	font-weight: bold;
+}
+
+.title-secction{
+	font-size: 28px;
+	font-weight: bold;	
+	line-height: 34px;
+}
+
+/*Textos verdes, con posibilidad de subrayado*/
+.green-letter, .title-h2 {
+    color: $primary-shade;
+    
+    &.underline { 
+		text-decoration-line: underline;
+		text-decoration-color: $primary-shade;
+	}
+}
+
+.subtitle {
+	margin-top: 21px;
+	/*mt-4*/
+	margin-bottom: 4px;
+	/*mb-1*/
+}
+
+.subtitulo-comp-buscador {
+	margin-bottom: 15px;
+}
+
+.ul-subtitle {
+	margin-top: 21px;
+	/*mt-4*/
+	margin-bottom: 15px;
+	/*mb-3*/
+}
+
+hr {
+	margin-bottom: 4px;
+	/*mb-1*/
+	margin-top: 4px;
+	/*mt-1*/
+}
+.main-content{
+	h1, .h1 {
+			font-size: $font-size-h1;
+			font-family: 'Montserrat', Arial, Verdana, sans-serif;
+	}
+	
+	h2, .h2 {
+			font-size: $font-size-h2;
+			font-weight: bold;
+	}
+	
+	h3, .h3 {
+			font-size: $font-size-h3;
+			font-weight: bold;
+	}
+	
+	h4, .h4 {
+			font-size: $font-size-h4;
+			font-weight: 600;
+	}
+	
+	h5, .h5 {
+			font-size: $font-size-h5;
+			font-weight: 600;
+	}
+	
+	h6, .h6 {
+			font-size: $font-size-h6;
+			font-weight: 600;
+	}
+	
+	.h7 {
+		font-size: 16px;
+		font-weight: bold;
+		display: block;
+		margin-top: 4px;
+		/*mt-1*/
+	}
+	
+	.h8 {
+		font-size: 14px;
+		display: block;
+		margin-top: 4px;
+	}
+	
+	.h9 {
+		font-size: 14px;
+		font-weight: 600;
+		/* Semi-Bold */
+		display: block;
+		margin-top: 4px;
+	}
+	
+	.h10 {
+		font-size: 14px;
+		font-weight: bold;
+		display: block;
+		margin-top: 4px;
+	}
+	
+	.h11 {
+		font-size: 12px;
+		font-weight: 600;
+		display: block;
+		margin-top: 4px;
+	}
+	
+	.h12 {
+		font-size: 13px;
+		display: block;
+		margin-top: 4px;
+	}
+	
+	.h13 { 
+		font-size: 11px;
+	}
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: $font-size-h5;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+input, select, textarea {
+    font-size: 14px;
+}
+
+small {
+    font-size: 13px;
+}

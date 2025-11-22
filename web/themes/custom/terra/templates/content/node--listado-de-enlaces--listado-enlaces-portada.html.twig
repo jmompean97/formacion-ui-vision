@@ -1,0 +1,32 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'listado-enlaces', 'listado-enlaces-portada') }}>
+    {% if content.field_imagen_cabecera is not empty %}
+        <div class="imagebox">
+          {{content.field_imagen_cabecera}}
+          {% if content.field_titulo_imagen_cabecera is not empty %}
+            {{content.field_titulo_imagen_cabecera}}
+          {% endif %}
+        </div>
+    {% endif %}
+    {{content.field_listado_enlaces}}
+    <div class="enlace-mas-opciones">
+      <a href="{{ content.field_mas_opciones.0['#url'] }}" title="Más opciones">
+        <i class="fas fa-plus-circle"></i>
+        <span class="more-elems">Más opciones</span>
+      </a>
+    </div>
+  </div>
+</article>

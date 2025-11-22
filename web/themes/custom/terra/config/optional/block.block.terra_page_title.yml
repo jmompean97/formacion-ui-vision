@@ -1,0 +1,24 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - terra
+id: terra_page_title
+theme: terra
+region: content
+weight: -53
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /buscar
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,818 @@
+/* 
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+    background: $white;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+.social-media-links--platforms {
+    margin: 0;
+}
+
+/* COLORS 
+--------------------------------------------------*/
+
+a {
+    color: $primary-shade;
+}
+
+.bg-inverse {
+    background: $primary-shade !important;
+}
+
+.site-footer {
+    background: $gray-100 !important;
+}
+
+#navbar-top {
+    background: $gray-800 !important;
+}
+
+#navbar-main {
+    background: $accent-shade !important;
+    height: 100px;
+}
+
+.site-name-slogan a {
+    text-decoration: none;
+}
+
+.card-group img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.card-group .field--type-image {
+    margin: 0
+}
+
+.slick {
+    width: 100%;
+}
+
+.slick>div {
+    margin: 0 15px;
+}
+
+.line-vertical {
+    @extend .mr-4;
+    box-sizing: border-box;
+    margin-top: 3.8px;
+    height: 36.8px;
+    width: 0.1px;
+    border: 1.9px solid #087021;
+}
+
+.site-name {
+    color: #333333;
+    font-family: $font-montserrat;
+    .txt-verde {
+        font-family: $font-montserrat-bold;
+    }
+}
+
+.txt-verde {
+    color: #087021;
+}
+
+.full-width {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+// Directo a Portada
+.slide{
+  .portada-directo-a{
+    background-color: #fff;
+    .layout{
+      padding-bottom: 1rem;
+      background-color: #fff;
+    }
+  }
+  .block-field-blocknodedirecto-afield-directo-a-contenido{
+    .card-directo-a{
+      padding-bottom: 1em;
+      background-color: #fff;
+      .card-header{
+        font-size: 21px;
+        font-weight: 600;
+        border-bottom: none;
+        padding: 0;
+        color: #333;
+        font-family: 'Source Sans Pro', sans-serif;
+        background-color: #fff;
+        margin: 0 0 24px 0;
+        line-height: 1.2;
+      }
+      .card-body{
+        padding: 0 15px 0 32px;
+        background-color:$bg-green-dira;
+        border-style: solid;
+        border-color: #BEBEBE #BEBEBE #BEBEBE $primary-dark;
+        border-width: 1px 1px 1px 5px;
+        ul{
+          margin-bottom: 25px;
+          li{
+            padding: 0;
+            margin-top: 30px;
+            &:first-child{
+              padding-top: 0;
+              margin-top: 25px;
+            }
+            .fa-li{
+              color: $primary-shade;
+            }
+            a{
+              color: $gray-800;
+              font-size: 15px;
+              font-weight: bold;
+              letter-spacing: 0;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.background-grey{
+    .portada-directo-a{
+      background-color: transparent;
+      .layout{
+        background-color: transparent;
+      }
+    }
+    .block-field-blocknodedirecto-afield-directo-a-contenido{
+      .card-directo-a{
+          background-color:transparent;
+          .card-header{
+              background-color:transparent;
+          }
+          .card-body{
+              background-color:transparent;
+              border-color: #BEBEBE #BEBEBE #BEBEBE $primary-dark;
+          }
+      }        
+    }
+  }
+}
+
+.form-item-layout-settings-ds-classes-layout-class{
+    min-height: 10em;
+    select{
+        min-height: 10em;
+    }
+}
+
+/*  blocks-terra-portada-titulo-seccion 
+--------------------------------------------------*/
+.block-blocks-terra-portada-titulo-seccion{
+    h1{
+        font-family: 'Montserrat Bold';
+        color: #333333;
+        line-height: 34px;
+    }
+}
+
+@media (max-width: $screen-md-max){
+  .block-blocks-terra-portada-titulo-seccion {
+    h1{
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      word-wrap: break-word;
+    }
+  }
+}
+
+/********** CONTENIDOS  NIVEL 3 ********************************/
+        
+/* CONTENIDOS GENERALES DEL TERCER NIVEL*********************************************************************/
+    
+.editor strong{ font-weight: bold; color:#2b2b2b;}
+
+.editor ol, .editor ul { 
+  line-height:1.5em;
+  color:#515151;
+  margin:0;
+  padding:0.6em 1em;    
+  display:block;
+  }
+  
+.editor ol { 
+  list-style:decimal;
+  list-style-position: inside;
+  }
+
+.editor ul{
+  list-style:disc;
+  list-style-position:inherit;
+  }
+  
+.editor ol li, .editor ul li { 
+  clear: left;
+  margin-bottom:0.7em;
+  margin-left:1em;  
+  }
+
+.editor ul ul,
+.editor ul ol,
+.editor ol ol,
+.editor ol ul,
+.editor ul ul ul,
+.editor ul ul ol,
+.editor ul ol ul,
+.editor ul ol ol,
+.editor ol ol ul,
+.editor ol ol ol,
+.editor ol ul ul,
+.editor ol ul ol {
+  padding-bottom: 0px;
+  }
+    
+.editor .listado_pdf, .editor .listado_adjuntos, .editor .listado_pdf li, .editor .listado_adjuntos li, .editor .lista_con_foto, .editor .lista_con_foto li { 
+  list-style:none !important;
+  }
+      
+.editor .listado li{
+  width: 170px !important;
+  margin-left: 0 !important;
+  }
+
+.editor .imagen img{
+  border:1px solid #ccc;
+  width:14.125rem; 
+  }
+    
+.editor .note-off{clear:none !important;}
+.editor .lista_con_foto li {padding-left:0 !important; }
+.editor .destacado .lista_con_foto{padding:0 !important; }
+.editor .destacado .lista_con_foto li{
+    padding-left:0 !important; width: 20.8em;
+    min-height:0.1em !important;
+    clear:none;
+    float:left;
+    height:auto;
+    border:none !important;
+    border-bottom:2em solid #fafafa !important;
+    }
+
+.editor .destacado .lista_con_foto li img{border:1px solid #cbcbcb; width:3.8em}
+
+/* TABLA EN TERCER NIVEL: ZONA EDITABLE  POR CONTENIDOS: */
+  .editor table{
+  border-collapse: collapse;
+  border: 1px solid #cccccc;
+  color: #363636;
+  background: #f6f6f6;
+  text-align:left;
+  }
+          
+.editor table caption {
+  text-align: center;
+  background: transparent;
+  padding:6px 4px 8px 0px;
+  color: #087021;
+  text-transform: uppercase;
+  }
+  
+/* Caso especial para los detalles del Registro de Entidades Locales */
+.editor table caption.caption_rael {    
+  padding: 1em 0 0.7em 0;
+  color: #515151;
+  text-align: left;
+  font-weight: normal !important;
+}  
+          
+.editor table thead, tfoot {
+  text-align:left;
+  height:3em;
+  }
+        
+.editor table thead th, tfoot th {
+  padding:5px;
+  background: #666666;
+  color:#FFFFFF;
+  border: 1px solid #cccccc;
+  }
+          
+.editor table a {
+  text-decoration:none;
+  }
+        
+.editor table a:hover {
+  text-decoration:underline;
+  }
+          
+.editor table tr.odd {
+  background: #f1f1f1;
+  }
+          
+.editor table tbody th, tbody td {
+  padding:5px;
+  border: 1px solid #e3e3e3;
+  }
+
+.editor table span{
+    font-size: 0.75rem;
+}
+/* FIN  TABLA EN TERCER NIVEL: ZONA EDITABLE  POR CONTENIDOS: */
+
+// DR estilos sugeridos para arreglar las tablas de datos que se muestran mal
+.cont-secc > .block > .content table {
+  width:100%;
+  table-layout: auto;
+  margin-bottom: 1rem;
+  margin-left: 0 !important;
+  font-size: 13px;
+  line-height: 15px;
+  border: 1px solid #e3e3e3 !important;
+
+}
+
+.editor table span {
+font-size: inherit;
+}
+
+.cont-secc > .block > .content table > tbody > tr > td,
+.cont-secc > .block > .content table > thead > tr > td,
+.cont-secc > .block > .content table > thead > tr > th{
+  border: 1px solid #e3e3e3 !important;
+  padding: 5px !important;
+}
+
+.cont-secc > .block > .content table td p{
+  text-align: left;
+}
+
+.cont-secc > .block > .content table img{
+  max-width: unset;
+}
+
+/* Para hacer responsive las tablas */
+
+@media (max-width: 991px) { 
+  .cont-secc > .block > .content table{
+      display: block;
+      width: 100% !important;
+      overflow-x: auto;
+      height: auto !important;
+      -webkit-overflow-scrolling: touch;
+  }
+}
+// DR fin estilos sugeridos para arreglar tablas 
+
+
+#contenidos .contenidos_nivel3 p, .sesiones  p{
+  margin:0 0 1em 0!important;
+  }
+
+.contenidos_nivel3 ul{ clear:none !important;}
+    
+.contenidos_nivel3 .izquierda{
+  margin-left:0 !important;
+  float: left;
+}
+      
+.contenidos_nivel3 .derecha{
+  float:right !important; 
+  margin-right:0 !important;
+  }
+    
+
+.contenidos_nivel3 .listado{
+  clear:both;
+  line-height:1.5em;
+  color:#515151;
+  margin:0;
+  padding:0.6em 0;
+  display:block;
+  }
+    
+.contenidos_nivel3 .listado li{
+  display:block;
+  clear: left;
+  margin-bottom:0.7em; 
+  padding-left: 10px;
+  } 
+    
+.contenidos_nivel3 .listado ul{
+  padding:10px 0 0px 0;
+  }
+      
+.contenidos_nivel3 .listado ul li{
+  margin-bottom:10px; 
+  padding-left: 5px;
+  }
+  
+.contenidos_nivel3 .img_izquierda{ 
+  float: left;
+  margin-right: 1em;
+  }
+    
+.contenidos_nivel3 .img_derecha{ 
+  float: right !important;
+  margin-left: 1em;
+  }
+
+.contenidos_nivel3 .img_medium{ 
+  width: 200px;
+}
+      
+/* ELEMENTOS DEL LOS DESTACADOS DEL TERCER NIVEL *************************************/
+
+.contenidos_nivel3 .destacado{
+  clear:both;
+  border:1px #CCCCCC solid; 
+  background-color:#fafafa; 
+  padding:.5em .5em .2em .5em;
+  width:20.8em !important;
+  margin:2em 1em .5em 1em;
+  display:inline;
+}
+
+@media (max-width: 991px) { 
+  .contenidos_nivel3 .destacado{
+    width:20.5em !important;
+  }
+}
+      
+.contenidos_nivel3 .destacado .titulo{
+  line-height:1.2em !important; 
+  padding:0.2em 0 0em 0 !important; 
+  color:#515151;  
+  margin:0 !important;
+  }
+          
+.contenidos_nivel3 .destacado .lista_con_foto{
+  padding:0 !important; 
+  }     
+    
+.contenidos_nivel3 .destacado .lista_con_foto .item p{
+  margin-bottom:0 !important;
+  }
+    
+.contenidos_nivel3 .destacado .lista_con_foto .item{
+  width: 20.8em;
+  min-height:0.1em !important;
+  clear:none;
+  float:left;
+  height:auto;
+  border:none !important;
+  border-bottom:2em solid #fafafa !important;
+  }
+  
+.contenidos_nivel3 .destacado .lista_con_foto li img{ margin:0 !important;}
+  
+.contenidos_nivel3 .destacado .listado{
+  width: 100%;
+  float:left;
+  }
+      
+/* ESPECIFICO LISTA CON FOTO DEL TERCER NIVEL *************************************/  
+          
+.contenidos_nivel3 .lista_con_foto { padding:2em 0 0 0 !important;}
+        
+/* TABLAS *******************************************/
+      
+table.tabla_01{
+  border-collapse: collapse;
+  border: 1px solid #cccccc;
+  color: #363636;
+  background: #f6f6f6;
+    text-align:left;
+  }
+  
+.tabla_01 caption {
+  text-align: center;
+  background: transparent;
+  padding:6px 4px 8px 0px;
+  color: #087021;
+  text-transform: uppercase;
+  }
+          
+.tabla_01 thead, tfoot {
+  text-align:left;
+  height:3em;
+  }
+        
+.tabla_01 thead th, tfoot th {
+  padding:5px;
+  background: #666666;
+  color:#FFFFFF;
+  border: 1px solid #cccccc;
+  }
+          
+.tabla_01 table a {
+  text-decoration:none;
+  }
+        
+.tabla_01 table a:hover {
+  text-decoration:underline;
+  }
+          
+.tabla_01 tr.odd {
+  background: #f1f1f1;
+  }
+          
+.tabla_01 tbody th, tbody td {
+  padding:5px;
+  border: 1px solid #e3e3e3;
+  }   
+    
+/*ELEMENTOS COMUNES: Imagen ********************************/
+
+.imagen{
+    padding:0.3em;
+    border:1px solid #ccc;
+    font-size: 12px;
+    }
+  
+  .imagen_5col, .imagen_5col_libre{ 
+    border:1px solid #ccc;
+    width:27em;
+    }
+      
+  .imagen_4col,.imagen_4col_libre { 
+    border:1px solid #ccc;
+    width:21em; 
+    }
+    
+  .imagen_1col {border:1px solid #cbcbcb; width:3.8em}
+    
+  .imagen_col{
+    padding:0.3em;
+    background:#fff;
+    border:1px solid #ccc;
+    
+    }
+      
+  .imagen_col img{
+    border:1px solid #ccc;
+    }
+    
+  .imagen_pie, .img_pie{
+    font-size: 0.75rem;
+    color:#515151;
+    padding:.3em;
+    width:19em;
+    color:#515151;
+    }
+  
+  .imagen_pie p, .img_pie p{ 
+        line-height:1.1em !important; 
+        padding-bottom:0 !important;
+    }
+    
+  .imagen_publicacion{
+    float:left;
+    padding:0.3em;
+    border:1px solid #ccc;
+    }
+  
+  .imagen_publicacion img{
+    border:1px solid #ccc;
+    width:21em;
+    }
+  
+
+// estilos para el formulario de Seguro agrario
+.contenedor-seguro-agrario{
+  max-width: 940px; 
+  margin: 0 auto;
+  #buscador_de_seguros{
+    font-size: 12px;
+  }
+  #buscador_de_seguros h4{
+    font-family: 'TeXGyreHerosCnRegular', Arial;
+    font-weight: normal;
+    padding-top: 0;
+  }
+
+  #buscador_de_seguros img {
+    display: initial;
+  }
+
+  #buscador_de_seguros .col-xs-1, 
+  .col-xs-2, 
+  .col-xs-3, 
+  .col-xs-4, 
+  .col-xs-5, 
+  .col-xs-6, 
+  .col-xs-7, 
+  .col-xs-8, 
+  .col-xs-9, 
+  .col-xs-10, 
+  .col-xs-11, 
+  .col-xs-12 {
+    float: left;
+  }
+  #buscador_de_seguros .col-xs-12 {
+    width: 100%;
+  }
+  #buscador_de_seguros .col-xs-11 {
+    width: 91.66666667%;
+  }
+  #buscador_de_seguros .col-xs-10 {
+    width: 83.33333333%;
+  }
+  #buscador_de_seguros .col-xs-9 {
+    width: 75%;
+  }
+  #buscador_de_seguros .col-xs-8 {
+    width: 66.66666667%;
+  }
+  #buscador_de_seguros .col-xs-7 {
+    width: 58.33333333%;
+  }
+  #buscador_de_seguros .col-xs-6 {
+    width: 50%;
+  }
+  #buscador_de_seguros .col-xs-5 {
+    width: 41.66666667%;
+  }
+  #buscador_de_seguros .col-xs-4 {
+    width: 33.33333333%;
+  }
+  #buscador_de_seguros .col-xs-3 {
+    width: 25%;
+  }
+  #buscador_de_seguros .col-xs-2 {
+    width: 16.66666667%;
+  }
+  #buscador_de_seguros .col-xs-1 {
+    width: 8.33333333%;
+  }
+  #buscador_de_seguros .sep_inf-1{
+    margin-bottom:20px; 
+  }
+  #buscador_de_seguros .sep_inf-2{
+    margin-bottom:40px; 
+  }
+  #buscador_de_seguros .sep_sup-1{
+    margin-top: 20px;
+  }
+  #buscador_de_seguros .sep_sup-2{
+    margin-top: 40px;
+  }
+
+  /**/
+
+  #buscador_de_seguros .tematica{
+    text-align: center;
+  }
+  #buscador_de_seguros .tematica img {
+    width: 60%;
+  }
+
+  #buscador_de_seguros .por_fecha .col-xs-2, #buscador_de_seguros .por_tipo .col-xs-2{
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #buscador_de_seguros .por_fecha .col-xs-2 img{
+    width: 60%;
+    margin-top: 10px;
+  }
+  #buscador_de_seguros .caja_seguros {
+    border: 1px solid #ccc; 
+    height:1%; 
+    overflow:hidden; 
+    background-color:#fafafa; 
+    padding:20px;
+  }
+  #buscador_de_seguros .caja_seguros h3{
+    line-height: 3;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  #buscador_de_seguros .por_fecha_detalle{ 
+    margin-bottom: 20px;
+  }
+  #buscador_de_seguros .por_fecha_detalle > div{ 
+    height: 1%;
+    overflow: hidden;
+  }
+  #buscador_de_seguros .por_produccion h3 img,
+  #buscador_de_seguros .por_fecha_detalle h3 img,
+  #buscador_de_seguros .por_produccion_detalle h3 img,
+  #buscador_de_seguros .por_tipo_detalle h3 img{ 
+    float: left;
+    width: 60px;
+    margin-right: 20px;
+
+  }
+  #buscador_de_seguros hr {
+    clear: both;
+    margin: 10px 0;
+    height: 1px;
+    color: #ccc;
+    background-color: #ccc;
+      border: 0 none;
+  }
+  #buscador_de_seguros .col-xs-5 a img,
+  #buscador_de_seguros .col-xs-7 a img  {
+    
+  }
+
+  #buscador_de_seguros .inicio .col-xs-6 {
+    text-align: center;
+  }
+  #buscador_de_seguros .inicio .col-xs-6 img{
+    border: 1px solid #ccc;
+  }
+
+  #buscador_de_seguros .enlace_boton {
+    background: #4c4c4c url("https://www.juntadeandalucia.es/themes/images/boton_bg.jpg") repeat scroll 0 0;
+    border: 1px solid #999999;
+    color: #fff;
+    cursor: pointer;
+    padding: 3px 12px;
+    text-transform: uppercase;
+  }
+
+  #buscador_de_seguros .enlace_boton:hover {
+    background: #4c4c4c url("https://www.juntadeandalucia.es/themes/images/boton_bg.jpg") repeat scroll 0 -24px;
+    text-decoration: none;
+  }
+
+  #buscador_de_seguros #contenedor4, #buscador_de_seguros .contenedor_botonera {
+    text-align: right;
+    padding: 20px 0;
+  } 
+
+  #buscador_de_seguros .contenedor_botonera_derecha {
+    text-align: right;
+    padding: 20px 0;
+  } 
+
+  #buscador_de_seguros .col-xs-5 a , #buscador_de_seguros .col-xs-7 a {
+    position: relative;
+    display: block;
+    float: right;
+    width: calc(100% - 50px);
+  }
+
+  #buscador_de_seguros .col-xs-5 a img, #buscador_de_seguros .col-xs-7 a img {
+    display: block;
+    float: left;
+    left: -34px;
+    position: absolute;
+    top: 0;
+  }
+
+  #buscador_de_seguros .col-xs-5 a img {
+    top: -5px;
+  }
+
+  #buscador_de_seguros .col-xs-7 {
+    margin-bottom: 20px;
+  }
+
+  .caja_seguros.por_produccion_detalle > div {
+    clear: both;
+    height: 1%;
+    overflow: hidden;
+  }
+  .enlace_boton > img {
+    vertical-align: bottom;
+    width: 15px;
+    margin-right: 5px;
+  }
+}
+// fin estilos para el formulario de Seguro agrario    
+
+// Blazy spinner
+.media--loading::before {
+display:none;
+}
+
+@media (max-width: 600px) { 
+  .contenidos_nivel3 .img_derecha{ 
+    float: none !important;
+    margin-left: 0;
+    >img, >.img_pie{
+      width: 100%;
+    }
+  }
+}
+
+.fixedPosition{
+  height: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,17 @@
+langcode: es
+status: true
+dependencies:
+  theme:
+    - terra
+id: terra_local_actions
+theme: terra
+region: content
+weight: -50
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones primarias de administración'
+  provider: core
+  label_display: '0'
+visibility: {  }

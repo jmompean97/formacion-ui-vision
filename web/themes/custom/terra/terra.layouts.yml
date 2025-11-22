@@ -1,0 +1,109 @@
+layout--ds-3-col-bt-white:
+  label: MSD Tres columnas
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/ds_layouts/layout--ds-3-col-bt-white
+  regions:
+    header:
+      label: Header
+    middle:
+      label: Middle
+    left:
+      label: Left
+    right:
+      label: Right
+
+layout--ds-3-col-transp:
+  label: MSD Transparencia tres columnas
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/ds_layouts/layout--ds-3-col-transp
+  regions:
+    title:
+      label: Titulo
+    left:
+      label: Izquierda
+    centertop:
+      label: Centro arriba
+    centerbtleft:
+      label: Centro abajo izda
+    centerbtright:
+      label: Centro abajo dcha
+    right:
+      label: Derecha
+
+layout--cont-struct:
+  label: MSD Contenido estructurado
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  icon: templates/ds_layouts/layout--cont-estruct.png
+  template: templates/ds_layouts/layout--cont-estruct
+  regions:
+    titulo:
+      label: Información general
+    encab:
+      label: Encabezado
+    cont:
+      label: Contenido
+    side:
+      label: Sidebar
+
+layout--cont-pag-naveg:
+  label: MSD Pagina navegacion
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/ds_layouts/layout--cont-pag-naveg
+  regions:
+    cont:
+      label: Contenido
+    side:
+      label: Sidebar
+    footer:
+      label: Footer
+
+layout--ds-3-col-50-25-25:
+  label: MSD 3 columnas 50-25-25
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/ds_layouts/layout--ds-3-col-50-25-25
+  regions:
+    title:
+      label: Titulo
+    izda:
+      label: Contenido izquierda
+    center:
+      label: Contenido centro
+    dcha:
+      label: Contenido derecha
+
+layout--busc-th-blocks:
+  label: MSD Buscador bloques
+  category: Display Suite
+  template: templates/layout/layout--busc-th-blocks
+  regions:
+    lefttop:
+      label: Izquierda Arriba
+    leftbottom:
+      label: Izquierda Abajo
+    right:
+      label: Derecha
+
+layout--icms-resource:
+  label: MSD Contenido icms
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  icon: templates/ds_layouts/layout--icms-resource.png
+  template: templates/ds_layouts/layout--icms-resource
+  regions:
+    titulo:
+      label: Titulo
+    cont:
+      label: Contenido
+    side:
+      label: Sidebar

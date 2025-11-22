@@ -1,0 +1,25 @@
+<div {{ attributes.addClass(classes) }}>
+  <div class="layout--ds-3-col-bt-white container clearfix">
+
+    {{ title_suffix.contextual_links }}
+
+    <{{ header_wrapper }}{{ header_attributes.addClass('row-fluid','header_wrapper') }}>
+      {{ header }}
+    </{{ header_wrapper }}>
+
+    <div class="row">
+      <{{ left_wrapper }}{{ left_attributes.addClass('col-12', 'col-md-6', 'col-lg-4', 'mb-3', 'mb-lg-0') }}>
+        {{ left }}
+      </{{ left_wrapper }}>
+
+      <{{ middle_wrapper }}{{ middle_attributes.addClass('col-12', 'col-md-6', 'col-lg-4', 'mb-3', 'mb-lg-0') }}>
+        {{ middle }}
+      </{{ middle_wrapper }}>
+
+      <{{ right_wrapper }}{{ right_attributes.addClass('col-12', 'col-md-12', 'col-lg-4') }}>
+        {{ right }}
+      </{{ right_wrapper }}>
+    </div>
+
+  </div>
+</div>

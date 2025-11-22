@@ -1,0 +1,60 @@
+/**
+ * @file
+ * Styles for Bootstrap Barrio's breadcrumbs.
+ * Modificado Para que coincida con nuestro diseño
+ */
+
+.breadcrumb {
+    font-size: $font-size-sm;
+    background-color:transparent;
+    padding: 16px 0 0 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item{
+    color: #087021;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 17px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before{
+    content: "\f054";
+    font-family: 'Font Awesome 5 Free';
+    color: #333333;
+    font-size: 10px;
+}
+
+.breadcrumb-item:last-child{
+    padding-right: .5rem;
+    &:after{
+        display: inline-block;
+        padding-left: .5rem;
+        content: "\f054";
+        font-family: 'Font Awesome 5 Free';
+        color: #333;
+        font-size: 10px;
+    }
+}
+
+.region-breadcrumb {
+    padding: 0 15px 0.25em;
+    width: 100%;
+}
+
+@media all and (max-width: $screen-lg-max) {
+    nav{
+        .breadcrumb{
+            .breadcrumb-item{
+                display: none;
+                &:last-child {
+                    display: block;
+                    padding-left: 0;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

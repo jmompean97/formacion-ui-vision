@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a menu link entity entity.
+ *
+ * Available variables:
+ * - menu_link_content: Menu link entity.
+ * - show_item_link: Indicator for menu item link.
+ *
+ * @see template_preprocess_menu_link_content()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set noMostrarEnSolapa = menu_link_content.field_no_mostrar_en_solapa[0] %}
+{% if noMostrarEnSolapa is empty or (noMostrarEnSolapa and not noMostrarEnSolapa.value ) %}
+  <li>
+    <a href="{{ menu_link_content.getUrlObject() }}"
+      title="{{ menu_link_content.getTitle() }}"> 
+        <span>{{ menu_link_content.getTitle() }} </span>
+    </a>
+  </li>
+{% endif %}

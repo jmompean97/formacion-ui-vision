@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - contextual
+    - file
+    - system
+    - toolbar
+id: administrator
+label: Administrator
+weight: 3
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'view the administration theme'

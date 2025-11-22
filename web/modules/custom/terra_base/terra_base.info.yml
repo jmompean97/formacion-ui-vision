@@ -1,0 +1,30 @@
+name: Terra Base
+description: Base files and configurations for any Drupal MSD application.
+package: Terra
+
+project: terra_base
+version: 3.0.x-dev
+type: module
+core_version_requirement: ^9.5 || ^10
+
+interface translation project: terra_base
+interface translation server pattern: modules/custom/terra_base/translations/%language.po
+
+dependencies:
+  - drupal:contextual
+  - drupal:datetime
+  - drupal:help
+  - drupal:image
+  - drupal:link
+  - drupal:locale
+  - drupal:options
+  - drupal:page_cache
+  - drupal:text
+  - drupal:user
+  - admin_toolbar:admin_toolbar
+  - better_exposed_filters:better_exposed_filters
+  - config_rewrite:config_rewrite
+  - field_group:field_group
+  - mailsystem:mailsystem
+  - token:token
+  - ultimate_cron:ultimate_cron

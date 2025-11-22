@@ -1,0 +1,355 @@
+//Tabla por defecto, ancho por defecto
+table {
+    // DR table-layout: fixed;
+    // DR width: 100%; 
+}  
+
+//Diseño de tabla base para el portal
+.table-custom {
+    @extend .table-responsive-sm;
+
+    border: 1px solid $primary-shade;
+
+    tr {
+        th, td {
+            padding: 5px 10px;
+        }
+    }
+
+    thead {
+        color: $accent-shade;
+        background: $primary-shade;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background-color: $primary-back;
+            }
+
+            &:nth-child(even) {
+                background-color: $accent-shade;
+            }
+
+            td {
+                padding-top: 12px;
+                padding-bottom: 12px;
+
+                &:first-child {
+                    vertical-align: middle;
+                }
+
+                &.table-custom__vertical-column {
+                    height: 300px;
+                    // padding: 0px 12px;
+                    text-align: center;
+                    // margin: auto;
+                    
+                    div {
+                        display:inline-block;
+                        writing-mode: vertical-rl;
+                        text-orientation: mixed;
+                        transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg); // Safari and Chrome
+                        -ms-transform: rotate(180deg); // IE 9
+                        -moz-transform: rotate(180deg); // Firefox
+                        -o-transform: rotate(180deg); // Opera
+                    }
+                }
+            }
+        }
+    }
+
+    // Recortar textos o palabras largas
+    word-wrap: break-word;
+}
+
+//Tabla con los elementos de las columnas centrados hoizontalmente
+.table-custom--elements-center {
+    @extend .table-custom;
+
+    th, td {
+        &:not(:first-child) {
+            text-align: center;
+        }
+    }
+}
+
+//Tabla base sin borde
+.table-custom--noborder {
+    @extend .table-custom;
+    border: 0px;
+}
+
+//Tabla con tipo de letra normal y título con fondo blanco
+.table-custom__firstcolumn--noborder {
+    @extend .table-custom--noborder;
+
+    thead {
+        color: black;
+        background: $accent-shade;
+    }
+}
+
+//Tabla con primera columna y título en negrita
+.table-custom__firstcolumn--noborder-secondary {
+    @extend .table-custom__firstcolumn--noborder;
+
+    tbody {
+        tr {
+            td {
+                &:first-child {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//Tabla con título en negrita y primera columna y hover verde
+.table-custom__firstcolumngreen--noborder {
+    @extend .table-custom__firstcolumn--noborder;
+
+    tr {
+        th, td {
+            &:first-child {
+                padding-left:2.5%;
+            }
+
+            &:last-child {
+                padding-right:2.5%;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            &:not(:hover) {
+                td{
+                    &:first-child{
+                        color:	$primary-dark;
+                    }
+                }
+            }
+
+            &:hover, &.green-hover {
+                color: $accent-shade;
+                background-color: $primary-hover;
+
+                td {
+                    &:first-child{
+                        color: $accent-shade;
+                    }
+                }
+
+                img{
+                    -webkit-filter: brightness(0) invert(1);
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+//Tabla para el sistema de diseño gráfico
+.table-custom--design {
+    @extend .table-custom--noborder;
+
+    thead, tbody {
+        color: $gray-600;
+        border-bottom: 1px solid #DCDCDC;
+    }
+
+    thead {
+        background: $accent-shade;
+    }
+
+    tbody {
+        tr {
+            td {
+                &:not(:first-child) {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//Tabla para hacer cards
+.table-custom--cards {
+    @extend .table-custom;
+
+    float: left;
+	margin: 15px;
+    width: 210px;
+
+    tbody {
+        tr {
+            border: 1px solid $gray-300;
+
+            &:first-child {
+                td {
+                    height: 50px;
+                }
+            }
+
+            td {
+                padding: 20px;
+            }
+        }
+    }
+}
+
+//Tabla blanca con tr separados por líneas grises
+.table-custom--background-white {
+    @extend .table-custom__firstcolumn--noborder;
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background-color: $accent-shade;
+            }
+
+            td {
+                padding: 10px;
+            }
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid $gray-300;
+    }
+}
+
+//Tabla blanca sin líneas que separen cada tr
+.table-custom--background-white--no-lines {
+    @extend .table-custom--background-white;
+
+    float: none;
+    margin: 15px auto;
+    
+    tr {
+        border-bottom: 0px solid;
+        text-align: center;
+
+        td { // Separación entre cajas
+            padding: 0px 15px;
+            border: 0px;
+            width: 16.66%;
+
+            div { //Cada una de las cajas coloreadas
+                width: 100%;
+                margin-right: 40px;
+                border: 0px;
+            }
+        }
+    }
+}
+
+//Tabla con fondo blanco, título en negrita y primera colunma normal
+.table-custom--background-white-secondary {
+    @extend .table-custom--background-white;
+
+    tr {
+        border-bottom: 0px solid;
+    }
+
+    thead {
+        td {
+            &:last-child {
+                font-weight: bold;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                padding: 10px 5px;
+            }
+        }
+        &.color-palette {
+            div {
+                @extend .square--little;
+                float: left;
+            }
+        }
+    }
+}
+
+//Tabla para calendario
+.table-calendar-hover {
+	width: 40%;
+	text-align: center;
+	font-weight: 600;
+    margin: auto;
+    
+    thead {
+        tr {
+            &:first-child {
+                background-color: $gray-300;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $gray-300;
+            }
+        }
+    }
+
+    tbody {
+        color: $primary-shade;
+
+        tr {
+            &:nth-child(2) {
+                td {
+                    &:nth-child(4) {
+                        /*Número de día actual para el calendario*/
+                        background: $primary-shade;
+                        border-radius: 50%;
+                        color: $accent-shade;
+                        display: inline-block;
+                        width: 1.6em;
+                    }
+                }
+            }
+            
+            td {
+                &:nth-child(6), &:nth-child(7) {
+                    color: $gray-600;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $gray-300;
+            }
+        }
+    }
+
+    tr {
+        td {
+            padding: 2px 0px 2px 0px;
+        }
+    }
+}
+
+@include responsive {
+    .table-custom--cards{
+            float: none;
+            margin: 15px auto;
+            border: 0px solid;
+
+            td {
+                width:210px;
+            }
+    }
+
+    .table-custom--background-white--no-lines {
+        tbody {
+            tr {            
+                td {
+                    padding: 0px 7px;
+                }
+            }
+        }
+    }
+}

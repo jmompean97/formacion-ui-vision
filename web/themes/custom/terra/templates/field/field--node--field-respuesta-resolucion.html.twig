@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div{{ attributes.addClass(classes, 'mb-secc') }}>
+  <div{{ title_attributes.addClass(title_classes) }}>{{ 'Resolución'|t }}</div>
+  {% for item in items|slice(0,1) %}
+      <div{{ item.attributes.addClass('field__item') }}>{{ item.content['#taxonomy_term'].parent.entity.name.value }}</div>
+  {% endfor %}
+</div>
+
+<div{{ attributes.addClass(classes) }}>
+  <div{{ title_attributes.addClass(title_classes) }}>{{ 'Causa de la denegación'|t }}</div>
+  {% for item in items %}
+      <div{{ item.attributes.addClass('field__item') }}><strong>{{ item.content['#taxonomy_term'].name.value }}</strong></div>
+  {% endfor %}
+</div>

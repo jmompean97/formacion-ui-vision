@@ -1,0 +1,89 @@
+// DR se añaden estilos para ajustar las vistas de buscadores
+
+.cont-busq .view-content .item-list {
+    padding-right: 15px;
+    padding-left: 15px;
+    li {
+        border-bottom: 1px solid #d8d8d8;
+    }
+}
+
+// buscadores con facetas
+@media all and (max-width: $screen-lg-max){
+    .node--type-buscador .layout--twocol-section--67-33 {
+        flex-direction: column-reverse;
+    }
+
+    .block-jda-views-pages{
+        ~.block{
+            display: none;
+        }
+
+        >.content{
+            >h4::before{
+              content: '\f105';
+              font-family: 'Font Awesome 5 Free';
+              margin-right: 8px;
+              font-size: 22px;
+              cursor: pointer;
+            }
+          }
+        
+        &.open{
+            ~.block{
+                display: block;
+            }
+            >.content{
+                >h4::before{
+                    content: '\f107';
+                }
+            }
+        }
+    }
+
+}
+
+// buscadores con tabla
+.cont-busq .view-content .table-responsive .table>thead>tr>th {
+    vertical-align: top;
+}
+@media all and (max-width: 992px){
+    .cont-busq .view-content .table-responsive {
+        overflow-x: auto;
+        flex-basis: auto;
+    }
+}
+
+// buscador Histórico de sesiones
+.cont-busq .sesiones-antiguas {
+    padding: 40px 0;
+    max-width: 867px;
+    p {
+        font-weight: 700;
+        font-size: 25px;
+        border-bottom: 1px solid $gray-300;
+        padding-bottom: 10px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul > li {
+        display: inline-block;
+    }
+    ul > li > a{
+        border: 1px solid $gray-300;
+        display: block;
+        padding: 10px 18px;
+        margin-right: 16px;
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 700;
+        background: #ffffff;
+        &:hover{
+            color: #ffffff;
+            background: $primary-shade;
+        }
+    }
+}

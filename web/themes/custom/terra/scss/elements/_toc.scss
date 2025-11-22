@@ -1,0 +1,29 @@
+// Dynamic table of contents styles.
+.toc-js {
+  .toc-title {
+    margin-bottom: 30px;
+  }
+
+  nav {
+    ol {
+      padding-left: 1em;
+    }
+  }
+
+  .toc-active {
+    font-weight: bold;
+  }
+
+  
+  &.is-sticked{
+    .block-field-blocknodepagina-estandarfield-directo-a{
+      padding-top: 18px;
+    }
+  }
+
+  // Hide on phone.
+  @media screen and (max-width: $phone-width) {
+    // display: none;
+  }
+
+}

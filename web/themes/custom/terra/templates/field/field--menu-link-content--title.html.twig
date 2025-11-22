@@ -1,0 +1,15 @@
+
+{% for item in items %}
+    <div class="col-12">
+        <button id="cierre-custom" class="cierre-custom-button navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="slp-title">
+    {% if item.content['#url'] %}
+        <a href="{{  item.content['#url'].options.entity.getUrlObject() }}" 
+            title="{{ item.content['#title'] }}"> {{ item.content['#title'] }} 
+        </a> 
+    {% else %}
+        <span> {{ item.content }}  </span>
+    {% endif %}
+        </div>
+    </div>
+{% endfor %}

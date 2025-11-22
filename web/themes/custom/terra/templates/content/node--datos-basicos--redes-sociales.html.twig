@@ -1,0 +1,40 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'datos-basicos-rrss') }}>
+    {% block paragraph %}
+        {% block content %}
+          {% if content.field_organismo_twitter[0] is not empty %}
+            <a href="{{ content.field_organismo_twitter[0]['#url'].uri}}"><i class="fab fa-twitter"></i> <span>{{ content.field_organismo_twitter[0]['#title'] }}</span></a>
+          {% endif %}
+
+          {% if content.field_organismo_facebook[0] is not empty %}
+            <a href="{{ content.field_organismo_facebook[0]['#url'].uri}}"><i class="fab fa-facebook-f"></i> <span>{{ content.field_organismo_facebook[0]['#title'] }}</span></a>
+          {% endif %}
+
+          {% if content.field_organismo_instagram[0] is not empty %}
+            <a href="{{ content.field_organismo_instagram[0]['#url'].uri}}"><i class="fab fa-instagram"></i> <span>{{ content.field_organismo_instagram[0]['#title'] }}</span></a>
+          {% endif %}
+
+          {% if content.field_organismo_youtube[0] is not empty %}
+            <a href="{{ content.field_organismo_youtube[0]['#url'].uri}}"><i class="fab fa-youtube"></i> <span>{{ content.field_organismo_youtube[0]['#title'] }}</span></a>
+          {% endif %}
+
+          {% if content.field_organismo_linkedin[0] is not empty %}
+            <a href="{{ content.field_organismo_linkedin[0]['#url'].uri}}"><i class="fab fa-linkedin-in"></i> <span>{{ content.field_organismo_linkedin[0]['#title'] }}</span></a>
+          {% endif %}
+        {% endblock content %}
+    {% endblock paragraph %}
+  </div>
+</article>

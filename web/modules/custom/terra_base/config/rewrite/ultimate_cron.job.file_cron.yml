@@ -1,0 +1,10 @@
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0+@ 5 * * *'
+    catch_up: 0
+logger:
+  configuration:
+    method: '3'
+    retain: 100

@@ -1,0 +1,41 @@
+/**
+ * @file
+ * List group.
+ * A list of links, grouped together.
+ */
+
+.list-group__link {
+    border-top: $border-width solid $border-color;
+    padding: $list-group-item-padding-y 0 0;
+}
+
+.list-group__description {
+    margin: 0 0 $list-group-item-padding-y;
+}
+ 
+.quick-node-block-wrapper,
+.block-blocks-terra,
+.block-block-content {
+    >h2{
+        font-size: 21px;
+        font-weight: 600;
+        font-family: 'Source Sans Pro', sans-serif;
+    }    
+}
+
+.quick-node-block-wrapper,
+.block-blocks-terra,
+.block-block-content {
+    >h2 {
+        margin-bottom: 24px;
+        margin-top: 1rem;
+    }
+    .field--type-text-with-summary{
+        >h2 {
+            margin-top: 1rem;
+        }   
+    }
+    &.content-ntitle:not(.block-blocks-terra-portada-titulo-seccion){
+        margin-top: 1rem;
+    }
+}

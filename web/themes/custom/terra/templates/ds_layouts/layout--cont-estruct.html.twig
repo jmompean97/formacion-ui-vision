@@ -1,0 +1,24 @@
+<div>
+  <{{ outer_wrapper }}{{ attributes.addClass('layout--cont-estruct', 'container', 'clearfix') }}>
+
+    {{ title_suffix.contextual_links }}
+
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-8">
+        <{{ titulo_wrapper }}{{ titulo_attributes.addClass('col-12') }}>
+          {{ titulo }}
+        </{{ titulo_wrapper }}>
+        <{{ encab_wrapper }}{{ encab_attributes.addClass('col-12') }}>
+          {{ encab }}
+        </{{ encab_wrapper }}>
+        <{{ cont_wrapper }}{{ cont_attributes.addClass('col-12', 'contenidos_nivel3', 'editor') }}>
+          {{ cont }}
+        </{{ cont_wrapper }}>
+      </div>
+      <{{ side_wrapper }}{{ side_attributes.addClass('col-12', 'col-md-12', 'col-lg-4') }}>
+        {{ side }}
+      </{{ side_wrapper }}>
+    </div>
+
+  </{{ outer_wrapper }}>
+</div>

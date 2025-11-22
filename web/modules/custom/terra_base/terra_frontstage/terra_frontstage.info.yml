@@ -1,0 +1,22 @@
+name: Terra Frontstage
+description: Common site public area tools and setup for any MSD/Terra Drupal application..
+package: Terra
+
+project: terra_frontstage
+version: 1.1.x-dev
+type: module
+core_version_requirement: ^10
+
+interface translation project: terra_frontstage
+interface translation server pattern: modules/custom/terra_frontstage/translations/%language.po
+
+dependencies:
+  - drupal:layout_builder
+  - drupal:path
+  - easy_breadcrumb:easy_breadcrumb
+  - layout_builder_styles:layout_builder_styles
+  - metatag:metatag
+  - ds:ds
+  - pathauto:pathauto
+  - fontawesome:fontawesome
+  - fontawesome:fontawesome_iconpicker_widget

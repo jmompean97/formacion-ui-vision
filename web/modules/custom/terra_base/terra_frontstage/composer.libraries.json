@@ -1,0 +1,121 @@
+{
+  "require": {
+    "terra-frontstage-libraries-fontawesome/fontawesome": "*",
+    "terra-frontstage-libraries-fonticonpicker/fonticonpicker": "*",
+    "terra-frontstage-libraries-jquery/cycle": "*",
+    "terra-frontstage-libraries-jquery/hoverintent": "*",
+    "terra-frontstage-libraries-jquery/pause": "*",
+    "terra-frontstage-libraries-jsonjs/json2": "*"
+  },
+  "repositories": {
+    "fontawesome": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-fontawesome/fontawesome",
+        "version": "5.14.0",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "fontawesome"
+        },
+        "dist": {
+          "url": "https://use.fontawesome.com/releases/v5.14.0/fontawesome-free-5.14.0-web.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    },
+    "fonticonpicker--fonticonpicker": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-fonticonpicker/fonticonpicker",
+        "version": "3.1.1",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "fonticonpicker--fonticonpicker/dist"
+        },
+        "dist": {
+          "url": "https://github.com/fontIconPicker/fontIconPicker/releases/download/v3.1.1/fontIconPicker.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    },
+    "jquery.cycle": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-jquery/cycle",
+        "version": "3.0.3",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "jquery.cycle"
+        },
+        "dist": {
+          "url": "https://github.com/malsup/cycle/archive/refs/tags/3.0.3.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    },
+    "jquery.hoverintent": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-jquery/hoverintent",
+        "version": "1.10.1",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "jquery.hoverIntent"
+        },
+        "dist": {
+          "url": "https://github.com/briancherne/jquery-hoverIntent/archive/refs/tags/v1.10.1.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    },
+    "jquery.pause": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-jquery/pause",
+        "version": "0.1.0",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "jquery.pause"
+        },
+        "dist": {
+          "url": "https://github.com/tobia/Pause/archive/refs/heads/master.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    },
+    "json2": {
+      "type": "package",
+      "package": {
+        "name": "terra-frontstage-libraries-jsonjs/json2",
+        "version": "0.1.0",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "json2"
+        },
+        "dist": {
+          "url": "https://github.com/douglascrockford/JSON-js/archive/refs/heads/master.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,42 @@
+// Open data block styles.
+.open-data-dataset-summary {
+  padding: 15px 0;
+  border-top: 1px solid $gray-100;
+  border-bottom: 1px solid $gray-100;
+  font-size: 13px;
+  margin: 15px 0;
+
+  // Icon.
+  .fa-stack {
+    width: 1.9em;
+    margin-right: 1em;
+
+    .fa-circle {
+      color: $primary-dark;
+      width: 2em;
+      height: 2em;
+    }
+
+    .fa-share-alt {
+      height: 1.2em;
+    }
+  }
+
+  @media screen and (min-width: $tablet-width) {
+    .open-data-dataset-summary__link,
+    .open-data-dataset-summary__updated {
+      padding-right: 15px;
+      border-right: 1px solid $gray-100;
+      margin-right: 15px;
+    }
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    .open-data-dataset-summary__updated,
+    .open-data-dataset-summary__periodicity {
+      display: block;
+      margin-left: 3.1em;
+      margin-bottom: 5px;
+    }
+  }
+}

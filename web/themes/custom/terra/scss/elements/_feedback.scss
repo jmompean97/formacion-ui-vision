@@ -1,0 +1,78 @@
+// Estilos para soporte de valoración de contenidos.
+.feedback-group {
+  background-color: #F7FBF8;
+  padding: 30px 60px;
+  margin: 30px 0;
+
+  @media screen and (max-width: $screen-1300-max) {
+    padding: 30px 15px;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .feedback-group__label {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 45px 0 0;
+    font-weight: 700;
+
+    @media screen and (max-width: $screen-1300-max) {
+      margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: $screen-lg-max) {
+      width: 100%;
+    }
+
+  }
+
+  .flag {
+    display: inline-block;
+
+    a {
+      text-transform: uppercase;
+      min-width: 80px;
+      margin-right: 15px;
+      border: 2px solid #087021;
+    }
+
+    a:hover{
+      background-color: #0B4C1A;
+      color:#FFFFFF;
+    }
+  }
+
+  .feedback-group__icon {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 30px !important;
+    margin-bottom: 50px;
+    color: map-get($theme-colors, 'primary');
+
+    @media (max-width: $screen-sm-max) {
+      float: none;
+      margin-bottom: 30px;
+    }
+  }
+
+  .feedback-group__stats {
+    margin-top: 15px;
+
+    @media (min-width: $screen-sm-max) {
+      padding-left: 70px;
+    }
+  }
+
+  .flagging-form {
+    margin: 30px 0;
+
+    .form-group,
+    .js-field-item {
+      padding: 0;
+    }
+  }
+}

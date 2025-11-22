@@ -1,0 +1,25 @@
+{
+  "require": {
+    "terra-libraries-slick/slick": "*"
+  },
+  "repositories": {
+    "slick": {
+      "type": "package",
+      "package": {
+        "name": "terra-libraries-slick/slick",
+        "version": "1.8.0",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "slick"
+        },
+        "dist": {
+          "url": "https://github.com/kenwheeler/slick/archive/refs/tags/1.8.0.zip",
+          "type": "zip"
+        },
+        "require": {
+          "composer/installers": "^1.2.0 || ^2"
+        }
+      }
+    }
+  }
+}

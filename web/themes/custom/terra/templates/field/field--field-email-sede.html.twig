@@ -1,0 +1,13 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {% for item in items %}
+       <div class="field__label">{{'Correo electrónico'|t}}</div>
+       <div class="field__item"><a href="mailto:{{item.content}}" title="{{ item.content }}">{{ item.content }}</a></div>
+    {% endfor %}
+</div>

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Terra Base install functions.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function terra_base_install($is_syncing) {
+  if (!$is_syncing) {
+    // Enables the Spanish language.
+    $language_storage = \Drupal::entityTypeManager()->getStorage('configurable_language');
+    if (!$language_storage->load('es')) {
+      $language_storage->create([
+        'id' => 'es',
+        'label' => 'Spanish',
+      ])->save();
+    }
+  }
+}

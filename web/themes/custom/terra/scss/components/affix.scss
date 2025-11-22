@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Styles for Bootstrap Barrio affix effect.
+ */
+
+// DR estaba en z-index: 1035, se pasa a 99 porque da problemas con la modal 
+.affix {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  left: 0;
+}

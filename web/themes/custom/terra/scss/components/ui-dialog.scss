@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Styles for Bartik's modal windows
+ */
+
+.ui-widget-overlay {
+    background: $gray-800;
+    opacity: 0.35;
+}
+
+.ui-dialog {
+    border-radius: 0;
+    padding: 0;
+    border: 1px solid #d8d8d8;
+}
+
+.ui-dialog-titlebar {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+    border-radius: 0;
+    padding: 10px 20px;
+    background: #fff;
+}
+
+.ui-dialog input,
+.ui-dialog select,
+.ui-dialog textarea {
+    font-size: $font-size-base;
+}
+.ui-dialog .ui-button {
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+}
+
+.ui-dialog .ui-button .ui-icon {
+    background-image: url(/themes/custom/terra/images/cross-modal.png);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    right: 20px;
+}
+
+.webform-confirmation-modal{
+    max-width: 600px;
+    width: 90% !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+}

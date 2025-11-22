@@ -1,0 +1,107 @@
+.content-metadata {
+    font-size: 15px;
+    margin: 30px 0;
+    border: 1px solid $gray-300;
+    padding: 20px;
+    overflow: hidden;
+    ul {
+        padding-left: 2rem;
+        li {
+        position: relative;
+            >.icon {
+                position: absolute;
+                top: 3px;
+                +p,+div {
+                    padding-left: 1.8rem;
+                }
+            }
+        }
+    }
+
+
+    // Changelog
+    .paragraph--type--changelog{
+        .field--name-field-date{
+            position: absolute;
+        }
+        .field--name-field-text{
+            padding-left: 4.2rem;
+        }
+    }
+
+    .btn-secondary{
+        width:170px;
+        position: relative;
+        font-size: 14px;
+        text-align: left;
+        color: $gray-800;
+        font-weight: 400;
+        border: 1px solid $primary-dark;
+
+        &:hover,&:not(.disabled):active{
+            background-color: transparent;
+            border-color: $primary-dark;
+        }
+        &:focus{
+            box-shadow: 0 0 0 .2rem rgba(8, 112, 33, .25);
+        }
+    }
+    .show>.btn-secondary.dropdown-toggle{
+        background-color: transparent;
+        &:focus{
+            box-shadow: 0 0 0 .2rem rgba(8, 112, 33, .25);
+        }
+    }
+    .dropdown-toggle::before{
+        content: "\f09e";
+        font-family: "Font Awesome 5 Free";
+        left: 10px;
+        position: absolute;
+        font-weight: 900;
+        color: $primary-dark;
+    }
+    .dropdown-toggle::after{
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        border-radius: 0;
+        border-top: none;
+        right: 4px;
+        position: absolute;
+        font-weight: 900;
+    }
+
+    .dropdown-menu{
+
+        font-size: 14px;
+        width:170px;
+
+        >.dropdown-item{
+            margin: 0;
+            white-space: normal;
+            padding-left: 26px;
+            padding-right: 10px;
+            position: relative;
+
+            &:before{
+                left: 10px;
+                top: 12px;
+                position: absolute;
+                font-weight: 900;
+                color: $primary-dark;
+                font-size: 10px;
+                font-family: "Font Awesome 5 Free"
+            }
+
+            &.subscribe::before{
+                content: "\f09e";
+
+            }
+            &.help::before{
+                content: "\f059";
+            }
+            &:hover{
+                padding-right: 10px;
+            }
+        }
+    }
+}

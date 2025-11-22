@@ -1,0 +1,84 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+{{ attach_library('terra/slick-css') }}
+
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'datos-basicos-datos-contacto') }}>
+    {% block content %}
+      <div class="left-col">
+        <h2>{{ content.field_organismo_titular['#title'] }}</h2>
+        <img src="{{file_url(content.field_organismo_solapa[0]['#media'].field_media_image.entity.uri.value)}}" 
+        alt="{{ item.content['#media'].field_media_image.alt }}"
+        class="category-banner img-responsive"/>
+        {{ content.field_organismo_titular }}
+        <a href="{{ url }}" title="Más información"><i class="fas fa-caret-right"></i><span>Más información</span></a>
+      </div>
+      <div class="right-col">
+        <h2>{{ content.field_sede['#title'] }}</h2>
+        <div class="slick-container">
+          <div class="slider-sedes">
+            {% for item in content.field_sede['#items'] %}
+              <div class="cont-sedes">
+                {% if (item.entity.field_nombre_sede is defined and item.entity.field_nombre_sede.0.fieldDefinition is not null) %}
+                  <div class="nomb-sede">
+                    {{ item.entity.field_nombre_sede.value }}
+                  </div>
+                {% endif %}
+                {% if (item.entity.field_direccion_sede is defined and item.entity.field_direccion_sede.0.fieldDefinition is not null) or ((item.entity.field_localidad_sede is defined and item.entity.field_localidad_sede.0.fieldDefinition is not null) and (item.entity.field_codigo_postal_sede is defined and item.entity.field_codigo_postal_sede.0.fieldDefinition is not null)) %}
+                  <div class="dir-sede">
+                    {% if (item.entity.field_direccion_sede is defined and item.entity.field_direccion_sede.0.fieldDefinition is not null) %}
+                      <div class="dir-int">{{ item.entity.field_direccion_sede.value }}</div>
+                    {% endif %}
+                    {% if ((item.entity.field_localidad_sede is defined and item.entity.field_localidad_sede.0.fieldDefinition is not null) and (item.entity.field_codigo_postal_sede is defined and item.entity.field_codigo_postal_sede.0.fieldDefinition is not null)) %}
+                      <div class="fin-dir-int">
+                        {{ item.entity.field_localidad_sede.value }}{% if (item.entity.field_codigo_postal_sede is defined and item.entity.field_codigo_postal_sede.0.fieldDefinition is not null) %}, {{ item.entity.field_codigo_postal_sede.value }}{% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if (item.entity.field_telefono_sede is defined and item.entity.field_telefono_sede.0.fieldDefinition is not null) or (item.entity.field_fax_sede is defined and item.entity.field_fax_sede.0.fieldDefinition is not null)  %}
+                  <div class="cont-sede">
+                    {% if (item.entity.field_telefono_sede is defined and item.entity.field_telefono_sede.0.fieldDefinition is not null) %}
+                      <div class="tel-sede">
+                        <span>{{ item.entity.field_telefono_sede.0.fieldDefinition.label }}:</span>
+                        <a href="tel:+34{{ item.entity.field_telefono_sede.value }}" title="{{ item.entity.field_telefono_sede.value }}">{{ item.entity.field_telefono_sede.value }}</a>
+                      </div>
+                    {% endif %}
+                    {% if (item.entity.field_fax_sede is defined and item.entity.field_fax_sede.0.fieldDefinition is not null) %}
+                      <div class="fax-sede">
+                        <span>{{ item.entity.field_fax_sede.0.fieldDefinition.label }}:</span>
+                        <a href="tel:+34{{ item.entity.field_fax_sede.value }}" title="{{ item.entity.field_fax_sede.value }}">{{ item.entity.field_fax_sede.value }}</a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if item.entity.field_email_sede is defined and item.entity.field_email_sede.0.fieldDefinition is not null %}
+                  <div class="cont-email">
+                    <span>{{ item.entity.field_email_sede.0.fieldDefinition.label }}:</span>
+                    {% for item in item.entity.field_email_sede %}
+                      <div><a href="mailto:{{ item.value }}">{{ item.value }}</a></div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endblock content %}
+  </div>
+</article>
+
+{{ attach_library('terra/slick-js') }}

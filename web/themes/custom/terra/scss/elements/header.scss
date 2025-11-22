@@ -1,0 +1,684 @@
+/**
+ * @file
+ * Header: logo, menú y botones de acceso.
+ */
+
+#navbar-top {
+    padding: 0 1rem;
+}
+
+#navbar-top.navbar-dark .nav-link:hover,
+#navbar-top.navbar-dark .nav-link:focus {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+#navbar-top.navbar-dark .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#navbar-top.navbar-light .nav-link:hover,
+#navbar-top.navbar-light .nav-link:focus {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#navbar-top.navbar-light .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand .site-logo {
+    margin-right: 1rem;
+}
+
+@media (max-width: 33.9em) {
+    .navbar-toggleable-xs .navbar-nav .nav-item+.nav-item,
+    .navbar-toggleable-xs.collapse.in .navbar-nav .nav-item {
+        margin-left: 0;
+        float: none;
+    }
+}
+
+@media (max-width: 47.9em) {
+    .navbar-toggleable-sm .navbar-nav .nav-item+.nav-item,
+    .navbar-toggleable-xs.collapse.in .navbar-nav .nav-item {
+        margin-left: 0;
+        float: none;
+    }
+}
+
+#navbar-main {
+    // box-shadow: 0 2px 2px -2px $shadow-color;
+    display: block;
+    >.container {
+        height: 100px;
+        .header-cap {
+            @media all and (max-width: $screen-lg-max) {
+                height: 52px;
+                padding-left: 15px;
+            }
+            @media all and (max-width: $screen-sm-max) {
+                padding-left: 0;
+            }
+        }
+        .logo-junta{
+            width: 70px;
+            height: 105px;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 175px 105px;
+            text-indent: -9999px;
+            margin-right: 10px;
+            @media all and (max-width: $screen-lg-max) {
+                height: 50px;
+                background-position: -34px 0;
+                background-size: 84px 50px;
+                margin-right: 0;
+            }
+            @media all and (max-width: $screen-md-max) {
+                margin-right: 8px;
+                margin-top: 0;
+                width: 50px;
+            }
+        }
+        .logo-organismo{
+            width:254px;
+        }
+        .aligned{
+            margin-left: 0px;
+        }
+
+        @media all and (max-width: $screen-lg-max) {
+            .aligned{
+                margin-left: 15px;
+            }
+        }
+        @media all and (max-width: $screen-sm-max) {
+            .aligned{
+                margin-left: 0px;
+            }
+        }
+
+        .navbar-toggler {
+            padding: 0 0 0 5px;
+            font-size: initial;
+            line-height: initial;
+            .navbar-toggler-icon {
+                width: auto;
+                height: auto;
+                display: block;
+                &::before {
+                    content: '\2630';
+                    display: block;
+                    color: $primary-dark;
+                    width: 100%;
+                    height: 100%;
+                    font-weight: 900;
+                    font-size: 20px;
+                }
+            }
+            i {
+                width: auto;
+                height: auto;
+                display: block;
+                color: $primary-dark;
+                font-size: 18px;
+                position: relative;
+                margin-bottom: 3px;
+                top: 2px;
+                &.fa-times{
+                    font-size: 20px;
+                    margin-bottom: 1px;
+                }
+            }
+            .navbar-toggler-text{
+                font-size: 10px;
+                line-height: 13px;
+                display: block;
+                color: $primary-dark;
+                width: 100%;
+                height: 100%;
+                text-transform: uppercase;
+            }
+
+            &[aria-expanded="false"] {
+                i.fa-bars{
+                    display: block;
+                }
+                i.fa-times{
+                    display: none;
+                }
+            }
+
+            &[aria-expanded="true"] {
+                i.fa-bars{
+                    display: none;
+                }
+                i.fa-times{
+                    display: block;
+                }
+            }
+        }
+        // Estilos menu principal
+        >.menu--main, .menu-msd,.menu--juntadeandalucia {
+            margin-left: auto;
+            
+            :last-child{
+                border-bottom:none;
+            } 
+
+            .quick-node-block-wrapper{
+                padding:.9375rem 0;
+                margin-top: 0;
+            }
+
+            >li{
+                max-width: 105px;
+                margin: 0 10px;
+                @media all and (max-width: $screen-1300-max){
+                    margin: 0 5px;
+                    max-width: 80px;
+                }
+
+                a{
+                    color: $primary-shade;
+                    padding: 0;
+                    font-weight: 600;
+                    font-size: 15px;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .menu-icon-content{
+                    white-space: normal;
+                    text-align: center;
+                    margin-left: 0;
+                    position: relative;
+                    top: 6px;
+                    line-height: 16px;
+                }
+            }
+            .card-body{
+                >ul{
+                    padding: 0;
+                    >.paragraph--type--directo-a{
+                        width: auto;
+                        padding: 0 0 0 25px;
+                        margin: 0 0 10px 10px;
+                        >i{
+                            top: 3px;
+                            position: absolute;
+                            width: auto;
+                        }
+                        >a{
+                            display: block;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+            .dropdown-menu{
+                margin-top: 0;
+                border-bottom: 5px solid $primary-shade;
+                box-shadow: none;
+                border-radius: 0;
+                height: 465px;
+                z-index: 100;
+                &.full-width{
+                    width: 100vw;
+                    margin: 0 auto;
+                    >.menu_link_content{
+                        padding: 0 6px;
+                        >.layout.solapa,
+                        >.solapa.ds-1col + .solapa.ds-1col{
+                            >div:first-child{
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .dropdown-toggle::after{
+                border:none;
+            }
+
+            .menu-icon-content{
+               
+                i, img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    
+                    line-height: 1;
+                    margin-bottom: 8px;
+
+                    color: $primary-light;
+                    font-size: 18px;
+
+                    @media all and (max-width: $screen-lg-max){
+                        font-size: 14px;
+                    }
+                }
+                img{
+                    margin-bottom: 7px;
+                    &.nav-sup-lj{
+                        display: block;
+                    }
+                    &.nav-sup-lj-hv{
+                        display: none;
+                    }
+                }
+            }
+
+            .solapa{
+                margin-top:4px;
+                .blockmenulink-msd{
+                    padding-left: 0;
+                    padding-right: 0;
+                    .row{
+                        padding-top: .8rem;
+                    }
+                    .slp-title{
+                        border-bottom: 1px solid #d8d8d8;
+                        padding-bottom:.8rem;
+                        a{
+                            color: $gray-800;
+                            font-size: 22px;
+                            line-height: 27px;
+                            font-family: 'Source Sans Pro', sans-serif;
+                            font-weight: bold;
+                            display: table-cell;
+                            &:hover {
+                                text-decoration: underline; 
+                                color: $primary-hover;
+                            }
+                        }
+                    }
+                }
+                
+                .enlaces-primer-nivel{
+                    div ul {
+                        padding-right: 30px;
+                        > li{
+                            border:none;
+                            padding: .75rem 0;
+                            width: auto;
+                            >a{
+                                color: #333333;
+                                font-size: 17px;
+                                line-height: 22px;
+                                font-family: 'Source Sans Pro', sans-serif;
+                                font-weight: bold;
+                                display: block;
+                                overflow: hidden;
+                                width: auto;
+                                .awemenu-arrow{
+                                    margin-right: 10px;
+                                    color: #087021;
+                                    display: block;
+                                    position: absolute;
+                                    top: 18px;
+                                }
+                                span{
+                                    display: block;
+                                    line-height: 22px;
+                                }
+                                &:hover{
+                                    text-decoration: underline;
+                                    color: $primary-hover;
+                                }
+                            }
+                        }
+                    }
+
+                    .enlaces-segundo-nivel{
+                        padding: 10px 0 0 10px;
+                        > li{
+                            padding:10px 0 0 0;
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+                            > a{
+                                color: #087021;
+                                font-weight: 100;
+                                font-size: 15px;	
+                                line-height: 20px;
+                                position: relative;
+                                font-family: 'Source Sans Pro', sans-serif;
+                                .awemenu-plus{
+                                    font-size: 20px;
+                                    position: absolute;
+                                    top: 0;
+                                }
+                                span{
+                                    padding-left: 0;
+                                }
+                                span.more-elems{
+                                    padding-left: 20px;
+                                    font-weight: 100;
+                                    font-family: 'Source Sans Pro', sans-serif;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+                .node--type-listado-de-enlaces{
+                    margin-top:-1.5em;
+                }
+                .listado-enlaces{
+                    padding:1em;
+                        ul {
+                        list-style: none;
+                        padding-inline-start: 0;
+                        margin-left: 0;
+                        li {
+                            padding: 8px 0;
+                            border:none;
+                            a {
+                                font-weight: bold;
+                                font-family: 'Source Sans Pro', sans-serif;
+                                font-size: 17px;
+                                font-weight: bold;
+                                line-height: 22px;
+                                color: $gray-800;
+                                display: block;
+                                overflow: hidden;
+                                width: 100%;
+
+                                &:hover {
+                                    color: $primary-shade;
+                                }
+                                .awemenu-arrow {
+                                    margin-right: 0;
+                                    display: none;
+                                }
+                                span {
+                                    display: block;
+                                    float: left;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .imagebox {
+                    padding: 0px;
+                    position: relative;
+                    width: 100%;
+
+                    img {
+                        opacity: 1;
+                    }
+
+                    .imagebox-desc {
+                        background-color: rgba(8,112,33,0.76);
+                        bottom: 0px;
+                        color: white;
+                        font-size: 0.75em;
+                        left: 0px;
+                        padding: 2px 15px;
+                        position: absolute;
+                    }
+                }
+
+                #autocompletado-solapa,
+                #recomendado-solapa {
+                    ul {
+                        padding: 0;
+                        margin-top: 1em;
+                        list-style: none;
+                        li{
+                            margin-bottom: 5px;
+                            font-size: .85rem;
+                            a{
+                                color: $gray-800;
+                                font-size: .85rem;
+                                font-weight: normal;
+                                display: inline;
+                                em{
+                                    font-weight: 900;
+                                    font-style: normal;
+                                }
+                            }
+                            i {
+                                margin-right: .5em;
+                                color: $primary-dark;
+                            }
+                            button {
+                                background: transparent;
+                                border: 0;
+                                color: $gray-800;
+                                padding:0;
+                                em{
+                                    font-weight: 900;
+                                    font-style: normal;
+                                }
+                            }
+                        }
+                    }
+                    #busquedas-encontradas li {
+                        list-style: none;
+                    }
+                    #boton-recomendador svg.svg-inline--fa.fa-external-link-alt.fa-w-18,
+                    #boton-recomendador svg.svg-inline--fa.fa-search.fa-w-16 {
+                        color: #fff;
+                        height: 22px;
+                        width: 22px;
+                    }
+                }
+
+                .portada-directo-a{
+                    >.layout{
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    // DR estilos para el menu responsive
+    .elem-activo {
+        background-color: rgba(216, 216, 216, 0.1);
+    }
+}
+
+@media all and (max-width: $screen-md-max) {
+    #navbar-main {    
+        .container {    
+            .logo-junta {
+                //margin-top: .3375rem;
+                //width: 49px;
+            }
+            .logo-organismo {
+                width: 190px;
+            }
+        }
+    }
+}
+
+
+.matter-brand{
+    width: 30%;
+    @media all and (max-width: $screen-lg-max) {
+    width: 70%;
+    }
+}
+/* Iconos en el menú
+   ================================================================================================================= */
+
+// Margen para cuando el usuario es administrador
+.role-admin-margin{
+    margin-top: 2.4em;
+}
+
+
+// Margen para cuando el usuario es administrador
+.role-admin-margin{
+    margin-top: 2.4em;
+}
+
+.header .logo, .site-footer .logo{
+    max-width:500px;
+}
+
+#header{ 
+    border-bottom: solid 1px $gray-100; 
+    background-color: $accent-shade;
+    box-shadow:0 0px 4px 0 rgba(0,0,0,.1);
+}
+
+
+@media (max-width: $screen-sm-max) {
+    #header{
+        border-bottom: none;
+    }
+    #navbar-main{
+        border-bottom: solid 1px $gray-100; 
+    }
+}
+
+@media (max-width: $screen-lg-max) {
+    #header{
+        #navbar-main{
+            height: 60px;
+            .container{
+                .navbar-collapse.row{
+                    top: 60px;
+                    .menu--juntadeandalucia{
+                        div{
+                            .menu-msd{
+                                .position-static{
+                                    padding: 0;
+                                    margin: 0;
+                                    max-width: none;
+                                    .dropdown-menu{
+                                        height: auto;
+                                        border: none;
+                                    }
+                                }
+                                .solapa{
+                                    border-bottom: 1px solid $gray-300;
+                                    .layout__region--first,
+                                    .layout__region--second{
+                                        flex: 0 1 100%;
+                                        padding-right: 0;
+                                    }
+                                    .enlaces-primer-nivel {
+                                        div {
+                                            ul {
+                                                li{
+                                                    padding: 10px 20px;
+                                                    a{
+                                                        .awemenu-arrow{
+                                                            top: 3px;
+                                                        }
+                                                    }
+                                                    .enlaces-segundo-nivel{
+                                                        padding: 10px 0 0 20px;
+                                                        li{
+                                                            padding: 10px 0;
+                                                            a{
+                                                                padding-left: 0;
+                                                                span{
+                                                                    padding-left: 0;
+                                                                    &.more-elems{
+                                                                        padding-left: 20px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #navbar-main{
+        >.container{
+            height: 60px;
+        }
+    }  
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #header{
+        #navbar-main{
+            .container{
+                .navbar-collapse.row{
+                    .menu--juntadeandalucia{
+                        div{
+                            .menu-msd{
+                                .solapa{
+                                    .layout__region--first,
+                                    .layout__region--second{
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+@media (min-width: $screen-lg-max + 1) and (max-width: $screen-1300-max) { // DR nuevo punto de corte
+    #navbar-main {
+        >.container {
+            .menu--juntadeandalucia,
+            .menu-msd{
+                >li{
+                    word-break: break-word;
+                    //width: 87px; DR cambio debido a los nuevos logos
+                    a{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// DR cambia el logo dependiendo del dominio
+// se usa una imagen unica para cada resolucion
+// y se van cambiando el tamaño y la posicion de background-image
+// desktop 307px, tablet 272px (x2), movil 193 (x2)
+#navbar-main>.container{
+    .logo-domain {
+        width: 307px;
+        height: 100px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        margin-right: 0;
+        @media screen and (max-width: $screen-lg-max){
+            width: 272px;
+            height: 50px;
+            background-position: -153px 0px;
+            background-size: 622px 50px;
+        }
+        @media screen and (max-width: $screen-sm-max){
+            width: 193px;
+            height: 50px;
+            background-position: -430px 0px;
+            background-size: 622px 50px;
+            margin-right: 0;
+        }
+    } 
+}
+@media all and (max-width: $screen-lg-max) {
+    #header #navbar-main {
+        padding-top: 0;
+    }
+}

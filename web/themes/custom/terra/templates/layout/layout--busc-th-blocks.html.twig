@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('terra/func-busc-th-blocks') }}
+
+{% if content %}
+  <div{{ attributes.addClass('row', 'busc-th-blocks') }}>
+
+    {% if (content.lefttop or content.leftbottom) %}
+      <div class="layout__region left col-12 col-lg-8">
+        <div {{ region_attributes.lefttop.addClass('left-top', 'col-12') }}>
+          {{ content.lefttop }}
+        </div>
+        <div {{ region_attributes.leftbottom.addClass('left-bottom', 'col-12') }}>
+          {{ content.leftbottom }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if content.right %}
+      <div {{ region_attributes.right.addClass('layout__region', 'right', 'col-12', 'col-lg-4') }}>
+        {{ content.right }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

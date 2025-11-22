@@ -1,0 +1,142 @@
+/**
+ * @file
+ * Styling for views pages displaying an external resource from ICMS.
+ */
+.view--icms-resource {
+
+  .encab-secc {
+    ul.list-group{
+      padding-top: 0;
+      padding-bottom: 0;
+      >li.list-group-item{
+        padding-bottom: 0;
+      }
+    }
+
+    .list-group-item {
+      padding: 0 0 10px 0;
+      background-color: transparent;
+    }
+
+    > .block--social-links {
+      svg {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        margin-top: -3px;
+      }
+    }
+  }
+
+  .cont-secc > .block .field__label {
+// Cannot extend complex selectors.
+//    @extend .cont-secc > .block > .content > .field > .field__label;
+// Creates multiple CSS rules.
+//    @extend .field__label;
+// Copy from layouts.scss
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 11px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid $gray-300;
+  }
+
+  .cont-secc > .block--seguimiento {
+    strong,
+    a {
+      display: block;
+    }
+  }
+
+  .cont-secc{
+    >.block{
+      >h3.field__label{
+        font-size: 22px;
+        border-bottom: none;
+      }
+    }
+  }
+
+  
+  h2.field__label{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 11px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  
+
+  .encab-secc .block .field__label::after {
+    content: none;
+  }
+
+  .cont-secc>.block {
+      position: relative;
+      margin-bottom: 20px;
+      float: none;
+      
+      >.field__item{
+          a{
+              font-size: 15px;
+              line-height: 20px;
+              color: #087021;
+              font-weight: 700;
+              margin-bottom: 12px;
+              display: block;
+              
+          }          
+      } 
+  }
+
+  .list-group{
+    padding-left:0;
+    padding-right: 0;
+    padding-top: 0;
+    
+    >.list-group-item{
+        margin-left: 0;
+    }
+  }
+
+  ul.item-list{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    >li{
+      margin-left: 0;
+    }
+  }
+
+  .view-content{
+    margin: 0;
+  }
+
+  &.view-consulta-bienes-inmuebles, &.view-consulta-subvencion{
+    .block{
+        >.field__item{
+          text-transform: uppercase;
+        }
+    }
+  }
+}
+
+.layout--twocol-section--67-33, .layout--cont-estruct, .layout--icms-resource{
+  .view--icms-resource{
+      .col-12{
+          padding-left:0;
+          padding-right: 0;
+      }
+  }
+  
+  .block-jda-views-pages-more-info{
+      p{
+          font-size: 15px;
+      }
+  }
+  
+}

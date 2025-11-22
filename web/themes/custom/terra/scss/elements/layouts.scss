@@ -1,0 +1,2838 @@
+/**
+ * @file
+ * Layout: Estilos para las plantillas
+ */
+
+///*------------------------------------
+//    # Layouts
+//------------------------------------*/
+.slide,
+.secc-transparencia {
+    padding: 2em 0;
+    overflow: hidden;
+    .layout--ds-3-col-bt-white,
+    .layout--ds-3-col-50-25-25,
+    .layout--ds-3-col-grey,
+    .layout--ds-3-col-transp-org,
+    .layout--ds-3-col-transp {
+        padding: 0;
+    }
+    .layout--ds-3-col-bt-white{
+        p{
+            font-size: 15px;
+        }
+    }
+}
+
+.full-width{
+    &.slide,
+    &.secc-transparencia {
+        padding: 2em 0;
+        overflow: hidden;
+        .layout--ds-3-col-bt-white.container,
+        .layout--ds-3-col-50-25-25,
+        .layout--ds-3-col-grey,
+        .layout--ds-3-col-transp-org,
+        .layout--ds-3-col-transp {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    >.slide{
+        &.layout--ds-3-col-grey{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+@media all and (max-width: $screen-sm-max) {
+    .full-width{
+        &.slide,
+        &.secc-transparencia {
+            .layout--ds-3-col-bt-white.container,
+            .layout--ds-3-col-50-25-25,
+            .layout--ds-3-col-grey,
+            .layout--ds-3-col-transp-org,
+            .layout--ds-3-col-transp {
+                padding-left: 23px;
+                padding-right: 23px;
+            }
+        }
+    }   
+}
+
+///*------------------------------------
+//    # Layout | layout--ds-trans
+//------------------------------------*/
+.secc-transparencia {
+    .jda-chart {
+        margin-bottom: 0.5em;
+    }
+    .block-blocks-terra-wc-counter {
+        display: inline-block;
+        width: 49%;
+        .contenedor {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media all and (max-width: $screen-md-max) {
+    .secc-transparencia {
+        .row {
+            .col-xs-12 {
+                padding: 1em 0;
+                .jda-chart {
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+    .layout--ds-trans {
+        padding: 0;
+    }
+}
+ 
+.layout--cont-estruct{
+    margin-bottom: 2em;
+    padding: 0;
+    // DR inverte columna del cuerpo y el toc a la derecha
+    @media all and (max-width: $screen-lg-max) {
+        >.row {
+            flex-direction: column-reverse;
+        }
+    }
+    
+    .contenidos_nivel3, .col-auto{
+        padding: 0;
+    }
+
+    .col-lg-4{
+        .block-toc-js + .block-field-blocknodepagina-estandarfield-directo-a{
+            margin-top: 2em;
+        }
+    }
+
+    @media all and (max-width: $screen-lg-max) {
+        .col-lg-4{
+            .block-toc-js + .block-field-blocknodepagina-estandarfield-directo-a{
+                display: block;
+                margin-bottom: 2em;
+            }
+        }   
+        .toc-js{
+            margin-bottom: 30px;
+            >nav{
+                >ol{
+                    >li{
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+      
+}
+
+.layout--icms-resource{
+    margin-bottom: 2em;
+    padding: 0;
+
+    @media all and (max-width: $screen-lg-max) {
+        >.row:last-child {
+            flex-direction: column-reverse;
+        }
+    }
+    
+    .contenidos_nivel3, .col-auto, .titulo{
+        padding: 0;
+    }
+
+    @media all and (max-width: $screen-lg-max) { 
+        .toc-js{
+            margin-bottom: 30px;
+            >nav{
+                >ol{
+                    >li{
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.toc-js{
+    position: relative;
+    >.toc-title{
+        font-size: 20px;
+    }
+    >nav{
+        >ol,ul{
+            list-style-position: outside;
+            >li{
+                padding: 10px 0;
+                margin-bottom: 0;
+
+                &.toc-active{
+                    font-weight: bold;
+                }
+
+                &:last-child{
+                   &::after{
+                        content:'';
+                        border: 0.5px solid $gray-300;
+                        position: absolute;
+                        width: 100%;
+                        display: block;
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+                &::before{
+                    content:'';
+                    border: 0.5px solid $gray-300;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+
+    &.is-sticked{
+        width: 350px; 
+        >nav{
+            >ol,ul{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/********************* Inicio iconos redes sociales ****************/
+
+.main-content{
+    .icon-facebook{
+        display: inline-block;
+        &:after{
+            content:'\f082';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #3B5998;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+
+    }
+    .icon-linkedin{
+        display: inline-block;
+        &:after{
+            content:'\f08c';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #0077B5;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-twitter{
+        display: inline-block;
+        &:after{
+            content:'\f081';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #1DA1F2;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+        
+        
+    }
+    .icon-youtube{
+        display: inline-block;
+        &:after{
+            content:'\f431';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #FF0000;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-blog{
+        display: inline-block;
+        &:after{
+            content:'\f37c';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #F47722;
+        }
+        
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-flickr{
+        display: inline-block;
+        &:after{
+            content:'\f16e';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #ff0084;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+
+        
+    }
+    .icon-foursquare{
+        display: inline-block;
+        &:after{
+            content:'\f180';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: #0072b1;
+            background-color: $accent-shade;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-googlemas{
+        display: inline-block;
+        &:after{
+            content:'\f0d4';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #dd4b39;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    .icon-instagram{
+        display: inline-block;
+        &:after{
+            content:'\f16d';
+            font-size: 34px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: #e95950;
+            background-color: $accent-shade;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-issuu{
+        display: inline-block;
+        &:after{
+            content:'';
+            background-image: url(./../../terra/images/icons/issuu.svg);
+            background-size: 57px 41px;
+            background-repeat: no-repeat;
+            width: 28.49px;
+            height: 37px;
+            display: inline-block;
+            transform: translateY(-6px);
+            background-position: 0 0;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-pinterest{
+        display: inline-block;
+        &:after{
+            content:'\f0d3';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #cb2027;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-slideshare{
+        display: inline-block;
+        &:after{
+            content:'\f1e7';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $shadow-color;
+            background-color: $accent-shade;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-tuenti{
+        display: inline-block;
+        &:after{
+            content:'';
+            background-image: url(./../../terra/images/icons/tuenti.svg);
+            background-size: 57px 41px;
+            background-repeat: no-repeat;
+            width: 28.5px;
+            height: 37px;
+            display: inline-block;
+            transform: translateY(-6px);
+            background-position: 0 0;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .icon-tumbler{
+        display: inline-block;
+        &:after{
+            content:'\f174';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #32506d;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+
+        
+    }
+
+    .icon-vimeo{
+        display: inline-block;
+        &:after{
+            content:'\f194';
+            font-size: 28px;
+            font-family: 'Font Awesome 5 Brands';
+            padding: 0 1.3px;
+            border-radius: 5px;
+            color: $accent-shade;
+            background-color: #aad450;
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+/************************* Fin iconos redes sociales ********************/
+
+//Tamaño texto párrafos en los bloques de la portada
+.main-content{
+    .node__content{
+        .text-formatted{
+            font-size: 15px;
+        }
+    }
+}
+
+.title-slider .block-blocks-terra-portada-titulo-seccion .content{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+@media (min-width: $screen-sm-max + 1){
+    .title-slider .block-blocks-terra-portada-titulo-seccion .content {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: $screen-md-max + 1){
+    .title-slider .block-blocks-terra-portada-titulo-seccion .content {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: $screen-lg-max + 1){
+    .title-slider .block-blocks-terra-portada-titulo-seccion .content {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: $screen-1300-max + 1){
+    .title-slider .block-blocks-terra-portada-titulo-seccion .content {
+        max-width: 1275px;
+    }
+}
+
+.info-general{
+    padding: 0;
+    .field__label{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 24px;
+        margin-bottom: 11px;
+        padding-bottom: 11px;
+        border-bottom: 1px solid $gray-300;
+    }
+}
+
+/*INICIO ESTILOS FORMULARIOS*/
+.webform-submission-form{
+    width: 75%;
+
+    h2{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+
+    // Estilos campos agrupados
+    >section{
+        margin-bottom: 25px;
+        >div{
+            padding-left: 20px;
+            >fieldset{
+                margin-bottom: 25px;
+                >legend{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    
+    .js-form-item{
+
+        padding: 0;
+
+        &.form-no-label{
+            margin-bottom: 0;
+        }
+        
+        >legend>span{
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        //Estilos input de tipo radio
+        .js-form-type-radio{
+            padding:0;
+            width: 85px;
+        
+            >label{
+                padding-left: 20px;
+                font-weight: normal;
+                background-color: white;
+            }
+            
+            >input[type="radio"]{
+                position: absolute;
+                margin-left: 0;
+                &:focus+label:before{
+                    border-color: #0B4C1A;
+                }
+
+                &+label:before{
+                    content: '';
+                    display: block;
+                    height: 15px;
+                    width: 15px;
+                    border: 1px solid #087021;
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    border-radius: 100%;
+                }
+
+                &:checked+label{
+                    font-weight: bold;
+
+                    &:before{
+                        border:5px solid #087021;
+                    }
+                }
+            }
+        }
+    }
+    
+    fieldset{
+        >div{
+            .description{
+                margin-bottom: 10px;
+                font-size: 15px;
+                >p{
+                    margin-bottom: 0; 
+                    font-weight: bold;
+                    &.pregunta{
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+        
+        p{
+            font-size: 15px;
+            >img{
+                margin-right: 8px;
+            }
+        }
+    }
+
+    
+
+    label{
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea{
+        margin-top:0;
+        border-color: #087021;
+        border-radius: 5px;
+        padding-left: 14px;
+        font-size: 15px;
+        
+        &:focus{
+            border-color: #087021;
+        }
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], select{
+        height: 40px;
+    }
+
+    select{
+        padding-left: 10px;
+    }
+
+    >.form-group{
+        margin-bottom: 34px;  
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+                
+    }
+
+    //Estilos términos del servicio formulario
+    div.form-type-webform-terms-of-service{
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 20px;
+        >.form-check-input{
+                position: static;
+                margin: 4px 5px 0 0;
+        }
+        >small{
+            >div{
+                padding: 0;
+            }
+        }
+        
+        >label{
+            padding-left: 25px;
+            font-size: 15px;
+            font-weight: normal;
+            background-color: white;
+        
+        }
+        input[type="checkbox"]{
+            position: absolute;
+            &:focus+label:before{
+                border-color: #0B4C1A;
+            }
+
+            &+label:before{
+                content: '';
+                display: block;
+                height: 15px;
+                width: 15px;
+                border: 1px solid #83b790;
+                box-shadow: 0 0 3px #83b790;
+                transition: all 0.2s ease-in;
+                position: absolute;
+                left: 0;
+                top: 3px;
+            }
+
+            &:checked+label:before{
+                width: 8px;
+                height: 16px;
+                border-top: transparent;
+                border-left: transparent;
+                border-color: #087021;
+                border-width: 2px;
+                box-shadow: none;
+                transform: rotate(45deg);
+                top:0;
+                left: 4px;
+            }
+        } 
+    }
+
+
+    >.webform-actions, .submit{
+        text-align: right;
+
+        >button{
+            width: 128px;
+        }
+    }
+    
+    .webform-flex{
+        flex: none;
+        flex-wrap: wrap;
+    }
+    
+    .webform-flexbox{
+        justify-content: space-between;
+        
+        .webform-flex{
+            align-self: baseline;
+            .webform-flex--container{
+                margin: 0;
+                >fieldset{
+                    padding: 0;
+                    
+                }
+            }
+        }
+        
+        &.datos-personales{
+            .webform-flex{
+                width: 48%;
+            }
+        }
+        
+        &.datos-direccion{
+            .webform-flex{
+                width: 23%;
+            }
+        }
+        
+        &.datos-empresa{
+            .webform-flex{
+                width: 32%;
+            }
+        }
+    }
+}
+
+//Estilos mensaje respuesta formulario
+.webform-confirmation{
+    margin-bottom: 90px;
+    >.webform-confirmation__message{
+        position: relative;
+        background-color: $accent-shade;
+        box-shadow: 1px 1px 11px 0 rgba(73,73,73,0.14);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 80px;
+        border-left: 5px solid $primary-dark;
+        margin-bottom: 30px;
+        
+        >p{
+            margin-bottom: 0px;
+            font-size: 16px;
+            >strong{
+                font-weight: normal;
+            }
+        }
+
+        &::before{
+            content: '\f05a';
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-45%);
+            font-weight: 900;
+            font-size: 30px;
+            color: $primary-dark;
+        }
+    }
+
+    >.webform-confirmation__back{
+        >a{
+            width: 130px;
+            border-radius: 5px;
+            background-color: $primary-dark;
+            height: 40px;
+            color: $accent-shade;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: bold;
+            &::before{
+                content: '\f104';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 700;
+                padding-right: 7px;
+                font-size: 16px;
+            }
+
+            &:hover, &:focus{
+                background-color: $primary-hover;
+            }
+        }
+    }
+}
+
+
+
+// Estilos modal Política de privacidad
+.ui-dialog[aria-describedby="webform-terms-of-service-terms_of_service--description"]{
+    width: 80% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+
+    a{
+        color: #087021;
+        &:hover{
+            color: #0b4c1a;
+        }
+    }
+
+    .webform-terms-of-service-details--content{
+        a {
+           color: #087021;
+           &:hover{
+                color: #0b4c1a;
+                text-decoration: underline;
+           }
+        }
+        table{
+            >tbody{
+                >tr{
+                    >th{
+                        width: 25%;
+                        
+                    }
+                    >td{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-juridico {
+    fieldset {
+        margin-bottom: 34px;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        legend {
+            font-size: 1em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: 400;
+            font-size: 1em;
+        }
+        div{
+            padding:0;        
+            >label{
+                font-weight: normal;
+            }
+            input[type=radio]{
+                position: absolute;
+                margin-left: 0;
+                opacity: 0;
+            }
+            input[type=radio] + label:before {
+                height:15px;
+                width:15px;
+                margin-right: 2px;
+                content: " ";  
+                display:inline-block;
+                vertical-align: baseline;
+                border: 1px solid $primary-shade;
+                border-radius: 100%;
+                background: #fff;
+            }
+            input[type=radio]:checked + label:before {
+                border: 5px solid $primary-shade;
+            }
+        }
+    }
+    fieldset.input_number {
+        div {
+            margin-bottom: 34px;
+        }
+        div label {
+            font-weight: 700;
+            padding: 0;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin-top: 0px;
+            font-size: 14px;
+            border: 1px solid $primary-shade;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            border-radius: .25rem;
+        }
+    }
+    input[type="submit"]{
+        font-weight: 700;
+        background: $primary-shade;
+        border: 1px solid $primary-shade;
+        color: #ffffff;
+        font-size: .75rem;
+        border-radius: 5px;
+        padding: .375rem 25px;
+        &:hover{
+            background: #054c16;
+            border-color: #054013;
+        }
+    }
+}
+.mensaje-resultado{
+    p {
+    margin-bottom: 30px; 
+    padding: 30px;
+    background: #eee;
+    border: 1px solid;
+    }
+}
+
+/*FIN ESTILOS FORMULARIOS*/
+
+.encab-secc {
+    background-color: rgba(216, 216, 216, 0.1);
+    display: block;
+    overflow: hidden;
+    padding: 20px;
+    .block {
+        margin-bottom: 28px;
+        display: block;
+        float: left;
+        width: 100%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .field--type-text-long {
+            .field__item {
+                margin-bottom: 0;
+                p {
+                    margin-bottom: 12px;
+                }
+                p:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        >h4,
+        .field__label {
+            width: 30%;
+            font-family: 'Source Sans Pro', sans-serif;
+            display: block;
+            float: left;
+            color: $gray-800;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: right;
+            margin-bottom: 0;
+            padding-right: 35px;
+        }
+        .field__item {
+            width: 70%;
+            display: block;
+            float: right;
+            color: $gray-800;
+            font-size: 15px;
+            line-height: 18px;
+            margin-bottom: 12px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .contextual-region .field__item{
+                width: 100%;
+            }
+        }
+        .field__item.field--name-field-datos-basicos-transparenci {
+            width: 100%;
+        }
+        .field--type-entity-reference {
+            margin: 0;
+            &.mb-secc:first-child{
+                margin-bottom: 28px;
+                display: block;
+                overflow: hidden;
+            }
+        }
+
+        a{
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .field--name-field-datos-curso, .field--name-field-gpi-periodo{
+            float: none;
+            width: 100%;
+
+            .field{
+                margin-bottom: 28px;
+                overflow: hidden;
+            }
+        }
+
+        .field--name-field-gpi-periodo{
+            >.paragraph{
+                >div:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            +.observaciones{
+                margin-top: 28px;
+            }
+        }
+
+        .field--name-field-presupuesto, .field--name-field-respuesta-descripcion{
+            >.field__item{
+                >p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .field--name-field-ne-tipo-rango{
+            >.field__items:first-child{
+                .field__label, .field__item{
+                    margin-bottom: 28px;
+                }
+            }
+        }
+        .field__label::after{
+            content: ':';
+        } 
+    }
+
+    .block-field-blocknodeinstituciones-culturalesfield-inst-cul-direccion {
+        margin-bottom: 0;
+
+        +div:not(.block-field-blocknodeinstituciones-culturalesfield-inst-cul-cd){
+            margin-top: 28px;
+        }
+        
+    }
+
+    .block.block-field-blocknodeactividades-estadisticas-y-cartofield-ae-descripcion, .block.block-field-blocknodeproducto-estadisticafield-pe-organismos{
+        .field__items{
+            >.field__item{
+                img{
+                    float: right;
+                    width: 30%;
+
+                    &+div{
+                        width: 67%;
+                        float: left;
+                    }
+                }
+
+                .row{
+                    margin: 0;
+                }
+
+                .views-element-container{
+                    width: 67%;
+                    float: left;
+                }
+                
+            }
+        }
+        
+    }  
+    
+    &.image-right{
+        .block{
+            width: 75%;
+
+            .field__label{
+                width: 39%;
+            }
+            .field__item{
+                width: 61%;
+            }
+
+            .block{
+                width: 100%;
+            }
+        } 
+
+        .block-field-blocknodepublicacionfield-img-cub, .block-field-blocknodeagendafield-imagen{
+            width: calc(100% - 77%);
+            float: right;
+            img{
+                width: 100%;
+            }
+        } 
+    }
+    
+    
+    .block-field-blocknodecursos-de-formacionfield-datos-curso{
+        .paragraph--type--datos-relativos-al-curso{
+            a{
+                font-family: 'Source Sans Pro', sans-serif;
+                margin-left: 0;
+                margin-bottom: 0;
+                line-height: normal;
+            }
+        }
+    }
+
+    /**************** Inicio estilos Datos básicos ***************************/
+    &.image-left{
+        
+        >.block-field-blocknodedatos-basicosfield-organismo-fotografia{
+            width: 119px;
+            float: left;
+            padding-left: 0;
+            
+            .field__label{
+                text-align: left;
+            }
+            .field--name-field-organismo-fotografia{
+                float: none;
+                width: auto;
+                >img{
+                    height: 135px;
+                    width: auto;
+                }
+            }
+
+            &~.block{
+                width: calc(100% - 119px);
+                float: right;
+                padding-left: 20px;
+            }
+        }
+
+        >.block-field-blocknodedatos-basicosfield-sede{
+            .item:before{
+                content: "";
+                border-top: 2px solid $accent-shade;
+                width: 90%;
+                position: absolute;
+                left: 5%;
+                transform: translateY(-13px);
+                
+            }
+            .item:first-child:before{
+                content: "";
+                border-top: none;
+            }
+        }    
+    }
+    
+    /**************** Fin estilos Datos básicos ***************************/
+
+
+    /**************** Inicio estilos Intervenciones ***************************/
+
+    .block{
+        .field--name-field-datos-principales{
+            width: 100%;
+            >.paragraph--type--datos-principales-ibph{
+                >.field{
+                    >.field__label, .field__item{
+                        margin-bottom: 28px;
+                        float: left;    
+                    }
+                        
+                    &.field--name-field-img-intervencioness{
+                        >.field__item{
+                            display: inline-block;
+                            width: auto;
+                            float: none;
+                            margin-right: 20px;
+                            margin-bottom: 20px;
+                            img{
+                                height: 150px;
+                                width: auto;
+                                margin-bottom: 0;
+                            }
+
+                            .field--name-field-media-image{
+                                margin: 0;
+                                >.field__item{
+                                    margin-bottom: 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    
+                    }
+                    &.field--name-field-fotografias-intervenciones{
+                        width: 100%;
+                        float: left;
+                    }
+                    
+                }
+
+                >.field--name-field-material-datos-principales{
+                    >.field__items{
+                        float: left;
+                        width: 70%;
+                        >.field__item{
+                            float: left;
+                            margin-bottom: 0;
+
+                            &:last-child{
+                                margin-bottom: 28px;
+                            }
+                        }
+                    }
+                }
+
+                >.field--name-field-obs-intervenciones{
+                    >.field__item{
+                        margin-bottom: 12px;
+                    }
+                }
+            }   
+        }
+    }
+
+
+    /**************** Fin estilos Intervenciones ***************************/    
+    
+    /*************** Inicio estilos Instituciones culturales***************/
+
+    .block-field-blocknodeinstituciones-culturalesfield-inst-cul-redes-sociales{
+        .field__items{
+            width: 70%;
+            float: right;
+            >.field__item{
+                vertical-align: top;
+                width: auto;
+                display: inline-block;
+                float: none;
+                margin-right: 18px;
+                line-height: normal;
+            }
+        }
+    }
+
+    &.image-left{
+        margin-bottom: 30px;
+    }
+
+    >.block-field-blocknodeactividades-estadisticas-y-cartofield-ae-periodicidad{
+        margin-bottom: 0;
+    }
+
+    :not(.block-field-blocknodeactividades-estadisticas-y-cartofield-group-calendario-difusion){
+        +.block-field-blocknodeactividades-estadisticas-y-cartofield-ae-productos{
+            margin-top: 40px;
+        }
+    }
+
+    .block-field-blocknodedatos-basicosfield-organismo-linkedin, .block-field-blocknodedatos-basicosfield-organismo-facebook, .block-field-blocknodedatos-basicosfield-organismo-instagram, .block-field-blocknodedatos-basicosfield-organismo-twitter, .block-field-blocknodedatos-basicosfield-organismo-youtube{
+        display: inline-block;
+        width: auto;
+        margin-top: 7px;
+        margin-bottom: 14px;
+    }
+
+}
+
+@media all and (max-width: $screen-lg-max) {
+    .encab-secc {
+        .block {
+            .field__label,
+            .field__item {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+        }
+        .block.block-field-blocknodeactividades-estadisticas-y-cartofield-ae-descripcion, .block.block-field-blocknodeproducto-estadisticafield-pe-organismos{
+            .field__items{
+                >.field__item{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    img{
+                        float: none;
+                        width: 140px;
+                        margin-top: 20px;
+
+                        &+div{
+                            width: 100%;
+                            float: none;
+                            >p:last-child{
+                                margin-bottom: 0;
+                            }
+                        } 
+                    }
+
+                    .views-element-container{
+                        width: 100%;
+                        float: none;
+                    }
+                }  
+            } 
+        }
+
+        &.image-right{
+            display: flex;
+            flex-direction: column;
+            .block{
+                width: 100%;
+
+                .field__label{
+                    width: 100%;
+                }
+                .field__item{
+                    width: 100%;
+                }
+            }
+
+            .block-field-blocknodepublicacionfield-img-cub, .block-field-blocknodeagendafield-imagen{
+                order: 1;
+                margin-top: 20px;
+                img{
+                    width: 180px;
+                }
+            }
+        }
+        
+
+        .block-field-blocknodeinstituciones-culturalesfield-inst-cul-redes-sociales{
+            .field__items{
+                width: 100%;
+            }
+        }
+
+        .block .field--name-field-datos-principales > .paragraph--type--datos-principales-ibph > .field > .field__label{
+            margin-bottom: 5px;
+        }
+    }
+
+    .webform-submission-form{
+        width: 100%;
+
+        > section > div {
+            padding-left: 0;
+        }
+
+        .webform-flexbox{
+            &.datos-personales{
+                .webform-flex{
+                    width: 100%;
+                }
+            }
+            
+            &.datos-direccion{
+                .webform-flex{
+                    width: 100%;
+                }
+            }
+            
+            &.datos-empresa{
+                .webform-flex{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.cont-secc{
+    background-color: $accent-shade;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    font-size: 15px;
+    >.block-blocks-terra-portada-titulo-seccion{
+        h1{
+            margin-bottom: 11px !important;
+            margin-top: 30px;
+        }
+    }
+    >.block {
+        display: block;
+        float: left;
+        width: 100%;
+        >h2.field__label{
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 24px;
+            margin-bottom: 11px;
+            margin-top: 30px;
+            padding-bottom: 11px;
+            border-bottom: 1px solid $gray-300;
+        }
+        >.content {
+            >.field {
+                >.field__label {
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-size: 26px;
+                    font-weight: bold;
+                    line-height: 24px;
+                    margin-bottom: 11px;
+                    margin-top: 30px;
+                    padding-bottom: 11px;
+                    border-bottom: 1px solid $gray-300;
+                }
+                >.field__items{
+                    >.field__item{
+                        font-size: 15px;
+                    }
+                    >h2{
+                        font-family: 'Source Sans Pro', sans-serif;
+                        font-size: 26px;
+                        font-weight: bold;
+                        line-height: 24px;
+                        margin-bottom: 11px;
+                        margin-top: 30px;
+                        padding-bottom: 11px;
+                        border-bottom: 1px solid $gray-300;
+                    }
+                }
+                >.field__item{
+                    margin-bottom: 12px;
+                    font-size: 15px;
+                    >h2{
+                        font-family: 'Source Sans Pro', sans-serif;
+                        font-size: 26px;
+                        font-weight: bold;
+                        line-height: 24px;
+                        margin-bottom: 11px;
+                        margin-top: 30px;
+                        padding-bottom: 11px;
+                        border-bottom: 1px solid $gray-300;
+                    }
+                }
+
+                >.list-link{
+                    > a{
+                        display: block;
+                        color: $primary-dark;
+                        font-family: 'Source Sans Pro', sans-serif;
+                        font-size: 15px;
+                        line-height: 20px;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+
+            >.field--name-field-pe-resultados{
+                >.field__item{
+                    p{
+                        font-family: 'Source Sans Pro', sans-serif;
+                    font-weight: bold;
+                        display: inline;
+                        font-size: 15px;
+
+                        >span{
+                            font-family: 'Source Sans Pro', sans-serif;
+                        }
+                        >a:before, >span:not(:first-child):before{
+                            content: "\007C";
+                            color: $gray-800;
+                            font-family: 'Source Sans Pro', sans-serif;
+                            margin-right: 3px;
+                        }
+                    }  
+                }
+            }
+
+            >.field--name-field-pe-destacamos{
+                img{
+                    height: 320px;
+                }
+            }
+
+            >.field--name-field-pe-logos, >.field--name-field-group-logos{
+                img{
+                    width: 150px;
+                    margin: 10px;
+                }
+
+            }
+
+            >.field--name-field-archivos-adjuntos{
+                a{
+                    margin-left: 0;
+                }
+            }
+                
+              
+            table.tabla-con-encabezado{
+                border: 0;
+                >tbody{
+                    >tr{
+                        >td, >th{
+                            border: 0;
+                            padding: 20px 30px;
+                            width: 25%;
+                            line-height: 17px;
+                        }
+                    }
+                    >tr:nth-child(2n){
+                        background-color: #EDF5EF;
+                    }
+                    
+                    >tr:nth-child(2n+1){
+                        background-color: $accent-shade;
+                    }
+
+                    >tr:first-child{
+                        color: $gray-800;
+                        font-family: 'Source Sans Pro', sans-serif;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        border-bottom: 2px solid $gray-800;
+                    }
+                }
+                font-size: 15px;
+                background-color: $accent-shade;
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+                
+            
+
+            >.clearfix{
+                >.field__item{
+                    >p{
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            >.field--name-field-procesos-seleccion, >.field--name-field-convcol, >.field--name-field-representantes, >.field--name-field-dispensa, >.field--name-field-oep{
+                >.field__label{
+                    border-bottom: none;
+                    padding-left: 15px;
+                    font-size: 22px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                >.field__items, >.field__item{
+                    padding-left: 15px;
+                    font-size: 15px;
+                    
+                }
+            }
+
+            .image-planes-y-programas{
+                width: 18%;
+                float: left;
+                &+.enlaces-documentos-del-plan{
+                    width: 77%;
+                    float: right; 
+                }
+            }
+
+            .field--type-text-long{
+                .field__item{
+                    h3{
+                        font-size: 16px;
+                    }
+                    h4{
+                        font-size: 14px;
+                    }
+                    h5,h6{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    >.block-field-blocknodeintervenciones-bienes-patrimoniofield-adjplan-intervencion{
+        padding-left: 10px;
+        >.content{
+            >.field{
+                >.field__label{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    >.block-field-blocknodeinformacion-de-personalfield-convcol, .block-field-blocknodeinformacion-de-personalfield-representantes, >.block-field-blocknodeinformacion-de-personalfield-oep{
+        margin-bottom: 20px;
+    }
+
+    p{
+        text-align: left;
+    }
+
+    h2{
+        font-family: $font-montserrat-bold;
+    }
+
+    .paragraph--type--perfil-persona-candidata, .paragraph--type--datos-entidad-adjudicataria{
+        .field__label{
+            display: inline;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: bold;
+            
+            &:after{
+                content:":";
+            }
+        }
+        .field__item{
+            display: inline;
+            >p{
+                display: inline;
+            }
+        }
+    }
+    
+    .paragraph--type--perfil-persona-candidata{
+        >div{
+            margin-bottom: 20px;
+        }
+    }
+
+    /**************** Inicio Datos básicos***********************/
+    
+    .paragraph--type--composicion{
+        >div{
+            font-size: 15px;
+        }
+    }
+
+
+    /*******************Fin Datos básicos***************/
+
+    /*******************Inicio Intervenciones************/
+
+    .block-field-blocknodeintervenciones-bienes-patrimoniofield-datos-historicos, .block-field-blocknodeintervenciones-bienes-patrimoniofield-estado-previo, .block-field-blocknodeintervenciones-bienes-patrimoniofield-descripcion-intervencion, .block-field-blocknodeintervenciones-bienes-patrimoniofield-fotografias{
+        .field--name-field-desca-imagen{
+            >.field__item{
+                display: inline-block;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                    
+                    .field{
+                        margin-right: 0;
+                        >.field__item{
+                            margin-right: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                    
+                    img{
+                        height: 150px;
+                        width: auto;
+                        margin-bottom: 0;
+                    }
+                
+            }
+           
+        }
+    }
+
+    .paragraph--type--ficha-tecnica-ibph{
+        >div{
+            margin-bottom: 28px;
+            overflow: hidden;
+
+            .field__label{
+                width: 25%;
+                float: left;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: bold;
+                &:after{
+                    content: ":";
+                }
+            }
+            .field__item{
+                width: 75%;
+                float: right;
+            }
+        }
+           
+           .field__items{
+               >.field__item{
+                   margin-bottom: 10px;
+               }
+           }
+       
+    }
+
+    /*******************Fin Intervenciones**********************/
+
+    /*************** Inicio estilos carousel Instituciones culturales*************/
+    .slider-instituciones{
+        >.slick-list{
+            height: 160px;
+            >.slick-track{
+                height: 160px;
+                .contenedor-imagen{
+                    display: flex;
+                    justify-content: center;
+                    width: auto !important;
+                    height: 100%;
+                    position: relative;
+                    margin: 0 5px 0 5px;
+                    >img{
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        
+        .slick-dots li.slick-active button:before{
+            color: green;
+            opacity: 1;
+        }
+
+        .slick-dots li button:before{
+            opacity: 1;
+        }
+        .slick-dots{
+            bottom: -55px;
+        }
+    }
+
+    /*************** Fin estilos carousel Instituciones culturales*************/
+
+    >.block:first-child{
+        >.content{
+            >.label-social-network:before{
+                vertical-align: super;
+                margin-right: 20px;
+                font-weight: bold;
+            }
+        }
+        
+    }
+
+    &.contenidos_nivel3{
+        .content{
+            .row{
+                >.col-3{
+                    padding-right: 5px;
+                    >a{
+                        >img{
+                            height: 220px;
+                            object-fit: cover;
+                            object-position: top; 
+                            width: 100%; 
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+    >.field--name-field-img-intervencioness{
+        padding-top: 5px;
+        >.field__item{
+            display: inline-block;
+            width: auto;
+            float: none;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            img{
+                height: 150px;
+                width: auto;
+                margin-bottom: 0;
+            }
+
+            .field--name-field-media-image{
+                margin: 0;
+                >.field__item{
+                    margin-bottom: 0;
+                    width: 100%;
+                }
+            }
+        }
+    
+    }
+    
+    //Oculta chevron de los enlaces en los tipos de contenidos
+    .fas.fa-caret-right{
+        display: none;
+        &+a{
+            margin-left: 0;
+        }
+    }
+}
+
+// DR estilos de tablas que no tienen que machacar los que vienen de la migración
+.cont-secc:not(.editor){
+    table{
+        border: 0;
+        width: 100% !important;
+        >tbody{
+            >tr{
+                >td{
+                    border: 0;
+                    padding: 20px 30px;
+                }
+            }
+            >tr:nth-child(2n+1){
+                background-color: $primary-back;
+            }
+        }
+        font-size: 15px;
+        background-color: $accent-shade;
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 17px;
+    }
+}
+
+.cont-fecha-asunto, .cont-subtitulo-asunto, .cont-subtitulo-noticia, .cont-titulo-nodo{
+    >.view-content{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.block-views-blocksolicitud-de-publicaciones-block-1{
+    .col-auto{
+       padding: 0; 
+    }
+}
+
+.cont-subtitulo-asunto, .cont-subtitulo-noticia{
+    margin-bottom: 30px;
+    .field-content{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+
+.intro-public{
+    padding: 28.5px 0 28.5px 0;
+    overflow: hidden;
+    border-top: 0.5px solid $gray-300;
+    border-bottom: 0.5px solid $gray-300;
+    border-radius: 0.25px;
+    margin-bottom: 50px;	
+    >.block-field-blocknodepublicacionfield-img-cub{
+        float: left;
+        width: 30%;
+        padding-right: 20px;
+        >.content{
+            >.field{
+                img{
+                    width: 180px;
+                    height: 265px;
+                }
+            }
+        }
+    }
+
+    >.block-field-blocknodepublicacionfield-tipo-pub, 
+    >.block-field-blocknodepublicacionfield-formato,
+    >.block-field-blocknodepublicacionfield-codigos,
+    >.block-field-blocknodepublicacionfield-idioma,
+    >.block-field-blocknodepublicacionfield-coleccion,
+    >.block-field-blocknodepublicacionfield-numero-paginas,
+    >.block-field-blocknodepublicaciontitle,
+    >.block-field-blocknodepublicacionfield-materia{
+        float: right;
+        width: 70%;
+
+        >.content{
+            >.field{
+                display: flex;
+                margin-bottom: 7px;
+                >.field__label{
+                    width: 35%;
+                    color: $gray-800;	
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 19px;
+                }
+                >.field__items, >.field__item{
+                    width: 65%;
+                    color: $gray-800;	
+                    font-family: 'Source Sans Pro', sans-serif;	
+                    font-size: 15px;	
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+    >.block-field-blocknodepublicaciontitle{
+        margin-bottom: 14px;
+        >.content{
+            >.field--name-title{
+                color: $primary-dark;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    >.block-field-blocknodepublicacionfield-codigos{
+        .field--type-entity-reference-revisions{
+            >.field__item{
+                >.paragraph {
+                    >.field--name-field-isbn{
+                        >.field__label{
+                            display: inline-block;
+                            font-family: 'Source Sans Pro', sans-serif;
+                            font-weight: bold;
+                        }
+                        >.field__items{
+                            margin-left: 14px;
+                            display: inline-block;
+                        }
+                    }
+                    >.field--name-field-issn{
+                        >.field__label{
+                            display: inline-block;
+                            font-family: 'Source Sans Pro', sans-serif;
+                            font-weight: bold;
+                        }
+                        >.field__item{
+                            margin-left: 14px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fondo-imagen {
+    position: relative;
+    overflow: hidden;
+    .field--name-field-pag-nav-imagen,
+    .field--name-field-subport-imagen {
+        position: relative;
+        margin: 0 0 40px 0;
+        border-bottom: 5px solid $primary-dark;
+        img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+    }
+    .field--name-field-pag-nav-directo-a,
+    .field--name-field-subportada-directo-a,
+    .block-quick-node-block {
+        position: absolute;
+        z-index: 10;
+        left: 900px;
+        font-weight: bold;
+        background-color: $primary-back;
+        height: 320px;
+        opacity: .95;
+        width: 375px;
+        top: 0;
+        margin: 0 auto;
+        right: 0;
+        .field__label,
+        .card-header {
+            color: $gray-800;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 27px;
+            padding: 20px 20px 12px;
+            border-bottom: 2px solid $border-list-inverse;
+        }
+        ul,
+        .card-body ul {
+            list-style: none;
+            padding-inline-start: 0;
+            margin-left: 0;
+            padding: 20px;
+            li {
+                display: block;
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 10px;
+                .fa-li {
+                    color: $primary-light;
+                    display: block;
+                    position: relative;
+                    top: -1px;
+                    float: left;
+                    left: 0;
+                }
+                a {
+                    font-weight: bold;
+                    color: $primary-shade;
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-size: 15px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    display: block;
+                    overflow: hidden;
+                    &:hover {
+                        color: $shadow-color;
+                    }
+                }
+            }
+        }
+        .card-body ul {
+            padding: 0;
+            li {
+                margin-bottom: 10px !important;
+                padding: 0 !important;
+                .fa-li {
+                    top: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-1300-max) {
+    .fondo-imagen {
+        .field--name-field-pag-nav-directo-a,
+        .field--name-field-subportada-directo-a,
+        .block-quick-node-block {
+            left: 590px;
+        }
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    .fondo-imagen {
+        height: auto;
+        margin-bottom: 20px;
+        .field--name-field-pag-nav-imagen,
+        .field--name-field-subport-imagen {
+            margin: 0;
+            img {
+                height: 150px;
+            }
+        }
+        .field--name-field-pag-nav-directo-a,
+        .field--name-field-subportada-directo-a,
+        .block-quick-node-block {
+            position: relative;
+            right: 0;
+            left: 0;
+            height: auto;
+            opacity: 1;
+            width: 100%;
+            padding: 0 20px;
+            .field__label {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+@media all and (min-width: $screen-md-max + 1) and (max-width: $screen-lg-max) {
+    .fondo-imagen {
+        >.block-field-blocknodesubportadafield-subportada-directo-a,
+        >.block-field-blocknodepagina-navegacionfield-pag-nav-directo-a{
+            background-color: $primary-back;
+            >.content{
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 0 15px;
+                >.field--name-field-subportada-directo-a,
+                >.field--name-field-pag-nav-directo-a{
+                    padding: 0;
+                    >.field__label{
+                        padding: 20px 0px 12px;
+                    }
+                    >ul{
+                        padding: 20px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dat-bas-rrss {
+    margin-top: 20px;
+    >.block {
+        display: inline-block;
+        width: auto;
+        &:nth-child(1) {
+            color: $gray-800;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            margin-left: 20px;
+        }
+        .field.field--name-field-organismo-facebook,
+        .field.field--name-field-organismo-twitter,
+        .field.field--name-field-organismo-linkedin {
+            position: relative;
+            top: 5px;
+        }
+        .field--name-field-organismo-facebook {
+            a {
+                color: #3b5999;
+                &:hover {
+                    color: #22438A;
+                }
+            }
+        }
+        .field--name-field-organismo-twitter {
+            a {
+                color: #55acee;
+                &:hover {
+                    color: #3197E5;
+                }
+            }
+        }
+        .field--name-field-organismo-linkedin {
+            a {
+                color: #0077B5;
+                &:hover {
+                    color: #005B8C;
+                }
+            }
+        }
+    }
+}
+
+.dat-bas-links {
+    >.block {
+        display: block;
+        width: 100%;
+        float: left;
+        position: relative;
+        >.content {
+            position: relative;
+            a {
+                margin-left: 10px;
+                display: block;
+                color: $primary-dark;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 20px;
+                margin-bottom: 12px;
+                &::before {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f0da";
+                    display: inline-block;
+                    padding-right: 3px;
+                    vertical-align: middle;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+        }
+    }
+}
+
+#block-menu-links {
+    i{
+        display: none;
+    }
+    >h3 {
+        display: none;
+    }
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-left: 0;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            padding-left: 0;
+        }
+        li {
+            a {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 15px;
+                color: $primary-dark;
+                display: block;
+                font-weight: 100;
+                line-height: 19px;
+                overflow: hidden;
+                &:hover {
+                    color: $primary-shade;
+                }
+            }
+        }
+    }
+    >ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+        >li {
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            width: calc(1/3*100% - (1 - 1/3)*30px);
+            padding-bottom: 25px;
+            border-bottom: 1px solid $border-list-inverse;
+            &:nth-child(3n+2) {
+                margin: 0 30px 30px;
+            }
+            >img{
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .pn-top{
+                >a {
+                    color: $gray-800;
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-weight: bold;
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: 30px;
+                    margin-bottom: 5px;
+                    &:hover{
+                        color: $gray-800;
+                    }
+                }
+            }
+            >p{
+                color: $gray-600;
+                font-size: 15px;
+            }
+            >ul {
+                >li {
+                    margin: 0 0 10px 0;
+                    position: relative;
+                    >a {
+                        font-weight: bold;
+                    }
+                    >a.mas-opciones{
+                        padding: 0 10px;
+                        text-align: right;
+                        &:before {
+                            content: '';
+                            display: none;
+                        }
+                        i{
+                            display: block;
+                            vertical-align: middle;
+                            font-weight: 900;
+                            font-style: normal;
+                            font-variant: normal;
+                            text-rendering: auto;
+                            -webkit-font-smoothing: antialiased;
+                            position: relative;
+                            display: inline-block;
+                            top: -2px;
+                        }
+                        span{
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    .intro-public{
+        >.block-field-blocknodepublicacionfield-img-cub{
+            float: none;
+            width: 100%;
+            padding-right: 0;
+        }
+    
+        >.block-field-blocknodepublicacionfield-tipo-pub, 
+        >.block-field-blocknodepublicacionfield-formato,
+        >.block-field-blocknodepublicacionfield-codigos,
+        >.block-field-blocknodepublicacionfield-idioma,
+        >.block-field-blocknodepublicacionfield-coleccion,
+        >.block-field-blocknodepublicacionfield-numero-paginas,
+        >.block-field-blocknodepublicaciontitle,
+        >.block-field-blocknodepublicacionfield-materia{
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .cont-secc{
+        .slider-instituciones{
+            >.slick-list{
+                height: 120px;
+                >.slick-track{
+                    height: 120px;
+                }
+            }
+        }
+    }
+
+    .cont-secc.contenidos_nivel3{
+        .content{
+            .row{
+                >.col-3{
+                    >a{
+                        >img{
+                            height: 180px;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    
+}
+
+@media all and (max-width: $screen-md-max) {
+    #block-menu-links {
+        >ul {
+            >li {
+                width: 100%;
+                &:nth-child(3n+2) {
+                    margin: 0 0 30px 0;
+                }
+                &:nth-last-child(-n+3) {
+                    margin: 0 0 30px 0;
+                }
+            }
+        }
+    }
+}
+
+.subport {
+    #block-menu-links {
+        .container >.row {
+            margin-bottom: 30px;
+            >.lead-mcdp{
+                padding: 0 15px 0 0;
+                border-bottom: none;
+                div{
+                    padding: 0;
+                    >a {
+                        color: $gray-800;
+                        font-family: 'Source Sans Pro', sans-serif;
+                        font-size: 22px;
+                        font-weight: bold;
+                        line-height: 30px;
+                    }
+                }
+            }
+            >.second-mcdp{
+                >ul{
+                    >li{
+                        margin: 0 0 10px 0;
+                        position: relative;
+                        >a {
+                            font-family: 'Source Sans Pro', sans-serif;
+                            font-size: 14px;
+                            color: $primary-dark;
+                            display: block;
+                            font-weight: 700;
+                            line-height: 19px;
+                            overflow: hidden;
+                            &:hover {
+                                color: $primary-shade;
+                            }
+                        }
+                    }
+                }
+                &.second-mcdp-nimg{
+                    padding-right: 0;
+                    margin-bottom: 0;
+                    >.row {
+                        >div {
+                            margin-bottom: 10px;
+                            >a {
+                                font-family: 'Source Sans Pro', sans-serif;
+                                font-size: 14px;
+                                color: $primary-dark;
+                                display: block;
+                                font-weight: 700;
+                                line-height: 19px;
+                                overflow: hidden;
+                                position: relative;
+                                
+                                &:hover {
+                                    color: $primary-shade;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            >.img-mcdp{
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    .subport {
+        #block-menu-links {
+            >ul {
+                >li {
+                    width: 100%;
+                    >a {
+                        width: calc(1/2*100% - (1 - 1/2)*30px);
+                    }
+                    >ul {
+                        margin-bottom: 20px;
+                        width: calc(1/1*50%);
+                        >li {
+                            flex: 0 0 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-md-max) {
+    .subport {
+        #block-menu-links {
+            .container >.row {
+                >.lead-mcdp{
+                    margin-bottom: 1em;
+                }
+                >.second-mcdp{
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }  
+
+    .cont-secc{
+        >.block{
+            >.content{
+                .image-planes-y-programas{
+                    width: 140px;
+                    margin-bottom: 20px;
+                    
+                    &+.enlaces-documentos-del-plan{
+                        width: 100%;
+                    }
+                } 
+            }
+        }
+    }
+}
+
+
+@media all and (max-width: $screen-sm-max) {
+    .subport {
+        #block-menu-links {
+            >ul {
+                padding: 0;
+                >li {
+                    width: 100%;
+                    >a {
+                        width: 100%;
+                    }
+                    >ul {
+                        padding: 0;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        >li {
+                            flex: 0 0 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .layout--ds-3-col-50-25-25 {
+        .row {
+            >div {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .cont-secc{
+        >.block{
+            >.content{
+                table.tabla-con-encabezado{
+                    >tbody{
+                        >tr{
+                            >td, >th{
+                                padding: 10px;
+                                line-height: 18px; 
+                            }
+                        }
+                    }  
+                    font-size: 12px;     
+                }
+
+                
+                table{
+                    >tbody{
+                        >tr{
+                            >td{
+                                padding: 10px;
+                                line-height: 18px;
+                            }
+                        } 
+                    }
+                    font-size: 12px;
+                }
+
+                >.field--name-field-pe-destacamos{
+                    img{
+                        height: 250px;
+                    }
+                }
+            }
+        }
+
+        .paragraph--type--ficha-tecnica-ibph{
+            >div{    
+                .field__label{
+                    width: 40%;
+                }
+                .field__item{
+                    width: 60%;
+                }
+            }           
+        }
+    }
+
+    .encab-secc{
+
+        &.image-left{
+            >.block-field-blocknodedatos-basicosfield-organismo-fotografia{
+                    
+                &~.block{
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+
+            >.block-field-blocknodedatos-basicosfield-sede{
+                .item:before{
+                    content: "";
+                    width: 100%;
+                    left: 0px;
+                }    
+            }
+        }
+        
+    }
+
+    .cont-secc.contenidos_nivel3{
+        .content{
+            .row{
+                >.col-3{
+                    >a{
+                        >img{
+                            height: 110px;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+.layout-builder {
+    .encab-secc,
+    .cont-secc,
+    .dat-bas-rrss,
+    .dat-bas-links {
+        .block {
+            margin-bottom: 0;
+            float: none;
+            width: 100%;
+        }
+    }
+    .fondo-imagen {
+        .block {
+            position: relative;
+            right: 0;
+            width: 100%;
+            height: auto;
+            background-color: none;
+            font-weight: normal;
+            opacity: 1;
+        }
+    }
+    #drupal-off-canvas:not(.drupal-off-canvas-reset),
+    #drupal-off-canvas-wrapper {
+        select[multiple]{
+            height: 280px;
+        }
+    }
+}
+
+#block-side-menu-links {
+    i{
+        display: none;
+    }
+    >h3 {
+        >a{
+            color: #333;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+    }
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-left: 0;
+        li {
+            margin-bottom: 10px;
+            a {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 14px;
+                color: $primary-dark;
+                display: block;
+                font-weight: 100;
+                line-height: 19px;
+                overflow: hidden;
+                &:hover {
+                    color: $primary-shade;
+                }
+            }
+        }
+    }
+}
+
+///*------------------------------------
+//    # Layout | layout--ds-trans-org
+//------------------------------------*/
+.layout--ds-3-col-transp-org{
+    .block-blocks-terra-wc-counter{
+        margin-bottom:1rem;
+    }
+}
+
+#drupal-off-canvas:not(.drupal-off-canvas-reset),
+#drupal-off-canvas-wrapper {
+    select[multiple]{
+        height: 278px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .toc-js.is-sticked{
+        width: 290px;
+    }
+}
+
+.layout--cont-estruct .contenidos_nivel3 .block-field-blocknodepagina-estandarfield-directo-a{
+    display: none;
+    ul {
+        list-style: none;
+        color: $primary-shade;
+    }
+}
+@media all and (max-width: $screen-lg-max) {
+    .toc-js.sticky.is-sticked{
+        position: static;
+        width: 100%;
+    }
+    .layout--cont-estruct .col-lg-4 .block-field-blocknodepagina-estandarfield-directo-a {
+        display: none;
+    }
+    .layout--cont-estruct .contenidos_nivel3 .block-field-blocknodepagina-estandarfield-directo-a{
+        display: block;
+    }
+}
+
+@media all and (max-width: $screen-md-max) {
+    .toc-js.sticky.is-sticked{
+        position: static;
+        width: 100%;
+    }
+
+    .toc-js>nav ul>li.toc-active, .toc-js>nav>ol>li.toc-active {
+        font-weight: normal;
+    }
+    
+}
+
+// DR bloque ultimo boja portada
+.block-blocks-terra-wc-last-boja {
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: $screen-md-max + 1) and (max-width: $screen-lg-max){
+    #block-menu-links {
+        >ul {
+            >li {
+                width: calc(1/2*100% - (1 - 1/2)*30px);
+                &:nth-child(3n+2){
+                    margin: 0 0 30px 0;
+                }
+                &:nth-child(2n) {
+                    margin: 0 0 30px 30px;
+                }
+            }
+        }
+    }
+}
+
+.counters-jda{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    >.block-blocks-terra-wc-counter {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 33.33333%;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media all and (max-width: $screen-lg-max) {
+    .counters-jda{
+        >.block-blocks-terra-wc-counter {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .layout--twocol-section.layout--twocol-section--33-67{
+        > .layout__region--second{
+            padding-right: 0;
+        }
+    }
+    .layout--twocol-section.layout--twocol-section--67-33{
+        > .layout__region--first{
+            padding-right: 0;
+        }
+    }
+    .layout--twocol-section.layout--twocol-section--33-67{
+        > .layout__region--first{
+            flex: 0 1 30%;
+            padding-right: 0;
+        }
+    }
+    .layout--twocol-section.layout--twocol-section--67-33{
+        > .layout__region--second{
+            flex: 0 1 30%;
+            padding-right: 0;
+        }
+    }
+
+    .cont-secc.contenidos_nivel3{
+        .content{
+            .row:nth-of-type(3){
+                >.col-3:nth-child(2){
+                    img{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: $screen-sm-max) {
+    .layout--dat-bas-v2.container.clearfix{
+        padding: 0;
+    }
+}
+
+.node--type-pagina-estandar{
+    .layout--cont-estruct{
+        .cont-secc{
+            h2, .h2{
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 700;
+                line-height: 24px;
+                margin-bottom: 11px;
+                margin-top: 30px;
+                padding-bottom: 11px;
+                border-bottom: 1px solid #d8d8d8;
+            }
+            h3, .h3{
+                font-size: 22px;
+            }
+        }
+    }
+}

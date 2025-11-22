@@ -1,0 +1,6 @@
+config_rewrite:
+  replace: ['negotiation.language_interface.enabled']
+negotiation:
+  language_interface:
+    enabled:
+      language-selected: 12

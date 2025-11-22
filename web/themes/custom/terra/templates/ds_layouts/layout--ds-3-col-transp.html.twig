@@ -1,0 +1,37 @@
+<div {{ attributes.addClass(classes) }}>
+  <div class="layout--ds-3-col-transp container clearfix">
+
+    {{ title_suffix.contextual_links }}
+
+    <{{ title_wrapper }}{{ title_attributes.addClass('row-fluid','title_wrapper') }}>
+      {{ title }}
+    </{{ title_wrapper }}>
+
+    <div class="row">
+      <{{ left_wrapper }}{{ left_attributes.addClass('col-12', 'col-md-4') }}>
+        {{ left }}
+      </{{ left_wrapper }}>
+
+      <div class="col-12 col-md-4">
+        <div class="row">
+          <{{ centertop_wrapper }}{{ centertop_attributes.addClass('col-12', 'col-md-12') }}>
+            {{ centertop }}
+          </{{ centertop_wrapper }}>
+        </div>
+        <div class="row">
+          <{{ centerbtleft_wrapper }}{{ centerbtleft_attributes.addClass('col-12', 'col-md-6') }}>
+            {{ centerbtleft }}
+          </{{ centerbtleft_wrapper }}>
+          <{{ centerbtright_wrapper }}{{ centerbtright_attributes.addClass('col-12', 'col-md-6') }}>
+            {{ centerbtright }}
+          </{{ centerbtright_wrapper }}>
+        </div>
+      </div>
+
+      <{{ right_wrapper }}{{ right_attributes.addClass('col-12', 'col-md-4') }}>
+        {{ right }}
+      </{{ right_wrapper }}>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,54 @@
+{
+  "name": "msd/terra_frontstage",
+  "description": "Common site public area tools and setup for any MSD/Terra Drupal application.",
+  "type": "drupal-custom-module",
+  "keywords": [
+    "Drupal",
+    "MSD"
+  ],
+  "homepage": "https://gitlab.juntadeandalucia.es/msd/terra_frontstage",
+  "license": "proprietary",
+  "source": {
+    "type": "git",
+    "url": "https://gitlab.juntadeandalucia.es/msd/terra_frontstage.git",
+    "reference": "1.1.x"
+  },
+  "authors": [
+    {
+      "name": "Manuel Adan",
+      "homepage": "https://www.drupal.org/user/516420",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "msd/terra_base": "^3",
+    "drupal/core": ">10.3 <10.5",
+    "drupal/ds": "^3.15",
+    "drupal/easy_breadcrumb": "^2.0",
+    "drupal/fontawesome": "2.26",
+    "drupal/layout_builder_styles": "^2.0",
+    "drupal/metatag": "^1.22",
+    "drupal/pathauto": "^1.11",
+    "drupal/page_manager": "4.0-rc2"
+  },
+  "extra": {
+    "enable-patching": true,
+    "patches": {
+      "drupal/core": {
+        "#3020876 Contextual links of reusable content blocks are not displayed when rendering entities built via Layout Builder": "https://www.drupal.org/files/issues/2023-11-23/3020876-96.patch",
+        "#3049332 PHP message: Error: Call to a member function getEntityTypeId() on null (Layout Builder)": "https://www.drupal.org/files/issues/2024-06-26/3049332_d10.3.0.patch"
+      },
+      "drupal/fontawesome": {
+        "#3371188: Problem installing fontawesome library via composer": "https://www.drupal.org/files/issues/2024-01-10/3371188-12.patch"
+      },
+      "drupal/page_manager": {
+        "#2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2023-05-17/2665328-128-page_manager_variant_title.patch",
+        "#3176661: Allow to edit page title when using Layout Builder variant": "https://www.drupal.org/files/issues/2022-11-15/page_manager-lb-title-3176661-15.patch"
+      }
+    }
+  },
+  "support": {
+    "issues": "https://redmine-attgap.juntadeandalucia.es",
+    "source": "https://gitlab.juntadeandalucia.es/msd/terra_frontstage"
+  }
+}

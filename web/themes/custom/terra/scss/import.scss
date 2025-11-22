@@ -1,0 +1,23 @@
+/* IMPORTS */
+
+//@import url(font-awesome.min.css);
+// variables
+// DR primero importa las variables de nuestro tema
+// luego importa lo que viene por defecto con bootstrap
+// ver el fichero variable.scss
+@import "variables";
+
+// typography
+@import "typography";
+
+// mixins
+@import "mixins";
+
+//bootstrap modificado para cuestiones de accesibilidad
+@import "bootstrap-red.scss";
+
+// barrio
+@import "barrio";
+
+// terra
+@import "terra";

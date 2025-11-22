@@ -1,0 +1,67 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'list-link'
+  ]
+%}
+{% block paragraph %}
+  <div {{ attributes.addClass(classes) }}>
+    {% block content %}
+      {% if content.field_url_mas_informacion|render %}
+        <i class="fas fa-caret-right icon-green"></i> 
+          <a 
+            {% if content.field_nueva_ventana_mas_informac['#items'].value == 1 %}
+              target='_blank'
+            {% endif %}
+            href="{{ content.field_url_mas_informacion.0["#url"].toString }}" 
+            title="{{ content.field_url_mas_informacion['#items'].0.title }}"> 
+            {{ content.field_url_mas_informacion['#items'].0.title }}
+          </a>
+      {% elseif content.field_multimedia|render %}
+        <i class="fas fa-caret-right icon-green"></i>
+        {% if content.field_multimedia.0['#media'].field_media_file.entity.uri.value|render %}
+          <a 
+            {% if content.field_nueva_ventana_mas_informac['#items'].value == 1 %}
+              target='_blank'
+            {% endif %}
+            href="{{ file_url(content.field_multimedia.0['#media'].field_media_file.entity.uri.value) }}"
+
+            {% if content.field_multimedia.0['#media'].field_media_file.0.description|render %}
+              title="{{ content.field_multimedia.0['#media'].field_media_file.0.description }}">
+              {{ content.field_multimedia.0['#media'].field_media_file.0.description }}
+            {% else %}
+              title="{{ content.field_multimedia.0['#media'].field_media_file.entity.filename.value }}">
+              {{ content.field_multimedia.0['#media'].field_media_file.entity.filename.value }}
+            {% endif %}
+          </a>
+        {% elseif content.field_multimedia.0['#media'].field_media_image.entity.uri.value|render %}
+            <a 
+              {% if content.field_nueva_ventana_mas_informac['#items'].value == 1 %}
+                target='_blank'
+              {% endif %}
+              href="{{ file_url(content.field_multimedia.0['#media'].field_media_image.entity.uri.value)}}" title="{{ content.field_multimedia.0['#media'].field_media_image.entity.filename.value }}">{{ content.field_multimedia.0['#media'].field_media_image.entity.filename.value }}
+            </a>
+        {% elseif content.field_multimedia.0['#media'].field_media_audio_file.entity.uri.value|render %}
+            <a 
+              {% if content.field_nueva_ventana_mas_informac['#items'].value == 1 %}
+                target='_blank'
+              {% endif %}
+              href="{{ file_url(content.field_multimedia.0['#media'].field_media_audio_file.entity.uri.value)}}" title="{{ content.field_multimedia.0['#media'].field_media_audio_file.0.description }}">{{ content.field_multimedia.0['#media'].field_media_audio_file.0.description }}
+            </a>
+        {% elseif content.field_multimedia.0['#media'].field_media_video_file.entity.uri.value|render %}
+            <a 
+              {% if content.field_nueva_ventana_mas_informac['#items'].value == 1 %}
+                target='_blank'
+              {% endif %}
+              href="{{ file_url(content.field_multimedia.0['#media'].field_media_video_file.entity.uri.value)}}" title="{{ content.field_multimedia.0['#media'].field_media_video_file.entity.filename.value }}">{{ content.field_multimedia.0['#media'].field_media_video_file.entity.filename.value }}
+            </a>
+        {% endif %}
+      {% endif %}
+    {% endblock content %}
+  </div>
+{% endblock paragraph %}
+
+

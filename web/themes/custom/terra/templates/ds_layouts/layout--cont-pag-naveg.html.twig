@@ -1,0 +1,21 @@
+<div>
+  <{{ outer_wrapper }}{{ attributes.addClass('layout--cont-pag-naveg', 'container', 'clearfix') }}>
+
+    {{ title_suffix.contextual_links }}
+
+    <div class="row">
+      <{{ cont_wrapper }}{{ cont_attributes.addClass('col-12', 'col-md-8') }}>
+        {{ cont }}
+      </{{ cont_wrapper }}>
+      <{{ side_wrapper }}{{ side_attributes.addClass('col-12', 'col-md-4') }}>
+        {{ side }}
+      </{{ side_wrapper }}>
+    </div>
+    <div class="row">
+      <{{ footer_wrapper }}{{ footer_attributes.addClass('col-12', 'col-md-12') }}>
+        {{ footer }}
+      </{{ footer_wrapper }}>
+    </div>
+
+  </{{ outer_wrapper }}>
+</div>

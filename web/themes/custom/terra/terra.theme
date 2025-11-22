@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ */
+function terra_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+}
+
+/* DR no se quiere el enlace de la pagina actual en la miga
+function terra_preprocess_breadcrumb(&$variables){
+
+        if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+          $variables['breadcrumb'][] = array(
+               'text' => $node->label(),
+               'url' => $node->URL()
+            );
+        }
+}*/
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function terra_preprocess_views_view_rss(&$variables)
+{
+  $variables['copyright'] = date("Y") . ' ' . \Drupal::config('system.site')->get('name');
+
+}
+
+/*
+ * Implements hook_theme_suggestions_view_alter().
+ */
+function terra_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  if (isset($variables['view'])) {
+    /** @var \Drupal\views\ViewExecutable $view */
+    $view = $variables['view'];
+    $view_id = $view->id();
+
+    // Add template suggestion based on the view ID.
+    $suggestions[] = 'views_view__' . $view_id;
+
+    // Add template suggestion based on the view ID and current display ID.
+    $view_display_id = $view->current_display;
+    $suggestions[] = 'views_view__' . $view_id . '__' . $view_display_id;
+
+    // Add template suggestions based on the display CSS classes.
+    $display = $view->getDisplay();
+    if (empty($display->options['css_class'])) {
+      // Select default display if no classes in the current display.
+      $display = $view->displayHandlers->get('default');
+    }
+
+    if (!empty($display->options['css_class'])) {
+      $base_suggestions = array_merge(['views_view'], $suggestions);
+      foreach (explode(' ', $display->options['css_class']) as $css_class) {
+        foreach ($base_suggestions as $base_suggestion) {
+          // Add suggestion per base suggestion and defined CSS class.
+          $suggestions[] = $base_suggestion . '__' . preg_replace('/[^a-z0-9]+/', '_', $css_class);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function terra_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+  if (!isset($variables['element'])) {
+    return;
+  }
+
+  $suggestions += _terra_theme_add_css_class_suggestions($variables['theme_hook_original'], $variables['element']);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function terra_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+  if (!isset($variables['element'])) {
+    return;
+  }
+
+  $suggestions += _terra_theme_add_css_class_suggestions($variables['theme_hook_original'], $variables['element']);
+}
+
+/**
+ * Add suggestions based on field classes.
+ *
+ * @param $theme_hook_original
+ *   The original theme hook.
+ * @param array $element
+ *   Render array of the element.
+ *
+ * @return string[]
+ *   New theme suggestions based on CSS class names.
+ */
+function _terra_theme_add_css_class_suggestions($theme_hook_original, array &$element) {
+  $suggestions = [];
+  if (!empty($element['#attributes']['class'])) {
+    // Add suggestions based on field classes.
+    foreach ($element['#attributes']['class'] as $css_class) {
+      $suggestions[] = $theme_hook_original . '__' . preg_replace('/[^a-z0-9]+/', '_', $css_class);
+    }
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function terra_preprocess_fieldset(&$variables) {
+  if (!isset($variables['element']['children'])) {
+    return;
+  }
+
+  $children_count = count(Element::children($variables['element']['children']));
+  if ($children_count) {
+    $variables['attributes']['class'][] = 'fieldset-children-' . $children_count;
+  }
+  else {
+    $variables['attributes']['class'][] = 'fieldset-empty';
+  }
+}
+
+function terra_preprocess_paragraph(&$variables){
+   $node = \Drupal::request()->attributes->get('node');
+   if($node){
+    $variables['nodetitle'] = $node->getTitle();
+  }
+}
+
+/**
+* Implements hook_preprocess_page(&$variables)
+*/
+function terra_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'terra/slick';
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function terra_preprocess_page_title(&$variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $variables['tdc'] = $node->bundle();
+  }
+}

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+<label class="sr-only">Buscar</label>
+<button{{ attributes }} aria-label="Enviar">{{ attributes.value }}</button>{{ children }}

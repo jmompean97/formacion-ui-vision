@@ -1,0 +1,88 @@
+diff --git a/js/messages.js b/js/messages.js
+new file mode 100644
+index 0000000..c8ab90e
+--- /dev/null
++++ b/js/messages.js
+@@ -0,0 +1,52 @@
++/**
++ * @file
++ * Message template overrides.
++ */
++
++((Drupal) => {
++  /**
++   * Overrides message theme function.
++   *
++   * @param {object} message
++   *   The message object.
++   * @param {string} message.text
++   *   The message text.
++   * @param {object} options
++   *   The message context.
++   * @param {string} options.type
++   *   The message type.
++   * @param {string} options.id
++   *   ID of the message, for reference.
++   *
++   * @return {HTMLElement}
++   *   A DOM Node.
++   */
++  Drupal.theme.message = ({ text }, { type, id }) => {
++    const messagesTypes = Drupal.Message.getMessageTypeLabels();
++    const messageWrapper = document.createElement('div');
++
++    messageWrapper.setAttribute(
++      'class',
++      `messages alert alert-${type === 'status' ? 'success' : type} messages--${type} messages-list__item`,
++
++    );
++    messageWrapper.setAttribute(
++      'role',
++      type === 'error' || type === 'warning' ? 'alert' : 'status',
++    );
++    messageWrapper.setAttribute('aria-labelledby', `${id}-title`);
++    messageWrapper.setAttribute('data-drupal-message-id', id);
++    messageWrapper.setAttribute('data-drupal-message-type', type);
++
++    messageWrapper.innerHTML = `
++    
++        <h4 id="${id}-title" class="visually-hidden messages__title">${messagesTypes[type]}</h4>
++        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
++          <span aria-hidden="true">&times;</span>
++        </button>
++        ${text}
++  `;
++
++    return messageWrapper;
++  };
++})(Drupal);
+diff --git a/terra.info.yml b/terra.info.yml
+index bf3a67d..2347ba8 100644
+--- a/terra.info.yml
++++ b/terra.info.yml
+@@ -22,6 +22,10 @@ libraries:
+   - terra/fonts
+   - terra/wc-polyfill
+ 
++libraries-extend:
++  core/drupal.message:
++    - terra/messages
++
+ libraries-override:
+   bootstrap_barrio/global-styling: false
+ 
+diff --git a/terra.libraries.yml b/terra.libraries.yml
+index d8fed10..c2e4562 100644
+--- a/terra.libraries.yml
++++ b/terra.libraries.yml
+@@ -69,3 +69,10 @@ slick-js:
+     js/slick-default.js: { }
+   dependencies:
+     - core/jquery
++
++messages:
++  version: 1.x
++  js:
++    js/messages.js: {}
++  dependencies:
++    - bootstrap_barrio/alerts

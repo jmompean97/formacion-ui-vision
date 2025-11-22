@@ -1,0 +1,41 @@
+<ul{{ attributes.addClass(['container','menu', 'menu-msd', 'menu--' ~ menu_name|clean_class, 'nav', 'navbar-nav']) }}>
+ {% for item in items %}
+  {% if key|first != '#' %}
+    {% set noMostrarEnSolapa = item.content['#menu_link_content'].field_no_mostrar_en_solapa[0] %}
+    
+    {% if noMostrarEnSolapa is empty or (noMostrarEnSolapa and not noMostrarEnSolapa.value ) %}
+      {% if item.content.children is not empty %}
+
+        <li class="position-static{% if item['#in_active_trail'] %} active{% endif %}">
+          <a href="{{ item['#url'] }}" class="dropdown-toggle"  title="{{ item.content['#menu_link_content'].getTitle() }}">
+              <div class="menu-icon-content">
+                {% if item.content['#menu_link_content'].field_imagen_enlace_main[0] is not empty %}
+                  <img src="{{file_url(item.content['#menu_link_content'].field_imagen_enlace_main[0].entity.field_media_image.entity.uri.value)}}" class="nav-sup-lj" alt=""/>
+                  <img src="/{{base_path ~ directory }}/images/Logo-Junta-hover.png" class="nav-sup-lj-hv" alt=""/>
+                {% endif %}
+                {{ item['#title'] }}
+              </div>
+            </a>
+          <div class="dropdown-menu dropdown-fullwidth full-width">
+            {{ item.content }}
+          </div>
+        </li>
+
+      {% else %}
+
+        <li class="position-static not-solapa{% if item['#in_active_trail'] %} active{% endif %}">
+          <a href="{{ item['#url'] }}" title="{{ item.content['#menu_link_content'].getTitle() }}">
+            <div class="menu-icon-content">
+              {% if item.content['#menu_link_content'].field_imagen_enlace_main[0] is not empty %}
+                <img src="{{file_url(item.content['#menu_link_content'].field_imagen_enlace_main[0].entity.field_media_image.entity.uri.value)}}" class="nav-sup-lj" alt=""/>
+                <img src="/{{base_path ~ directory }}/images/Logo-Junta-hover.png" class="nav-sup-lj-hv" alt=""/>
+              {% endif %}
+              {{ item['#title'] }}
+            </div>
+          </a>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+ {% endfor %}
+</ul>

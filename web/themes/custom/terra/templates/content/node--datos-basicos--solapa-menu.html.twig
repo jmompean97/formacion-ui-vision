@@ -1,0 +1,25 @@
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'datos-basicos-solapa') }}>
+    {% block content %}
+      <div class="imagebox">
+        <img src="{{file_url(content.field_organismo_solapa[0]['#media'].field_media_image.entity.uri.value)}}" 
+        alt="{{ item.content['#media'].field_media_image.alt }}"
+        class="category-banner img-responsive"/>
+        <span class="imagebox-desc">{{ content.field_organismo_titular }}</span>
+      </div>
+    {% endblock content %}
+  </div>
+</article>

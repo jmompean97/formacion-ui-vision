@@ -1,0 +1,7 @@
+    {% for item in items %}
+       <img src="{{file_url(item.content['#media'].field_media_image.entity.uri.value)}}" 
+        alt="{{ item.content['#media'].field_media_image.alt }}"
+        class="category-banner img-responsive"/>
+    {% endfor %}
+
+                  

@@ -1,0 +1,162 @@
+/**
+ * @file
+ * Submenú: estilos sobre MD MegaMenu.
+ */
+/* Hacerlo referencia al navbar */
+.header {
+    .navbar {
+        .contextual-region {
+            position: static;
+        }
+
+        .awemenu-standard {
+            position: static;
+
+            .awemenu-container {
+                position: static;
+
+                .awemenu {
+                    position: static;
+
+                    .awemenu-item {
+                        position: static;                       
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header {
+    .awemenu-submenu {
+        .ac_element {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        h3.ac-header {
+            color: $gray-800;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 5px 0 20px;
+        }
+
+        .ac-divider {
+            border: 0;
+            height: 0.5px;
+            border-radius: 0.25px;
+            background-color: $gray-100;
+            margin: 5px 0 20px;
+        }
+
+        h5.ac-header {
+            color: $gray-800;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            word-spacing: -1px;
+            letter-spacing: -0.6px;
+
+            &::before {
+                content: '\23F5';
+                color: $primary-shade;
+                padding-right: 5px;
+            }
+        }
+
+        .ac-text, .ac-html {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            font-size: 14px;
+        }
+
+        .msd-submenu-list-link {
+            padding: 0;
+
+            li {
+                list-style-type: none;
+                color: $primary-dark;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 30px;
+            }
+        }
+
+        .msd-submenu-link {
+            font-weight: 600;
+            margin-top: -10px;
+
+            &::after {
+                font-family: $font-awesome;
+                display: none;
+                font-weight: 900;
+                content: "\f35d";
+            }
+
+            i {
+                margin-left: 8px;
+                color: $primary-light;
+            }
+        }
+
+        .msd-submenu-h5 {
+            h5 {
+                margin-bottom: 20px;
+            }
+        }
+
+        .search-block-form, .block-user, .block-views {
+            h2 { 
+                display: none;
+            }
+        }
+
+        .search-block-form {
+            .content {
+                .content {
+                    width: 100%;
+
+                    form {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+
+                        fieldset {
+                            display: inline-block;
+                            width: 80%;
+                            padding: 0;
+                            z-index: 2;
+
+                            input {
+                                border: 3px solid $primary-dark;
+                                border-radius: 5px;
+                                color: #555555;
+                            }
+                        }
+
+                        .form-actions {
+                            background: $primary-dark;
+                            padding: 0 15px;
+                            border-radius: 5px;
+                            left: -5px;  
+                            &::before {
+                                font-family: $font-awesome;
+                                display: none !important;
+                                font-weight: 900;
+                                content: "\f002";
+                            }
+
+                            i {
+                                height: 35px;
+                                font-size: 25px;
+
+                                background: $primary-dark;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

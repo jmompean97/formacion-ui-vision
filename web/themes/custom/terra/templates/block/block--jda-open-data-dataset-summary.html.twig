@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an open data summary block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content.dataset_title: the data set title
+ * - content.dataset_link: a link to the public page of the data set
+ * - content.dataset_updated: the date the data set was updated
+ * - content.dataset_periodicity: textual representation of the data set update periodicity
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('open-data-dataset-summary') }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <span class="fa-stack">
+      <i class="fas fa-circle fa-stack-1x"></i>
+      <i class="fas fa-share-alt fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="open-data-dataset-summary__link">
+      Disponible en {{ content.dataset_link }}
+    </span>
+    {% if content.dataset_updated %}
+      <span class="open-data-dataset-summary__updated">
+        Última actualización: {{ content.dataset_updated }}
+      </span>
+    {% endif %}
+    {% if content.dataset_periodicity %}
+      <span class="open-data-dataset-summary__periodicity">
+        Periodicidad: {{ content.dataset_periodicity }}
+      </span>
+    {% endif %}
+  {% endblock %}
+</div>
