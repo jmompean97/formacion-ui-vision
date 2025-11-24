@@ -9,6 +9,21 @@ Description: Bootstrap 4 with Sass
 /* GENERAL STYLES
 -------------------------------------------------*/
 
+.doc {
+  position: relative;
+  padding-left: 20px;
+  &::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-image: url('../images/MaterialIconThemePdf.svg');
+  }
+}
+
 body {
     background: $white;
 }
