@@ -21,9 +21,12 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
+  extra_field: 0
+  extra_field_plus: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -73,6 +76,11 @@ module:
   views_slideshow: 0
   views_slideshow_cycle: 0
   views_ui: 0
+  webform: 0
+  webform_extra_field: 0
+  webform_node: 0
+  webform_templates: 0
+  webform_ui: 0
   ds: 1
   pathauto: 1
   views: 10

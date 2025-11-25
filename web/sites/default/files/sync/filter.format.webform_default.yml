@@ -1,0 +1,23 @@
+uuid: 2d3d5a0c-6a2b-4eab-bd0a-8e0bcb88d4b5
+langcode: es
+status: true
+dependencies:
+  module:
+    - slick
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: EeKp_M4Oid3erARiAam9rsgBKR91uEnFkEP3aZS2ol8
+name: 'Webform (Default) - DO NOT EDIT'
+format: webform_default
+weight: 100
+filters:
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''
