@@ -1,3 +1,5 @@
 /vendor/
 
 /web/themes/custom/terra/node_modules
+/web/sites/default/files/css/
+/web/sites/default/files/js/
