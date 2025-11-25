@@ -1,0 +1,13 @@
+name: 'Webform Extra Field'
+type: module
+description: 'Provides an extra field to place a Webform under "Manage display" tab.'
+core_version_requirement: ^9 || ^10 || ^11
+package: 'Webform'
+dependencies:
+  - webform:webform
+  - extra_field_plus:extra_field_plus
+
+# Information added by Drupal.org packaging script on 2025-04-02
+version: '2.1.0'
+project: 'webform_extra_field'
+datestamp: 1743617031

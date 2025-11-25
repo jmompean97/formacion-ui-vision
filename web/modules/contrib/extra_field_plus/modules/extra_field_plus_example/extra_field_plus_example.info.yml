@@ -1,0 +1,11 @@
+name: Extra Field Settings Provider Example
+type: module
+description: 'Provides example extra field plugins with settings.'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - extra_field_plus:extra_field_plus
+
+# Information added by Drupal.org packaging script on 2025-04-23
+version: '3.0.0-beta5'
+project: 'extra_field_plus'
+datestamp: 1745411798

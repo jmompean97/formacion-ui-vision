@@ -24,6 +24,10 @@ Description: Bootstrap 4 with Sass
   }
 }
 
+.messages__content.container.alert.alert-danger.alert-dismissible.fade.show{
+  display: none;
+}
+
 body {
     background: $white;
 }
