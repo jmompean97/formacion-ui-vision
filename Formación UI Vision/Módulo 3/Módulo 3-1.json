@@ -1,0 +1,42 @@
+{
+  "Name": "Módulo 3-3",
+  "CreationDate": "2025-11-27",
+  "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://formacion-ui-vision.ddev.site/user/login",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "2000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementVisible",
+      "Target": "id=edit-name",
+      "Value": "2000",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=edit-name",
+      "Value": "admin",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=edit-pass",
+      "Value": "admin",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=edit-submit",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Módulo 1-1",
+  "CreationDate": "2025-11-26",
+  "Commands": [
+    {
+      "Command": "selectWindow",
+      "Target": "TAB=OPEN",
+      "Value": "https://www.google.com",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "name=q",
+      "Value": "UI.Vision RPA",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "name=btnK",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

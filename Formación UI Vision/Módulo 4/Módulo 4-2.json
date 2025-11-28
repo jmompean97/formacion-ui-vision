@@ -1,0 +1,42 @@
+{
+  "Name": "Módulo 4-2",
+  "CreationDate": "2025-11-28",
+  "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/dashboard",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "link=Cerrar sesión",
+      "Value": "10000",
+      "Description": "Esperar a que el enlace esté disponible."
+    },
+    {
+      "Command": "storeText",
+      "Target": "link=Cerrar sesión",
+      "Value": "Etiqueta",
+      "Description": "Captura el texto visible: 'Cerrar sesión'."
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "link=Cerrar sesión@href",
+      "Value": "URLRelativa",
+      "Description": "Captura el atributo href: '/user/logout?token=...' (el valor de la URL)."
+    },
+    {
+      "Command": "echo",
+      "Target": "Etiqueta visible: ${Etiqueta}",
+      "Value": "",
+      "Description": "Muestra la etiqueta capturada."
+    },
+    {
+      "Command": "echo",
+      "Target": "Atributo href (oculto): ${URLRelativa}",
+      "Value": "",
+      "Description": "Muestra el valor del atributo capturado."
+    }
+  ]
+}

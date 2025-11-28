@@ -1,0 +1,42 @@
+{
+  "Name": "Módulo 4-5",
+  "CreationDate": "2025-11-28",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "2",
+      "Value": "contador",
+      "Description": "1. Inicialización del contador a 1."
+    },
+    {
+      "Command": "while",
+      "Target": "${contador} <= 3",
+      "Value": "",
+      "Description": "2. Condición del bucle."
+    },
+    {
+      "Command": "echo",
+      "Target": "Contando: ${contador}",
+      "Value": "",
+      "Description": "3. Muestra el valor actual."
+    },
+    {
+      "Command": "store",
+      "Target": "${contador} + 1",
+      "Value": "contador",
+      "Description": "4. INCREMENTO: Usa STORE con interpolación."
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": "5. CIERRE del bucle 'end'."
+    },
+    {
+      "Command": "echo",
+      "Target": "Conteo finalizado. El valor final es: ${contador}",
+      "Value": "",
+      "Description": "6. Muestra el resultado final."
+    }
+  ]
+}

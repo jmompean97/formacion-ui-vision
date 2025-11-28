@@ -1,0 +1,66 @@
+{
+    "Name": "Módulo 4-6-2",
+    "CreationDate": "2025-11-28",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "contenido.csv",
+            "Value": "contenido",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "contenido",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "https://formacion-ui-vision.ddev.site/node/add/article",
+            "Value": "",
+            "Description": "Abrir página de creación de artículo"
+        },
+        {
+            "Command": "echo",
+            "Target": "Buscando artículo: ${fila[0]}",
+            "Value": "blue",
+            "Description": "Mostrar qué artículo se está procesando"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-title-0-value",
+            "Value": "${fila[0]}",
+            "Description": "Escribir titulo del artículo"
+        },
+        {
+            "Command": "click",
+            "Target": "css=.ck-editor__editable",
+            "Value": "",
+            "Description": "Hacer click en el editor visual (CKEditor)"
+        },
+        {
+            "Command": "executeScript",
+            "Target": "var content = '${fila[1]}'; if (content.startsWith('\"') && content.endsWith('\"')) { content = content.slice(1, -1); } document.querySelector('.ck-editor__editable').ckeditorInstance.setData(content);",
+            "Value": "",
+            "Description": "Limpiar comillas e insertar en CKEditor en un solo paso"
+        },
+        {
+            "Command": "click",
+            "Target": "id=gin-sticky-edit-submit",
+            "Value": "",
+            "Description": "Click en el campo de crear artículo"
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "✅ Proceso completado: ${contenido.length} filas procesadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}

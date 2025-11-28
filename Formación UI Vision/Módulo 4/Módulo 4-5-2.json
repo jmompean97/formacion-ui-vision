@@ -1,0 +1,42 @@
+{
+  "Name": "Módulo 4-5-3",
+  "CreationDate": "2025-11-28",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\"Línea de texto 1\", \"Línea de texto 2\", \"Línea de texto 3\", \"Línea final\"];",
+      "Value": "miArrayDeTextos",
+      "Description": "1. Crea un ARRAY real de cadenas de texto utilizando JavaScript. Esto es obligatorio para que forEach funcione."
+    },
+    {
+      "Command": "echo",
+      "Target": "Array creado. Se encontraron ${miArrayDeTextos.length} elementos.",
+      "Value": "blue",
+      "Description": "Confirma la creación del array y el número de elementos."
+    },
+    {
+      "Command": "forEach",
+      "Target": "miArrayDeTextos",
+      "Value": "textoActual",
+      "Description": "2. Inicia el bucle: itera sobre el array y guarda el valor actual en la variable 'textoActual'."
+    },
+    {
+      "Command": "echo",
+      "Target": "Recorriendo: ${textoActual}",
+      "Value": "orange",
+      "Description": "3. Muestra cada elemento del array en el log."
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": "4. Fin del bucle forEach."
+    },
+    {
+      "Command": "echo",
+      "Target": "✅ Recorrido de array de texto finalizado.",
+      "Value": "green",
+      "Description": ""
+    }
+  ]
+}

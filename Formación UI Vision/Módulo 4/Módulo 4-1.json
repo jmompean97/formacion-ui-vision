@@ -1,0 +1,24 @@
+{
+  "Name": "Módulo 4-1",
+  "CreationDate": "2025-11-27",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/dashboard",
+      "Value": "BaseURL",
+      "Description": "Almacena la URL base en la variable 'BaseURL'."
+    },
+    {
+      "Command": "store",
+      "Target": "${BaseURL}/dashboard/users/search",
+      "Value": "BuscadorURL",
+      "Description": "Concatena BaseURL con la ruta de búsqueda y almacena el resultado."
+    },
+    {
+      "Command": "open",
+      "Target": "${BaseURL}",
+      "Value": "",
+      "Description": "Abre la URL construida (navegación visual)."
+    }
+  ]
+}

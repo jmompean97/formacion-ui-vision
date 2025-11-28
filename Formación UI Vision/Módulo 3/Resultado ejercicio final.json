@@ -1,0 +1,60 @@
+{
+  "Name": "Resultado ejercicio final",
+  "CreationDate": "2025-11-27",
+  "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/user/login",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "2000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementVisible",
+      "Target": "id=edit-name",
+      "Value": "2000",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=edit-name",
+      "Value": "desarrollo.tec514.sandetel.ext",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=edit-pass",
+      "Value": "12345",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=edit-submit",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "assertText",
+      "Target": "css=.admin-list .label",
+      "Value": "Buscador general",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "",
+      "Value": "Búsqueda completada con éxito",
+      "Description": ""
+    }
+  ]
+}

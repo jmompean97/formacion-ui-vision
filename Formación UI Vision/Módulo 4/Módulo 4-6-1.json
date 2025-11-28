@@ -1,0 +1,66 @@
+{
+  "Name": "Módulo 4-6-1",
+  "CreationDate": "2025-11-28",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "pruebacsv.csv",
+      "Value": "csvData",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "csvData",
+      "Value": "fila",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${fila[0]} == 'ID_Empleado'",
+      "Value": "",
+      "Description": "Verificar si es la cabecera (mirando solo la primera columna)"
+    },
+    {
+      "Command": "gotoLabel",
+      "Target": "FIN_FILA",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "if",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Procesando empleado: ${fila[1]} del departamento ${fila[2]}",
+      "Value": "#Lado_A",
+      "Description": "Usamos fila[1] y fila[2] directamente porque ya vienen separados"
+    },
+    {
+      "Command": "echo",
+      "Target": "Salario: ${fila[3]}; y fecha de contratación: ${fila[4]}",
+      "Value": "#Lado_A",
+      "Description": "Usamos fila[1] y fila[2] directamente porque ya vienen separados"
+    },
+    {
+      "Command": "label",
+      "Target": "FIN_FILA",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "forEach",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Proceso de lectura de CSV completado.",
+      "Value": "#Lado_B",
+      "Description": ""
+    }
+  ]
+}
