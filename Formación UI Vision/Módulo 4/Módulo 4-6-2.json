@@ -1,6 +1,6 @@
 {
     "Name": "Módulo 4-6-2",
-    "CreationDate": "2025-11-28",
+    "CreationDate": "2025-11-29",
     "Commands": [
         {
             "Command": "csvReadArray",
@@ -16,39 +16,117 @@
         },
         {
             "Command": "open",
-            "Target": "https://formacion-ui-vision.ddev.site/node/add/article",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/node/add/novedades",
             "Value": "",
-            "Description": "Abrir página de creación de artículo"
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
         },
         {
             "Command": "echo",
-            "Target": "Buscando artículo: ${fila[0]}",
+            "Target": "Buscando Título Novedad: ${fila[0]}",
             "Value": "blue",
-            "Description": "Mostrar qué artículo se está procesando"
+            "Description": "Mostrar qué Novedad se está procesando"
         },
         {
             "Command": "type",
             "Target": "id=edit-title-0-value",
             "Value": "${fila[0]}",
-            "Description": "Escribir titulo del artículo"
+            "Description": "Escribir titulo de la Novedad"
+        },
+        {
+            "Command": "executeScript_Sandbox",
+            "Target": "var s = '${fila[2]}'.replace(/['\"]+/g, ''); var parts = s.split('/'); return parts[2] + '-' + parts[1] + '-' + parts[0];",
+            "Value": "fecha_formateada",
+            "Description": "Limpiar comillas y convertir fecha a YYYY-MM-DD (Estándar HTML5)"
         },
         {
             "Command": "click",
-            "Target": "css=.ck-editor__editable",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
             "Value": "",
-            "Description": "Hacer click en el editor visual (CKEditor)"
+            "Description": "Dar foco al campo de fecha"
+        },
+        {
+            "Command": "pause",
+            "Target": "1000",
+            "Value": "",
+            "Description": "Esperar un segundo"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "${fecha_formateada}",
+            "Description": "Escribir fecha formateada (YYYY-MM-DD)"
+        },
+        {
+            "Command": "executeScript_Sandbox",
+            "Target": "var t = '${fila[3]}'.replace(/['\"]+/g, ''); return t",
+            "Value": "hora_limpia",
+            "Description": "Limpiar comillas y quitar AM/PM para formato 24h"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-novedades-fecha-0-value-time",
+            "Value": "",
+            "Description": "Dar foco al campo de hora"
+        },
+        {
+            "Command": "pause",
+            "Target": "1000",
+            "Value": "",
+            "Description": "Esperar un segundo"
         },
         {
             "Command": "executeScript",
-            "Target": "var content = '${fila[1]}'; if (content.startsWith('\"') && content.endsWith('\"')) { content = content.slice(1, -1); } document.querySelector('.ck-editor__editable').ckeditorInstance.setData(content);",
+            "Target": "var el = document.getElementById('edit-field-novedades-fecha-0-value-time'); el.value = '${hora_limpia}'; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
             "Value": "",
-            "Description": "Limpiar comillas e insertar en CKEditor en un solo paso"
+            "Description": "Asignar hora directamente y disparar eventos"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-time",
+            "Value": "${hora_limpia}",
+            "Description": "Escribir hora limpia"
         },
         {
             "Command": "click",
-            "Target": "id=gin-sticky-edit-submit",
+            "Target": "css=#edit-domain > summary",
             "Value": "",
-            "Description": "Click en el campo de crear artículo"
+            "Description": "Hacer click en la Configuración de Dominio"
+        },
+        {
+            "Command": "click",
+            "Target": "xpath=//label[normalize-space()='${fila[1]}']/preceding-sibling::input",
+            "Value": "",
+            "Description": "Seleccionar checkbox de Junta de Andalucía"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-domain-source",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "select",
+            "Target": "id=edit-field-domain-source",
+            "Value": "label=${fila[1]}",
+            "Description": "Seleccionar la opción buscando por el texto visible"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-publish",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "pause",
+            "Target": "10000",
+            "Value": "",
+            "Description": ""
         },
         {
             "Command": "end",
