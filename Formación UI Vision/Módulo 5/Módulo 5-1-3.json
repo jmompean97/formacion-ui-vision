@@ -1,0 +1,30 @@
+{
+    "Name": "Módulo 5-1-3",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "comment",
+            "Target": "open // https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/servicios/actualidad/eventos/detalle/599518.html",
+            "Value": "",
+            "Description": "Abrir página del evento"
+        },
+        {
+            "Command": "comment",
+            "Target": "pause // 5000",
+            "Value": "",
+            "Description": "Esperar carga completa"
+        },
+        {
+            "Command": "OCRExtractRelative",
+            "Target": "m7etq3_dpi_87.png",
+            "Value": "fecha, 200, 50",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "✅ La fecha extraída del evento es: ${fecha}",
+            "Value": "green",
+            "Description": "Mostrar el resultado del OCR en el log."
+        }
+    ]
+}

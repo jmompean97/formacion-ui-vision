@@ -1,0 +1,149 @@
+{
+    "Name": "Módulo 5-2",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/admin/content?title=&type=novedades&status=All&field_domain_access_target_id=All",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "linkText=Edit",
+            "Value": "",
+            "Targets": [
+                "linkText=Edit",
+                "xpath=//*[@id=\"views-form-content-page-1\"]/table/tbody/tr/td[7]/div/div/ul/li/a",
+                "xpath=//td[7]/div/div/ul/li/a",
+                "css=#views-form-content-page-1 > table > tbody > tr:nth-child(1) > td.views-field.views-field-operations > div > div > ul > li.edit.dropbutton-action > a"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-title-0-value",
+            "Value": "",
+            "Targets": [
+                "id=edit-title-0-value",
+                "name=title[0][value]",
+                "xpath=//*[@id=\"edit-title-0-value\"]",
+                "xpath=//input[@id='edit-title-0-value']",
+                "xpath=//div/div/div/input",
+                "css=#edit-title-0-value"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-title-0-value",
+            "Value": "Prueba de novedades 2",
+            "Targets": [
+                "id=edit-title-0-value",
+                "name=title[0][value]",
+                "xpath=//*[@id=\"edit-title-0-value\"]",
+                "xpath=//input[@id='edit-title-0-value']",
+                "xpath=//div/div/div/input",
+                "css=#edit-title-0-value"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value-date",
+                "name=field_novedades_fecha[0][value][date]",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value-date\"]",
+                "xpath=//input[@id='edit-field-novedades-fecha-0-value-date']",
+                "xpath=//fieldset/div/div/div/input",
+                "css=#edit-field-novedades-fecha-0-value-date"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "0002-02-14",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value-date",
+                "name=field_novedades_fecha[0][value][date]",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value-date\"]",
+                "xpath=//input[@id='edit-field-novedades-fecha-0-value-date']",
+                "xpath=//fieldset/div/div/div/input",
+                "css=#edit-field-novedades-fecha-0-value-date"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "0020-02-14",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value-date",
+                "name=field_novedades_fecha[0][value][date]",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value-date\"]",
+                "xpath=//input[@id='edit-field-novedades-fecha-0-value-date']",
+                "xpath=//fieldset/div/div/div/input",
+                "css=#edit-field-novedades-fecha-0-value-date"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "0202-02-14",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value-date",
+                "name=field_novedades_fecha[0][value][date]",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value-date\"]",
+                "xpath=//input[@id='edit-field-novedades-fecha-0-value-date']",
+                "xpath=//fieldset/div/div/div/input",
+                "css=#edit-field-novedades-fecha-0-value-date"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "2027-02-14",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value-date",
+                "name=field_novedades_fecha[0][value][date]",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value-date\"]",
+                "xpath=//input[@id='edit-field-novedades-fecha-0-value-date']",
+                "xpath=//fieldset/div/div/div/input",
+                "css=#edit-field-novedades-fecha-0-value-date"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-novedades-fecha-0-value",
+            "Value": "",
+            "Targets": [
+                "id=edit-field-novedades-fecha-0-value",
+                "xpath=//*[@id=\"edit-field-novedades-fecha-0-value\"]",
+                "xpath=//div[@id='edit-field-novedades-fecha-0-value']",
+                "xpath=//fieldset/div/div",
+                "css=#edit-field-novedades-fecha-0-value"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Targets": [
+                "id=edit-submit",
+                "name=op",
+                "xpath=//*[@id=\"edit-submit\"]",
+                "xpath=//input[@id='edit-submit']",
+                "xpath=//div[8]/input",
+                "css=#edit-submit"
+            ],
+            "Description": ""
+        }
+    ]
+}

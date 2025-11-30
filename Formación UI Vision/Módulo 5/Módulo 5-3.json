@@ -1,0 +1,36 @@
+{
+    "Name": "Módulo 5-3",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "XRun",
+            "Target": "C:\\Users\\jmompean\\Desktop\\Minsait\\Formación UI Vision\\DocPrueba.docx",
+            "Value": "",
+            "Description": "Utiliza XRun (requiere XModule) para forzar la ejecución de la aplicación."
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "Hola de nuevo",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_CTRL+KEY_G}",
+            "Value": "",
+            "Description": "Guardo el documento"
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_ALT+KEY_F4}",
+            "Value": "",
+            "Description": "Cierro el Word"
+        }
+    ]
+}

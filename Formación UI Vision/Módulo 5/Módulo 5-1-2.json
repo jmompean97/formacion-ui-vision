@@ -1,0 +1,30 @@
+{
+    "Name": "Módulo 5-1-2",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/servicios/actualidad/eventos/detalle/599518.html",
+            "Value": "",
+            "Description": "Abrir página del evento"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": "Esperar carga completa"
+        },
+        {
+            "Command": "visualVerify",
+            "Target": "cebra3.png",
+            "Value": "",
+            "Description": "Verificar fechas del evento"
+        },
+        {
+            "Command": "echo",
+            "Target": "✅ Todos los elementos visuales verificados correctamente",
+            "Value": "green",
+            "Description": ""
+        }
+    ]
+}
