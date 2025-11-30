@@ -1,10 +1,10 @@
 {
     "Name": "Módulo 4-6-2",
-    "CreationDate": "2025-11-29",
+    "CreationDate": "2025-11-30",
     "Commands": [
         {
             "Command": "csvReadArray",
-            "Target": "contenido.csv",
+            "Target": "contenido2.csv",
             "Value": "contenido",
             "Description": "Cargar todo el CSV en un array"
         },
@@ -39,12 +39,6 @@
             "Description": "Escribir titulo de la Novedad"
         },
         {
-            "Command": "executeScript_Sandbox",
-            "Target": "var s = '${fila[2]}'.replace(/['\"]+/g, ''); var parts = s.split('/'); return parts[2] + '-' + parts[1] + '-' + parts[0];",
-            "Value": "fecha_formateada",
-            "Description": "Limpiar comillas y convertir fecha a YYYY-MM-DD (Estándar HTML5)"
-        },
-        {
             "Command": "click",
             "Target": "id=edit-field-novedades-fecha-0-value-date",
             "Value": "",
@@ -59,14 +53,8 @@
         {
             "Command": "type",
             "Target": "id=edit-field-novedades-fecha-0-value-date",
-            "Value": "${fecha_formateada}",
+            "Value": "${fila[2]}",
             "Description": "Escribir fecha formateada (YYYY-MM-DD)"
-        },
-        {
-            "Command": "executeScript_Sandbox",
-            "Target": "var t = '${fila[3]}'.replace(/['\"]+/g, ''); return t",
-            "Value": "hora_limpia",
-            "Description": "Limpiar comillas y quitar AM/PM para formato 24h"
         },
         {
             "Command": "click",
@@ -81,15 +69,9 @@
             "Description": "Esperar un segundo"
         },
         {
-            "Command": "executeScript",
-            "Target": "var el = document.getElementById('edit-field-novedades-fecha-0-value-time'); el.value = '${hora_limpia}'; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
-            "Value": "",
-            "Description": "Asignar hora directamente y disparar eventos"
-        },
-        {
             "Command": "type",
             "Target": "id=edit-field-novedades-fecha-0-value-time",
-            "Value": "${hora_limpia}",
+            "Value": "${fila[3]}",
             "Description": "Escribir hora limpia"
         },
         {

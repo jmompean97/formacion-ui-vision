@@ -1,0 +1,36 @@
+{
+    "Name": "Módulo 3-5",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/admin/content",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "pause",
+            "Target": "2000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementVisible",
+            "Target": "css=h1.page-title",
+            "Value": "2000",
+            "Description": ""
+        },
+        {
+            "Command": "assertText",
+            "Target": "css=h1.page-title",
+            "Value": "Contenido",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "Búsqueda completada con éxito",
+            "Value": "green",
+            "Description": ""
+        }
+    ]
+}

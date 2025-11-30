@@ -1,0 +1,60 @@
+{
+    "Name": "Macro 4-6-3-1",
+    "CreationDate": "2025-11-30",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "contenido2.csv",
+            "Value": "contenido",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "contenido",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "${fila[4]}",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "Buscando Título Novedad: ${fila[0]}",
+            "Value": "blue",
+            "Description": "Mostrar qué Novedad se está procesando"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-title-0-value",
+            "Value": "${fila[0]}",
+            "Description": "Escribir titulo de la Novedad"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "✅ Proceso completado: ${contenido.length} filas modificadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
   "Name": "Módulo 4-4",
-  "CreationDate": "2025-11-28",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
       "Command": "open",
@@ -22,13 +22,25 @@
     },
     {
       "Command": "if",
-      "Target": "${EtiquetaCapturada} != 'Cerrar sesióneee'",
+      "Target": "${EtiquetaCapturada} != 'Cerrar sesióneeeeeee'",
       "Value": "",
       "Description": ""
     },
     {
       "Command": "echo",
-      "Target": "¡ERROR! El texto del enlace no es el esperado. Se esperaba 'Cerrar sesióneee' pero se encontró: ${EtiquetaCapturada}",
+      "Target": "¡ERROR! El texto del enlace no es el esperado. Se esperaba 'Cerrar sesióneeeeeee' pero se encontró: ${EtiquetaCapturada}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "¡CORRECTO! El texto del enlace si es el esperado. Se esperaba 'Cerrar sesión' y se encontró: ${EtiquetaCapturada}",
       "Value": "",
       "Description": ""
     },

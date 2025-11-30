@@ -1,10 +1,10 @@
 {
   "Name": "Módulo 4-6-1",
-  "CreationDate": "2025-11-28",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
       "Command": "csvReadArray",
-      "Target": "pruebacsv.csv",
+      "Target": "prueba.csv",
       "Value": "csvData",
       "Description": ""
     },
@@ -35,13 +35,13 @@
     {
       "Command": "echo",
       "Target": "Procesando empleado: ${fila[1]} del departamento ${fila[2]}",
-      "Value": "#Lado_A",
+      "Value": "brown",
       "Description": "Usamos fila[1] y fila[2] directamente porque ya vienen separados"
     },
     {
       "Command": "echo",
       "Target": "Salario: ${fila[3]}; y fecha de contratación: ${fila[4]}",
-      "Value": "#Lado_A",
+      "Value": "blue",
       "Description": "Usamos fila[1] y fila[2] directamente porque ya vienen separados"
     },
     {
@@ -59,7 +59,7 @@
     {
       "Command": "echo",
       "Target": "Proceso de lectura de CSV completado.",
-      "Value": "#Lado_B",
+      "Value": "green",
       "Description": ""
     }
   ]

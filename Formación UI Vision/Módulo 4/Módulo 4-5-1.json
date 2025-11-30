@@ -1,10 +1,10 @@
 {
-  "Name": "Módulo 4-5",
-  "CreationDate": "2025-11-28",
+  "Name": "Módulo 4-5-1",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
       "Command": "store",
-      "Target": "2",
+      "Target": "1",
       "Value": "contador",
       "Description": "1. Inicialización del contador a 1."
     },
@@ -21,10 +21,10 @@
       "Description": "3. Muestra el valor actual."
     },
     {
-      "Command": "store",
-      "Target": "${contador} + 1",
+      "Command": "executeScript",
+      "Target": "return Number(${contador}) + 1",
       "Value": "contador",
-      "Description": "4. INCREMENTO: Usa STORE con interpolación."
+      "Description": "4. Suma 1 al contador"
     },
     {
       "Command": "end",

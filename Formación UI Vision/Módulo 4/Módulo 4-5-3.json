@@ -1,59 +1,41 @@
 {
-  "Name": "Módulo 4-5-2",
-  "CreationDate": "2025-11-28",
+  "Name": "Módulo 4-5-3",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
-      "Command": "open",
-      "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/dashboard",
-      "Value": "",
-      "Description": ""
-    },
-    {
-      "Command": "storeXpathCount",
-      "Target": "xpath=//h3[text()='Buscar contenido']/following-sibling::div//li",
-      "Value": "TotalTiposContenido",
-      "Description": "Cuenta todos los elementos de lista (<li>) dentro del panel 'Buscar contenido'."
-    },
-    {
-      "Command": "store",
-      "Target": "1",
-      "Value": "i",
-      "Description": ""
-    },
-    {
-      "Command": "while",
-      "Target": "${i} < ${TotalTiposContenido}",
-      "Value": "",
-      "Description": ""
-    },
-    {
-      "Command": "storeText",
-      "Target": "xpath=//div[h3[text()='Buscar contenido']]/div/ul/li[${i}]/a/span[@class='label']",
-      "Value": "currentLabel",
-      "Description": ""
+      "Command": "executeScript",
+      "Target": "return [\"Línea de texto 1\", \"Línea de texto 2\", \"Línea de texto 3\", \"Línea final\"];",
+      "Value": "miArrayDeTextos",
+      "Description": "1. Crea un ARRAY real de cadenas de texto utilizando JavaScript. Esto es obligatorio para que forEach funcione."
     },
     {
       "Command": "echo",
-      "Target": "Ítem ${i}: ${currentLabel}",
-      "Value": "orange",
-      "Description": ""
+      "Target": "Array creado. Se encontraron ${miArrayDeTextos.length} elementos.",
+      "Value": "blue",
+      "Description": "Confirma la creación del array y el número de elementos."
     },
     {
-      "Command": "executeScript_Sandbox",
-      "Target": "return Number(${i}) + 1;",
-      "Value": "i",
-      "Description": ""
+      "Command": "forEach",
+      "Target": "miArrayDeTextos",
+      "Value": "textoActual",
+      "Description": "2. Inicia el bucle: itera sobre el array y guarda el valor actual en la variable 'textoActual'."
+    },
+    {
+      "Command": "echo",
+      "Target": "Recorriendo: ${textoActual}",
+      "Value": "orange",
+      "Description": "3. Muestra cada elemento del array en el log."
     },
     {
       "Command": "end",
       "Target": "",
       "Value": "",
-      "Description": ""
+      "Description": "4. Fin del bucle forEach."
     },
     {
       "Command": "echo",
-      "Target": "Macro finalizada.",
-      "Value": "blue",
+      "Target": "✅ Recorrido de array de texto finalizado.",
+      "Value": "green",
       "Description": ""
     }
   ]

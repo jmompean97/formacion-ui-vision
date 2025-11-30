@@ -1,9 +1,9 @@
 {
-  "Name": "Módulo 4-5-3",
-  "CreationDate": "2025-11-28",
+  "Name": "Módulo 4-5-2",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
-      "Command": "executeScript_Sandbox",
+      "Command": "executeScript",
       "Target": "return [\"Línea de texto 1\", \"Línea de texto 2\", \"Línea de texto 3\", \"Línea final\"];",
       "Value": "miArrayDeTextos",
       "Description": "1. Crea un ARRAY real de cadenas de texto utilizando JavaScript. Esto es obligatorio para que forEach funcione."

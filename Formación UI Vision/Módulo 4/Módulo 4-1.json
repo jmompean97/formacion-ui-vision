@@ -1,6 +1,6 @@
 {
   "Name": "Módulo 4-1",
-  "CreationDate": "2025-11-27",
+  "CreationDate": "2025-11-30",
   "Commands": [
     {
       "Command": "store",
@@ -10,13 +10,13 @@
     },
     {
       "Command": "store",
-      "Target": "${BaseURL}/dashboard/users/search",
+      "Target": "${BaseURL}/users/search",
       "Value": "BuscadorURL",
       "Description": "Concatena BaseURL con la ruta de búsqueda y almacena el resultado."
     },
     {
       "Command": "open",
-      "Target": "${BaseURL}",
+      "Target": "${BuscadorURL}",
       "Value": "",
       "Description": "Abre la URL construida (navegación visual)."
     }
