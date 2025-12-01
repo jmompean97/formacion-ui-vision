@@ -1,6 +1,6 @@
 {
     "Name": "Módulo 3-4",
-    "CreationDate": "2025-11-30",
+    "CreationDate": "2025-12-1",
     "Commands": [
         {
             "Command": "open",
@@ -10,27 +10,33 @@
         },
         {
             "Command": "pause",
-            "Target": "2000",
+            "Target": "5000",
             "Value": "",
             "Description": ""
         },
         {
-            "Command": "waitForElementVisible",
+            "Command": "waitForElementPresent",
             "Target": "css=.block-field-blocknodeagendafield-imagen img",
             "Value": "2000",
             "Description": ""
         },
         {
+            "Command": "comment",
+            "Target": "assertElementPresent // xpath=//div[contains(@class,'block-field-blocknodeagendafield-imagen')]//img[@alt='imagen de una cebra']",
+            "Value": "",
+            "Description": ""
+        },
+        {
             "Command": "assertElementPresent",
-            "Target": "css=.block-field-blocknodeagendafield-imagen img",
-            "Value": "Imagen de una cebra",
+            "Target": "xpath=//img[@alt='imagen de una cebra']",
+            "Value": "",
             "Description": ""
         },
         {
             "Command": "echo",
             "Target": "Búsqueda completada con éxito",
             "Value": "green",
-            "Description": ""
+            "Description": "2. Éxito."
         }
     ]
 }
