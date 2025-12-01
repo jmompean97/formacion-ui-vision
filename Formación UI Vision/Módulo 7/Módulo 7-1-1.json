@@ -1,0 +1,114 @@
+{
+    "Name": "Módulo 7-1-1",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/node/add/novedades",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-title-0-value",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-title-0-value",
+            "Value": "Prueba titulo de Novedad",
+            "Description": "Escribir titulo de la Novedad"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "",
+            "Description": "Dar foco al campo de fecha"
+        },
+        {
+            "Command": "pause",
+            "Target": "1000",
+            "Value": "",
+            "Description": "Esperar un segundo"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-date",
+            "Value": "2025-11-10",
+            "Description": "Escribir fecha formateada (YYYY-MM-DD)"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-field-novedades-fecha-0-value-time",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-novedades-fecha-0-value-time",
+            "Value": "",
+            "Description": "Dar foco al campo de hora"
+        },
+        {
+            "Command": "pause",
+            "Target": "1000",
+            "Value": "",
+            "Description": "Esperar un segundo"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-field-novedades-fecha-0-value-time",
+            "Value": "10:00:00",
+            "Description": "Escribir hora limpia"
+        },
+        {
+            "Command": "click",
+            "Target": "css=#edit-domain > summary",
+            "Value": "",
+            "Description": "Hacer click en la Configuración de Dominio"
+        },
+        {
+            "Command": "click",
+            "Target": "xpath=//label[normalize-space()='Junta de Andalucía']/preceding-sibling::input",
+            "Value": "",
+            "Description": "Seleccionar checkbox de Junta de Andalucía"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-domain-source",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "select",
+            "Target": "id=edit-field-domain-source",
+            "Value": "label=Junta de Andalucía",
+            "Description": "Seleccionar la opción buscando por el texto visible"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-publish",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado",
+            "Value": "green",
+            "Description": "Mensaje final"
+        }
+    ]
+}

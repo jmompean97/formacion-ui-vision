@@ -1,0 +1,12 @@
+{
+    "Name": "Módulo 6-1",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://www.google.com",
+            "Value": "",
+            "Description": "Ir a google"
+        }
+    ]
+}

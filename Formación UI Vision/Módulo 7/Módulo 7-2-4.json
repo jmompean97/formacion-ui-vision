@@ -1,0 +1,102 @@
+{
+    "Name": "Módulo 7-2-4",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "nuevosusuariosmodificar.csv\t",
+            "Value": "usuarios",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "usuarios",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/user/${fila[3]}/edit?destination=/admin/people",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-name",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-name",
+            "Value": "${fila[0]}",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "${fila[4]}",
+            "Value": "red",
+            "Description": ""
+        },
+        {
+            "Command": "if",
+            "Target": "${fila[4]} == \"Activo\"",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-status-1",
+            "Value": "",
+            "Description": "Hacer click en el botón de Bloquear"
+        },
+        {
+            "Command": "elseif",
+            "Target": "${fila[4]} == \"Bloqueado\"",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-status-0",
+            "Value": "",
+            "Description": "Hacer click en el botón de Bloquear"
+        },
+        {
+            "Command": "end",
+            "Target": "if",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "pause",
+            "Target": "10000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado: ${usuarios.length} filas procesadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}

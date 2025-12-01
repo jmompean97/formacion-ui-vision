@@ -1,0 +1,108 @@
+{
+    "Name": "Módulo 7-2-2",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "nuevosusuarios.csv",
+            "Value": "usuarios",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "usuarios",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/admin/people/create",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "Buscando Nombre de usuario: ${fila[0]}",
+            "Value": "blue",
+            "Description": "Mostrar qué Usuario se está procesando"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-name",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-name",
+            "Value": "${fila[0]}",
+            "Description": "Escribir titulo de la Novedad"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-pass-pass1",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-pass-pass1",
+            "Value": "${fila[1]}",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-pass-pass2",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-pass-pass2",
+            "Value": "${fila[1]}",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "css=#edit-group-dominios > summary",
+            "Value": "",
+            "Description": "Hacer click en la Configuración de Dominio"
+        },
+        {
+            "Command": "click",
+            "Target": "xpath=//label[normalize-space()='${fila[2]}']/preceding-sibling::input",
+            "Value": "",
+            "Description": "Seleccionar checkbox de Junta de Andalucía"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "pause",
+            "Target": "10000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado: ${usuarios.length} filas procesadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}

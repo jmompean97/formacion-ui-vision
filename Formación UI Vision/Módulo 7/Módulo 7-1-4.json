@@ -1,0 +1,90 @@
+{
+    "Name": "Módulo 7-1-4",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "contenidonovedadesmodificar.csv",
+            "Value": "contenido",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "contenido",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/node/${fila[2]}/edit?destination=/admin/content",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "Buscando Título Novedad: ${fila[0]}",
+            "Value": "blue",
+            "Description": "Mostrar qué Novedad se está procesando"
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-title-0-value",
+            "Value": "${fila[0]}",
+            "Description": "Escribir titulo de la Novedad"
+        },
+        {
+            "Command": "click",
+            "Target": "css=#edit-domain > summary",
+            "Value": "",
+            "Description": "Hacer click en la Configuración de Dominio"
+        },
+        {
+            "Command": "click",
+            "Target": "xpath=//label[normalize-space()='${fila[1]}']/preceding-sibling::input",
+            "Value": "",
+            "Description": "Seleccionar checkbox de Junta de Andalucía"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-field-domain-source",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "select",
+            "Target": "id=edit-field-domain-source",
+            "Value": "label=${fila[1]}",
+            "Description": "Seleccionar la opción buscando por el texto visible"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-unpublish",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "pause",
+            "Target": "10000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado: ${contenido.length} filas procesadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}

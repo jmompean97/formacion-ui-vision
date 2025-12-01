@@ -1,0 +1,60 @@
+{
+    "Name": "Módulo 7-2-5",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/user/18675/edit?destination=/admin/people",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-delete",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-delete",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-user-cancel-method-user-cancel-delete",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-user-cancel-method-user-cancel-delete",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Description": "Click en el campo de crear el TC NovedadClick en el campo de crear el TC Novedad"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado",
+            "Value": "green",
+            "Description": "Mensaje final"
+        }
+    ]
+}
