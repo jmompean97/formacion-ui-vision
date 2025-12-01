@@ -1,0 +1,78 @@
+{
+    "Name": "Módulo 5-3-3",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "XRun",
+            "Target": "calc.exe",
+            "Value": "",
+            "Description": "Utiliza XRun (requiere XModule) para forzar la ejecución de la aplicación."
+        },
+        {
+            "Command": "pause",
+            "Target": "3000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "7",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "+",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "2",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "=",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_CTRL+KEY_C}",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XRun",
+            "Target": "C:\\Users\\jmompean\\Desktop\\Minsait\\Formación UI Vision\\DocPrueba.docx",
+            "Value": "",
+            "Description": "Utiliza XRun (requiere XModule) para forzar la ejecución de la aplicación."
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_CTRL+KEY_V}",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_CTRL+KEY_G}",
+            "Value": "",
+            "Description": "Guardo el documento"
+        },
+        {
+            "Command": "XType",
+            "Target": "${KEY_ALT+KEY_F4}",
+            "Value": "",
+            "Description": "Cierro el Word"
+        }
+    ]
+}
