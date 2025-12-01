@@ -1,0 +1,101 @@
+{
+    "Name": "Módulo 7-3-2",
+    "CreationDate": "2025-12-1",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "nuevastaxonomias.csv",
+            "Value": "taxonomias",
+            "Description": "Cargar todo el CSV en un array"
+        },
+        {
+            "Command": "forEach",
+            "Target": "taxonomias",
+            "Value": "fila",
+            "Description": "Iterar por cada fila del CSV"
+        },
+        {
+            "Command": "open",
+            "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/admin/structure/taxonomy/manage/formacion_ui_vision/add",
+            "Value": "",
+            "Description": "Abrir página de creación de Novedades"
+        },
+        {
+            "Command": "pause",
+            "Target": "5000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "Buscando Nombre de taxonomía: ${fila[0]}",
+            "Value": "blue",
+            "Description": "Mostrar qué taxonomia se está procesando"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "id=edit-name-0-value",
+            "Value": "5000",
+            "Description": ""
+        },
+        {
+            "Command": "type",
+            "Target": "id=edit-name-0-value",
+            "Value": "${fila[0]}",
+            "Description": ""
+        },
+        {
+            "Command": "selectFrame",
+            "Target": "index=0",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "xpath=//html",
+            "Value": "",
+            "Targets": [
+                "xpath=/html/html",
+                "xpath=//html",
+                "css= > html"
+            ],
+            "Description": ""
+        },
+        {
+            "Command": "editContent",
+            "Target": "xpath=/html/body",
+            "Value": "<p>${fila[1]}</p>",
+            "Description": ""
+        },
+        {
+            "Command": "selectFrame",
+            "Target": "relative=top",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "click",
+            "Target": "id=edit-submit",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "pause",
+            "Target": "10000",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": "Fin del bucle"
+        },
+        {
+            "Command": "echo",
+            "Target": "Proceso completado: ${usuarios.length} filas procesadas",
+            "Value": "blue",
+            "Description": "Mensaje final"
+        }
+    ]
+}
