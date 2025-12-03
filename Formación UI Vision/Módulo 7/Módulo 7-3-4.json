@@ -1,0 +1,108 @@
+{
+  "Name": "Módulo 7-1-7",
+  "CreationDate": "2025-12-2",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "usuarios_a_bloquear_202511.csv",
+      "Value": "usuarios",
+      "Description": "Cargar todo el CSV en un array"
+    },
+    {
+      "Command": "forEach",
+      "Target": "usuarios",
+      "Value": "fila",
+      "Description": "Iterar por cada fila del CSV"
+    },
+    {
+      "Command": "if",
+      "Target": "${fila[0]} == 'ID_USUARIO'",
+      "Value": "",
+      "Description": "Verificar si es la cabecera (mirando solo la primera columna)"
+    },
+    {
+      "Command": "gotoLabel",
+      "Target": "NEXT",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "if",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://for-pd-portal-jda.apps.paas-pro.junta-andalucia.es/user/${fila[0]}/edit?destination=/admin/people",
+      "Value": "",
+      "Description": "Abrir página de edición de usuarios"
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${fila[1]} == 1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=edit-status-0",
+      "Value": "",
+      "Description": "Hacer click en el botón de Bloquear"
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=edit-status-1",
+      "Value": "",
+      "Description": "Hacer click en el botón de Bloquear"
+    },
+    {
+      "Command": "end",
+      "Target": "if",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=edit-submit",
+      "Value": "",
+      "Description": "Click en el campo de crear el TC Novedad"
+    },
+    {
+      "Command": "pause",
+      "Target": "10000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "label",
+      "Target": "NEXT",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "forEach",
+      "Value": "",
+      "Description": "Fin del bucle"
+    },
+    {
+      "Command": "echo",
+      "Target": "Proceso completado: ${usuarios.length} filas procesadas",
+      "Value": "blue",
+      "Description": "Mensaje final"
+    }
+  ]
+}
