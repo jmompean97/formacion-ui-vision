@@ -1,0 +1,132 @@
+{
+    "Name": "Pruebas-MD",
+    "CreationDate": "2025-12-5",
+    "Commands": [
+        {
+            "Command": "csvReadArray",
+            "Target": "buscador-pagina_estandar-2025-12-05 copy.csv",
+            "Value": "paginasEstandar",
+            "Description": "Lee el CSV de entrada."
+        },
+        {
+            "Command": "csvRead",
+            "Target": "resultados-buscador-pagina_estandar-2025-12-05.csv",
+            "Value": "",
+            "Description": "Inicializa el archivo CSV de salida (debe tener la cabecera: ID)"
+        },
+        {
+            "Command": "forEach",
+            "Target": "paginasEstandar",
+            "Value": "pagina",
+            "Description": "Inicia el bucle para cada fila."
+        },
+        {
+            "Command": "if",
+            "Target": "${pagina[0]} == 'ID'",
+            "Value": "",
+            "Description": "Verificar si es la cabecera"
+        },
+        {
+            "Command": "gotoLabel",
+            "Target": "NEXT",
+            "Value": "",
+            "Description": "Salta la cabecera"
+        },
+        {
+            "Command": "end",
+            "Target": "if",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "open",
+            "Target": "https://gdc.paas.junta-andalucia.es/node/${pagina[0]}/edit",
+            "Value": "!TIMEOUT_WAIT=45",
+            "Description": "Abre la URL de edición (timeout 45s)"
+        },
+        {
+            "Command": "pause",
+            "Target": "3000",
+            "Value": "",
+            "Description": "Pausa de 3s para asegurar carga completa"
+        },
+        {
+            "Command": "waitForElementPresent",
+            "Target": "xpath=//label[normalize-space()='Generate automatic URL alias for http://cspe.jda-pdpjda-pro.paas.junta-andalucia.es']/preceding-sibling::input",
+            "Value": "5000",
+            "Description": "Espera por el checkbox"
+        },
+        {
+            "Command": "storeChecked",
+            "Target": "xpath=//label[normalize-space()='Generate automatic URL alias for http://cspe.jda-pdpjda-pro.paas.junta-andalucia.es']/preceding-sibling::input",
+            "Value": "checkedStatus",
+            "Description": "Guarda el estado del checkbox"
+        },
+        {
+            "Command": "if",
+            "Target": "${checkedStatus} == false",
+            "Value": "",
+            "Description": "SOLO si el checkbox NO está marcado (no-checked)"
+        },
+        {
+            "Command": "store",
+            "Target": "${pagina[0]}",
+            "Value": "!csvLine",
+            "Description": "Guarda solo el ID"
+        },
+        {
+            "Command": "csvSave",
+            "Target": "resultados-buscador-pagina_estandar-2025-12-05.csv",
+            "Value": "",
+            "Description": "Guarda el ID en el CSV"
+        },
+        {
+            "Command": "echo",
+            "Target": "ID ${pagina[0]} guardado (no-checked)",
+            "Value": "",
+            "Description": "Mensaje de confirmación"
+        },
+        {
+            "Command": "else",
+            "Target": "",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "ID ${pagina[0]} saltado (está checked)",
+            "Value": "",
+            "Description": "Mensaje de que se salta porque está checked"
+        },
+        {
+            "Command": "end",
+            "Target": "if",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "pause",
+            "Target": "2000",
+            "Value": "",
+            "Description": "Pausa pequeña"
+        },
+        {
+            "Command": "label",
+            "Target": "NEXT",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "end",
+            "Target": "forEach",
+            "Value": "",
+            "Description": ""
+        },
+        {
+            "Command": "echo",
+            "Target": "CSV generado correctamente",
+            "Value": "",
+            "Description": "Finalizado"
+        }
+    ]
+}
